@@ -1,0 +1,15 @@
+._*
+*~
+*.pyc
+ve
+reports
+media/CACHE
+local_settings.py
+.coverage
+celerybeat-schedule
+.project
+.pydevproject
+.DS_Store
+node_modules
+npm-debug.log
+karma-test-results.xml
