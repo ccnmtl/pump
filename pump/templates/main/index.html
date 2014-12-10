@@ -1,21 +1,454 @@
 {% extends 'base.html' %}
 
+{% block js %}
+<script src="{{STATIC_URL}}js/underscore-min.js"></script>
+<script src="{{STATIC_URL}}js/src/wizard.js"></script>
+<script>
+$(document).ready(function() {
+  var w = new window.Wizard("#wizard", "#wizard section");
+});
+</script>
+
+{% endblock %}
+
 {% block content %}
-<div class="jumbotron">
-<h1>It works</h1>
-<p>Congratulations! Now start coding.</p>
-{% if not request.user.is_anonymous %}
-<p>This project includes Pagetree by default.</p>
 
-<p>The first thing you'll want to do is go to
-	the <a href="/pages/edit/">Edit page</a> for the root node and add
-	some modules, child sections and content.</p>
+<form role="form">
+<div id="wizard">
+	<section>
+		<h2>Houghton Questions</h2>
 
-<p> If you don't want to use
-	Pagetree, you should remove it from your requirements.txt and
-	INSTALLED_APPS and clear the views out of your main/views.py</p>
+	<div class="form-group">
+    <label for="q1">Do you wear your prosthesis</label>
+
+		<div class="radio">
+			<label>
+				<input type="radio" name="q1" id="q1-1" value="1"> Less than 25% of waking hours (1-3 hours)
+			</label>
+		</div>
+
+		<div class="radio">
+			<label>
+			<input type="radio" name="q1" id="q1-2" value="2"> Between 25% and 50% of waking hours (4-8 hours)
+			</label>
+		</div>
+
+		<div class="radio">
+			<label>
+			<input type="radio" name="q1" id="q1-3" value="3"> More than 50% of waking hours (more than 8 hours)
+			</label>
+		</div>
+
+		<div class="radio">
+			<label>
+			<input type="radio" name="q1" id="q1-4" value="4"> All working hours (12-16 hours)
+			</label>
+		</div>
+
+  </div>
+
+	<div class="form-group">
+    <label>Do you use your prosthesis to walk</label>
 
 
-{% endif %}
+		<div class="radio">
+			<label>
+			<input type="radio" name="q2" id="q2-1" value="1"> Just when visiting the doctor or limb-fitting center
+			</label>
+		</div>
+
+		<div class="radio">
+			<label>
+			<input type="radio" name="q2" id="q2-2" value="2"> At home but not to go outside
+			</label>
+		</div>
+
+		<div class="radio">
+			<label>
+			<input type="radio" name="q2" id="q2-3" value="3"> Outside the home on occasion
+			</label>
+		</div>
+
+		<div class="radio">
+			<label>
+			<input type="radio" name="q2" id="q2-4" value="4"> Inside and outside all the time
+			</label>
+		</div>
+
+  </div>
+
+
+	<div class="form-group">
+    <label>When going outside when wearing your prosthesis, do you:</label>
+
+		<div class="radio">
+			<label>
+			<input type="radio" name="q3" id="q3-1" value="1"> Use a wheelchair
+			</label>
+		</div>
+
+		<div class="radio">
+			<label>
+			<input type="radio" name="q3" id="q3-2" value="2"> Use two crutches, two canes, or a walker
+			</label>
+		</div>
+
+		<div class="radio">
+			<label>
+			<input type="radio" name="q3" id="q3-3" value="3"> Use one cane
+			</label>
+		</div>
+
+		<div class="radio">
+			<label>
+			<input type="radio" name="q3" id="q3-4" value="4"> Use nothing
+			</label>
+		</div>
+
+  </div>
+
+	<div class="form-group">
+    <label>When walking with your prothesis outside, do you feel unstable when: walking on a flat surface?</label>
+
+		<div class="radio">
+			<label>
+			<input type="radio" name="q4" id="q4-1" value="1"> Yes
+			</label>
+		</div>
+
+		<div class="radio">
+			<label>
+			<input type="radio" name="q4" id="q4-2" value="2"> No
+			</label>
+		</div>
+
+	</div>
+
+	<div class="form-group">
+    <label>When walking with your prothesis outside, do you feel unstable when: walking on slopes?</label>
+
+		<div class="radio">
+			<label>
+			<input type="radio" name="q4" id="q4-1" value="1"> Yes
+			</label>
+		</div>
+
+		<div class="radio">
+			<label>
+			<input type="radio" name="q4" id="q4-2" value="2"> No
+			</label>
+		</div>
+
+	</div>
+
+	<div class="form-group">
+    <label>When walking with your prothesis outside, do you feel unstable when: walking on rough ground?</label>
+
+		<div class="radio">
+			<label>
+			<input type="radio" name="q4" id="q4-1" value="1"> Yes
+			</label>
+		</div>
+
+		<div class="radio">
+			<label>
+			<input type="radio" name="q4" id="q4-2" value="2"> No
+			</label>
+		</div>
+
+	</div>
+
+	</section>
+	<section>
+	<h2>Activites-specific Balance Confidence (ABC) Scale</h2>
+
+How confident are you that you will NOT lose your balance or become unsteady when you:
+Walk around your house
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+No confidence
+
+Completely confident
+Walk up or down stairs?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+No confidence
+
+Completely confident
+Bend over and pick up a slipper from the front of a closet floor?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+No confidence
+
+Completely confident
+Reach for a small can off a shelf at eye level?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+No confidence
+
+Completely confident
+Stand on your tiptoes and reach for something above your head?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+No confidence
+
+Completely confident
+Stand on a chair and reach for something?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+No confidence
+
+Completely confident
+Sweep the floor?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+No confidence
+
+Completely confident
+Walk outside the house to a car parked in the driveway?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+No confidence
+
+Completely confident
+Get into or out of a car?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+No confidence
+
+Completely confident
+Walk across a parking lot at the mall?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+No confidence
+
+Completely confident
+Walk up or down a ramp?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+No confidence
+
+Completely confident
+Walk in a crowded mall where people rapidly walk past you?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+No confidence
+
+Completely confident
+Are bumped into by people as you walk through the mall?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+No confidence
+
+Completely confident
+Step onto or off an escalator while you are holding onto a railing?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+No confidence
+
+Completely confident
+Step onto or off an escalator while you are holding onto parcels such that you cannot hold onto the railing?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+No confidence
+
+Completely confident
+Walk outside on icy sidewalks?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+No confidence
+
+Completely confident
+</section>
+<section>
+	 <h2>Demonstrate your abilities</h2>
+
+	 <p>Retrieve object from floor</p>
+
+	<div class="form-group">
+    <label>Are you able to retrieve an object from floor?</label>
+
+		<div class="radio">
+			<label>
+			<input type="radio" name="q4" id="q4-1" value="1"> Yes
+			</label>
+		</div>
+
+		<div class="radio">
+			<label>
+			<input type="radio" name="q4" id="q4-2" value="2"> No
+			</label>
+		</div>
+
+	</div>
+
+</section>
+<section>
+	 <h2>Demonstrate your abilities</h2>
+
+	 <p>Look behind (both) shoulders</p>
+
+	<div class="form-group">
+    <label>Are you able to look behind (both) shoulders?</label>
+
+		<div class="radio">
+			<label>
+			<input type="radio" name="q4" id="q4-1" value="1"> Yes
+			</label>
+		</div>
+
+		<div class="radio">
+			<label>
+			<input type="radio" name="q4" id="q4-2" value="2"> No
+			</label>
+		</div>
+
+	</div>
+
+  <h3>Successfully looking behind both shoulders</h3>
+
+	<iframe class="ss-video" src="//youtube.com/embed/fc0NYxaPqNs" style="width: 360px; height: 274px;"></iframe>
+
+  <h3>Unsuccessfully looking behind both shoulders</h3>
+
+	<iframe class="ss-video" src="//youtube.com/embed/NbJWY-tDz2w" style="width: 360px; height: 274px;"></iframe>
+
+</section>
+
+<section>
+	 <h2>View Results</h2>
+	 <input type="submit" class="btn btn-primary" value="Submit"/>
+</section>
+
 </div>
+</form>
+
 {% endblock %}

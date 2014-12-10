@@ -15,7 +15,7 @@
   <script src="../assets/js/respond.min.js"></script>
 <![endif]-->
 
-    <link href="{% bootstrap_css_url %}" rel="stylesheet">
+<link href="{% bootstrap_css_url %}" rel="stylesheet">
 {% compress css %}
     <link href="{{STATIC_URL}}css/main.css" rel="stylesheet">
 {% endcompress %}
@@ -91,6 +91,7 @@
 {% endblock %}
 
 {% block loginbox %}
+{% comment %}
 {% if request.user.is_anonymous %}
 <div class="loginbox-container columbia">
     <div class="loginbox">
@@ -143,6 +144,7 @@
     </div>
 </div>
 {% endif %}
+{% endcomment %}
 {% endblock %}
 
 
