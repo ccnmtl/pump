@@ -9,6 +9,28 @@ $(document).ready(function() {
 });
 </script>
 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+<script>
+var makeSlider = function (i) {
+  $( "#abc-" + i + "-slider" ).slider({
+    value:0,
+    min: 0,
+    max: 10,
+    step: 1,
+    slide: function( event, ui ) { $( "#abc-" + i ).val( ui.value ); }
+  });
+  $( "#abc-" + i ).val( $( "#abc-" + i + "-slider" ).slider( "value" ) );
+};
+
+$(function() {
+  for (var i=1; i<17; i++) {
+    makeSlider(i);
+  }
+});
+</script>
+
 {% endblock %}
 
 {% block content %}
@@ -162,231 +184,120 @@ $(document).ready(function() {
 	<section>
 	<h2>Activites-specific Balance Confidence (ABC) Scale</h2>
 
-How confident are you that you will NOT lose your balance or become unsteady when you:
-Walk around your house
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-No confidence
+<p>How confident are you that you will NOT lose your balance or become unsteady when you:</p>
 
-Completely confident
-Walk up or down stairs?
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-No confidence
+	<div class="form-group">
+		<label>Walk around your house</label>
 
-Completely confident
-Bend over and pick up a slipper from the front of a closet floor?
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-No confidence
+		<input type="text" id="abc-1" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<div id="abc-1-slider"></div>
+	</div>
 
-Completely confident
-Reach for a small can off a shelf at eye level?
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-No confidence
 
-Completely confident
-Stand on your tiptoes and reach for something above your head?
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-No confidence
+	<div class="form-group">
+		<label>Walk up or down stairs?</label>
 
-Completely confident
-Stand on a chair and reach for something?
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-No confidence
+		<input type="text" id="abc-2" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<div id="abc-2-slider"></div>
+	</div>
 
-Completely confident
-Sweep the floor?
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-No confidence
+	<div class="form-group">
+		<label>Bend over and pick up a slipper from the front of a closet floor?</label>
 
-Completely confident
-Walk outside the house to a car parked in the driveway?
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-No confidence
+		<input type="text" id="abc-3" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<div id="abc-3-slider"></div>
+	</div>
 
-Completely confident
-Get into or out of a car?
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-No confidence
+	<div class="form-group">
+		<label>Reach for a small can off a shelf at eye level?</label>
 
-Completely confident
-Walk across a parking lot at the mall?
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-No confidence
+		<input type="text" id="abc-4" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<div id="abc-4-slider"></div>
+	</div>
 
-Completely confident
-Walk up or down a ramp?
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-No confidence
+	<div class="form-group">
+		<label>Stand on your tiptoes and reach for something above your head?</label>
 
-Completely confident
-Walk in a crowded mall where people rapidly walk past you?
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-No confidence
+		<input type="text" id="abc-5" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<div id="abc-5-slider"></div>
+	</div>
 
-Completely confident
-Are bumped into by people as you walk through the mall?
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-No confidence
+	<div class="form-group">
+		<label>Stand on a chair and reach for something?</label>
 
-Completely confident
-Step onto or off an escalator while you are holding onto a railing?
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-No confidence
+		<input type="text" id="abc-6" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<div id="abc-6-slider"></div>
+	</div>
 
-Completely confident
-Step onto or off an escalator while you are holding onto parcels such that you cannot hold onto the railing?
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-No confidence
+	<div class="form-group">
+		<label>Sweep the floor?</label>
 
-Completely confident
-Walk outside on icy sidewalks?
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-No confidence
+		<input type="text" id="abc-7" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<div id="abc-7-slider"></div>
+	</div>
 
-Completely confident
+	<div class="form-group">
+		<label>Walk outside the house to a car parked in the driveway?</label>
+
+		<input type="text" id="abc-8" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<div id="abc-8-slider"></div>
+	</div>
+
+	<div class="form-group">
+		<label>Get into or out of a car?</label>
+
+		<input type="text" id="abc-9" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<div id="abc-9-slider"></div>
+	</div>
+
+	<div class="form-group">
+		<label>Walk across a parking lot at the mall?</label>
+
+		<input type="text" id="abc-10" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<div id="abc-10-slider"></div>
+	</div>
+
+	<div class="form-group">
+		<label>Walk up or down a ramp?</label>
+
+		<input type="text" id="abc-11" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<div id="abc-11-slider"></div>
+	</div>
+
+	<div class="form-group">
+		<label>Walk in a crowded mall where people rapidly walk past you?</label>
+
+		<input type="text" id="abc-12" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<div id="abc-12-slider"></div>
+	</div>
+
+	<div class="form-group">
+		<label>Are bumped into by people as you walk through the mall?</label>
+
+		<input type="text" id="abc-13" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<div id="abc-13-slider"></div>
+	</div>
+
+	<div class="form-group">
+		<label>Step onto or off an escalator while you are holding onto a railing?</label>
+
+		<input type="text" id="abc-14" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<div id="abc-14-slider"></div>
+	</div>
+
+	<div class="form-group">
+		<label>Step onto or off an escalator while you are holding onto parcels such that you cannot hold onto the railing?</label>
+
+		<input type="text" id="abc-15" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<div id="abc-15-slider"></div>
+	</div>
+
+	<div class="form-group">
+		<label>Walk outside on icy sidewalks?</label>
+
+		<input type="text" id="abc-16" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<div id="abc-16-slider"></div>
+	</div>
 </section>
 <section>
 	 <h2>Demonstrate your abilities</h2>
