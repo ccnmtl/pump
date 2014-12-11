@@ -128,6 +128,7 @@ INSTALLED_APPS = [
     'pageblocks',
     'quizblock',
     'gunicorn',
+    'storages',
     'pump.main',
 ]
 
