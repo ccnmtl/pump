@@ -32,26 +32,28 @@
         var w = this;
         var length = this.sections.length;
         this.sections.each(function(index, element) {
+            var ul = $('<ul></ul>').addClass('pager');
+            var row = $('<nav></nav>')
+               .append(ul);
             if (index > 0) {
-                var pb = $('<a>Previous</a>')
-                    .attr({href:'#'})
-                    .addClass('btn btn-primary');
+                var pb = $('<li></li>').append($('<a>&lt; Previous</a>')
+                    .attr({href:'#'}));
                 pb.click(function() {
                     w.showPrevSection();
                     return false;
                 });
-                $(element).append(pb);
+                ul.append(pb);
             }
             if (index < (length - 1)) {
-                var nb = $('<a>Next</a>')
-                    .attr({href:'#'})
-                    .addClass('btn btn-primary');
+                var nb = $('<li></li>').append($('<a>Next &gt;</a>')
+                    .attr({href:'#'}));
                 nb.click(function() {
                     w.showNextSection();
                     return false;
                 });
-                $(element).append(nb);
+                ul.append(nb);
             }
+            $(element).append(row);
         });
     };
 

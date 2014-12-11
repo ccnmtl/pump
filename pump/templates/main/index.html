@@ -21,7 +21,7 @@ var makeSlider = function (i) {
     step: 1,
     slide: function( event, ui ) { $( "#abc-" + i ).val( ui.value ); }
   });
-  $( "#abc-" + i ).val( $( "#abc-" + i + "-slider" ).slider( "value" ) );
+//  $( "#abc-" + i ).val( $( "#abc-" + i + "-slider" ).slider( "value" ) );
 };
 
 $(function() {
@@ -298,6 +298,7 @@ $(function() {
 		<input type="text" id="abc-16" readonly style="border:0; color:#f6931f; font-weight:bold;" />
 		<div id="abc-16-slider"></div>
 	</div>
+
 </section>
 <section>
 	 <h2>Demonstrate your abilities</h2>
