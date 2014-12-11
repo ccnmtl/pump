@@ -164,9 +164,8 @@ EMAIL_HOST = 'localhost'
 SERVER_EMAIL = "pump@ccnmtl.columbia.edu"
 DEFAULT_FROM_EMAIL = SERVER_EMAIL
 
-STATIC_ROOT = os.path.join(os.path.dirname(__file__), "../media")
-STATICFILES_DIRS = (
-)
+STATIC_ROOT = "/tmp/pump/static"
+STATICFILES_DIRS = ("media/",)
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
