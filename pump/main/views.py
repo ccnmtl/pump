@@ -1,6 +1,8 @@
+from django.core.urlresolvers import reverse
 from django.views.generic.base import View
+from django.views.generic import ListView
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from .models import Response
 
 
@@ -14,4 +16,8 @@ class IndexView(View):
         qs = {'q' + str(i): request.POST.get('q' + str(i), '')
               for i in range(1, 25)}
         Response.objects.create(**qs)
-        return HttpResponse("thanks for participating")
+        return HttpResponseRedirect(reverse("results"))
+
+
+class ResultsView(ListView):
+    model = Response

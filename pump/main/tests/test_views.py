@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse
 from django.test import TestCase
 from django.test.client import Client
 from pagetree.helpers import get_hierarchy
@@ -22,6 +23,10 @@ class BasicTest(TestCase):
         # for now, it's ok to be empty
         self.c.post("/", dict())
         self.assertEqual(Response.objects.count(), 1)
+
+    def test_results_empty(self):
+        r = self.c.get(reverse('results'))
+        self.assertEqual(r.status_code, 200)
 
 
 class PagetreeViewTestsLoggedOut(TestCase):
