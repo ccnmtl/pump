@@ -4,6 +4,7 @@ from django.test.client import Client
 from pagetree.helpers import get_hierarchy
 from django.contrib.auth.models import User
 from pump.main.models import Response
+from .factories import ResponseFactory
 
 
 class BasicTest(TestCase):
@@ -27,6 +28,11 @@ class BasicTest(TestCase):
     def test_results_empty(self):
         r = self.c.get(reverse('results'))
         self.assertEqual(r.status_code, 200)
+
+    def test_results_notempty(self):
+        response = ResponseFactory()
+        r = self.c.get(reverse('results'))
+        self.assertTrue(str(response.added) in r.content)
 
 
 class PagetreeViewTestsLoggedOut(TestCase):

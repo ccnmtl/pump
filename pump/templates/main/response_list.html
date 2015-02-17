@@ -1,5 +1,70 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h1>Results</h1>
+
+<table class="table table-condensed table-striped">
+<thead>
+<tr>
+<th>timestamp</th>
+<th>Q1</th>
+<th>Q2</th>
+<th>Q3</th>
+<th>Q4</th>
+<th>Q5</th>
+<th>Q6</th>
+<th>Q7</th>
+<th>Q8</th>
+<th>Q9</th>
+<th>Q10</th>
+<th>Q11</th>
+<th>Q12</th>
+<th>Q13</th>
+<th>Q14</th>
+<th>Q15</th>
+<th>Q16</th>
+<th>Q17</th>
+<th>Q18</th>
+<th>Q19</th>
+<th>Q20</th>
+<th>Q21</th>
+<th>Q22</th>
+<th>Q23</th>
+<th>Q24</th>
+</tr>
+</thead>
+
+<tbody>
+{% for response in object_list %}
+<tr>
+	<td>{{response.added}}</td>
+	<td>{{response.q1}}</td>
+	<td>{{response.q2}}</td>
+	<td>{{response.q3}}</td>
+	<td>{{response.q4}}</td>
+	<td>{{response.q5}}</td>
+	<td>{{response.q6}}</td>
+	<td>{{response.q7}}</td>
+	<td>{{response.q8}}</td>
+	<td>{{response.q9}}</td>
+	<td>{{response.q10}}</td>
+	<td>{{response.q11}}</td>
+	<td>{{response.q12}}</td>
+	<td>{{response.q13}}</td>
+	<td>{{response.q14}}</td>
+	<td>{{response.q15}}</td>
+	<td>{{response.q16}}</td>
+	<td>{{response.q17}}</td>
+	<td>{{response.q18}}</td>
+	<td>{{response.q19}}</td>
+	<td>{{response.q20}}</td>
+	<td>{{response.q21}}</td>
+	<td>{{response.q22}}</td>
+	<td>{{response.q23}}</td>
+	<td>{{response.q24}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
 
 {% endblock %}
