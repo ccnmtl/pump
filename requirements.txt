@@ -67,4 +67,4 @@ django-markwhat==2014.9.20
 gunicorn==19.1.1
 django-infranil==0.1.0
 django-flatblocks==0.9
-django-storages==1.1.8
+django-storages-redux==1.2.2
