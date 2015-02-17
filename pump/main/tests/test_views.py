@@ -28,11 +28,12 @@ class BasicTest(TestCase):
     def test_results_empty(self):
         r = self.c.get(reverse('results'))
         self.assertEqual(r.status_code, 200)
+        self.assertTrue("No responses" in r.content)
 
     def test_results_notempty(self):
-        response = ResponseFactory()
+        ResponseFactory()
         r = self.c.get(reverse('results'))
-        self.assertTrue(str(response.added) in r.content)
+        self.assertTrue("<table" in r.content)
 
 
 class PagetreeViewTestsLoggedOut(TestCase):

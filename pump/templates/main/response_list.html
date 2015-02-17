@@ -3,6 +3,7 @@
 {% block content %}
 <h1>Results</h1>
 
+{% if object_list.exists %}
 <table class="table table-condensed table-striped">
 <thead>
 <tr>
@@ -66,5 +67,7 @@
 {% endfor %}
 </tbody>
 </table>
-
+{% else %}
+<p>No responses yet</p>
+{% endif %}
 {% endblock %}
