@@ -35,7 +35,8 @@ $(function() {
 
 {% block content %}
 
-<form role="form">
+<form role="form" method="post" action=".">
+{% csrf_token %}
 <div id="wizard">
 	<section>
 		<h2>Houghton Questions</h2>
@@ -151,13 +152,13 @@ $(function() {
 
 		<div class="radio">
 			<label>
-			<input type="radio" name="q4" id="q4-1" value="1"> Yes
+			<input type="radio" name="q5" id="q4-1" value="1"> Yes
 			</label>
 		</div>
 
 		<div class="radio">
 			<label>
-			<input type="radio" name="q4" id="q4-2" value="2"> No
+			<input type="radio" name="q5" id="q4-2" value="2"> No
 			</label>
 		</div>
 
@@ -168,13 +169,13 @@ $(function() {
 
 		<div class="radio">
 			<label>
-			<input type="radio" name="q4" id="q4-1" value="1"> Yes
+			<input type="radio" name="q6" id="q4-1" value="1"> Yes
 			</label>
 		</div>
 
 		<div class="radio">
 			<label>
-			<input type="radio" name="q4" id="q4-2" value="2"> No
+			<input type="radio" name="q6" id="q4-2" value="2"> No
 			</label>
 		</div>
 
@@ -193,7 +194,7 @@ $(function() {
 			<div class="col-sm-3"><span class="text-muted">No Confidence</span></div>
 			<div class="col-sm-3 pull-right"><span class="text-muted">Completely Confident</span></div>
 		</div>
-			<input type="text" id="abc-1" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+			<input type="text" id="abc-1" name="q7" readonly style="border:0; color:#f6931f; font-weight:bold;" />
 			<div id="abc-1-slider"></div>
 	</div>
 
@@ -205,7 +206,7 @@ $(function() {
 			<div class="col-sm-3 pull-right"><span class="text-muted">Completely Confident</span></div>
 		</div>
 
-		<input type="text" id="abc-2" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<input type="text" id="abc-2" name="q8" readonly style="border:0; color:#f6931f; font-weight:bold;" />
 		<div id="abc-2-slider"></div>
 	</div>
 
@@ -216,7 +217,7 @@ $(function() {
 			<div class="col-sm-3 pull-right"><span class="text-muted">Completely Confident</span></div>
 		</div>
 
-		<input type="text" id="abc-3" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<input type="text" id="abc-3" name="q9" readonly style="border:0; color:#f6931f; font-weight:bold;" />
 		<div id="abc-3-slider"></div>
 	</div>
 
@@ -227,7 +228,7 @@ $(function() {
 			<div class="col-sm-3 pull-right"><span class="text-muted">Completely Confident</span></div>
 		</div>
 
-		<input type="text" id="abc-4" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<input type="text" id="abc-4" name="q10" readonly style="border:0; color:#f6931f; font-weight:bold;" />
 		<div id="abc-4-slider"></div>
 	</div>
 
@@ -238,7 +239,7 @@ $(function() {
 			<div class="col-sm-3 pull-right"><span class="text-muted">Completely Confident</span></div>
 		</div>
 
-		<input type="text" id="abc-5" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<input type="text" id="abc-5" name="q11" readonly style="border:0; color:#f6931f; font-weight:bold;" />
 		<div id="abc-5-slider"></div>
 	</div>
 
@@ -249,7 +250,7 @@ $(function() {
 			<div class="col-sm-3 pull-right"><span class="text-muted">Completely Confident</span></div>
 		</div>
 
-		<input type="text" id="abc-6" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<input type="text" id="abc-6" name="q12" readonly style="border:0; color:#f6931f; font-weight:bold;" />
 		<div id="abc-6-slider"></div>
 	</div>
 
@@ -260,7 +261,7 @@ $(function() {
 			<div class="col-sm-3 pull-right"><span class="text-muted">Completely Confident</span></div>
 		</div>
 
-		<input type="text" id="abc-7" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<input type="text" id="abc-7" name="q13" readonly style="border:0; color:#f6931f; font-weight:bold;" />
 		<div id="abc-7-slider"></div>
 	</div>
 
@@ -271,7 +272,7 @@ $(function() {
 			<div class="col-sm-3 pull-right"><span class="text-muted">Completely Confident</span></div>
 		</div>
 
-		<input type="text" id="abc-8" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<input type="text" id="abc-8" name="q14" readonly style="border:0; color:#f6931f; font-weight:bold;" />
 		<div id="abc-8-slider"></div>
 	</div>
 
@@ -282,7 +283,7 @@ $(function() {
 			<div class="col-sm-3 pull-right"><span class="text-muted">Completely Confident</span></div>
 		</div>
 
-		<input type="text" id="abc-9" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<input type="text" id="abc-9" name="q15" readonly style="border:0; color:#f6931f; font-weight:bold;" />
 		<div id="abc-9-slider"></div>
 	</div>
 
@@ -293,7 +294,7 @@ $(function() {
 			<div class="col-sm-3 pull-right"><span class="text-muted">Completely Confident</span></div>
 		</div>
 
-		<input type="text" id="abc-10" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<input type="text" id="abc-10" name="q16" readonly style="border:0; color:#f6931f; font-weight:bold;" />
 		<div id="abc-10-slider"></div>
 	</div>
 
@@ -304,7 +305,7 @@ $(function() {
 			<div class="col-sm-3 pull-right"><span class="text-muted">Completely Confident</span></div>
 		</div>
 
-		<input type="text" id="abc-11" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<input type="text" id="abc-11" name="q17" readonly style="border:0; color:#f6931f; font-weight:bold;" />
 		<div id="abc-11-slider"></div>
 	</div>
 
@@ -315,7 +316,7 @@ $(function() {
 			<div class="col-sm-3 pull-right"><span class="text-muted">Completely Confident</span></div>
 		</div>
 
-		<input type="text" id="abc-12" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<input type="text" id="abc-12" name="q18" readonly style="border:0; color:#f6931f; font-weight:bold;" />
 		<div id="abc-12-slider"></div>
 	</div>
 
@@ -326,7 +327,7 @@ $(function() {
 			<div class="col-sm-3 pull-right"><span class="text-muted">Completely Confident</span></div>
 		</div>
 
-		<input type="text" id="abc-13" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<input type="text" id="abc-13" name="q19" readonly style="border:0; color:#f6931f; font-weight:bold;" />
 		<div id="abc-13-slider"></div>
 	</div>
 
@@ -337,7 +338,7 @@ $(function() {
 			<div class="col-sm-3 pull-right"><span class="text-muted">Completely Confident</span></div>
 		</div>
 
-		<input type="text" id="abc-14" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<input type="text" id="abc-14" name="q20" readonly style="border:0; color:#f6931f; font-weight:bold;" />
 		<div id="abc-14-slider"></div>
 	</div>
 
@@ -348,7 +349,7 @@ $(function() {
 			<div class="col-sm-3 pull-right"><span class="text-muted">Completely Confident</span></div>
 		</div>
 
-		<input type="text" id="abc-15" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<input type="text" id="abc-15" name="q21" readonly style="border:0; color:#f6931f; font-weight:bold;" />
 		<div id="abc-15-slider"></div>
 	</div>
 
@@ -359,7 +360,7 @@ $(function() {
 			<div class="col-sm-3 pull-right"><span class="text-muted">Completely Confident</span></div>
 		</div>
 
-		<input type="text" id="abc-16" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		<input type="text" id="abc-16" name="q22" readonly style="border:0; color:#f6931f; font-weight:bold;" />
 		<div id="abc-16-slider"></div>
 	</div>
 
@@ -374,13 +375,13 @@ $(function() {
 
 		<div class="radio">
 			<label>
-			<input type="radio" name="q4" id="q4-1" value="1"> Yes
+			<input type="radio" name="q23" id="q4-1" value="1"> Yes
 			</label>
 		</div>
 
 		<div class="radio">
 			<label>
-			<input type="radio" name="q4" id="q4-2" value="2"> No
+			<input type="radio" name="q23" id="q4-2" value="2"> No
 			</label>
 		</div>
 
@@ -397,13 +398,13 @@ $(function() {
 
 		<div class="radio">
 			<label>
-			<input type="radio" name="q4" id="q4-1" value="1"> Yes
+			<input type="radio" name="q24" id="q4-1" value="1"> Yes
 			</label>
 		</div>
 
 		<div class="radio">
 			<label>
-			<input type="radio" name="q4" id="q4-2" value="2"> No
+			<input type="radio" name="q24" id="q4-2" value="2"> No
 			</label>
 		</div>
 
@@ -421,7 +422,9 @@ $(function() {
 
 <section>
 	 <h2>View Results</h2>
-	 <input type="submit" class="btn btn-primary" value="Submit"/>
+	 <input type="submit" class="btn btn-primary" value="Submit"
+
+	 id="submit-button" />
 </section>
 
 </div>

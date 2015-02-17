@@ -2,6 +2,7 @@ from django.test import TestCase
 from django.test.client import Client
 from pagetree.helpers import get_hierarchy
 from django.contrib.auth.models import User
+from pump.main.models import Response
 
 
 class BasicTest(TestCase):
@@ -16,6 +17,11 @@ class BasicTest(TestCase):
         response = self.c.get("/smoketest/")
         self.assertEquals(response.status_code, 200)
         assert "PASS" in response.content
+
+    def test_empty_submit(self):
+        # for now, it's ok to be empty
+        self.c.post("/", dict())
+        self.assertEqual(Response.objects.count(), 1)
 
 
 class PagetreeViewTestsLoggedOut(TestCase):
