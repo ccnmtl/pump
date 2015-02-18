@@ -68,3 +68,4 @@ gunicorn==19.1.1
 django-infranil==0.1.0
 django-flatblocks==0.9
 django-storages-redux==1.2.2
+django-cacheds3storage==0.1.0
