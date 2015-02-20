@@ -2,9 +2,10 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, DetailView
 from pagetree.generic.views import PageView, EditView, InstructorView
 from pump.main import views
+from pump.main.models import Response
 import os.path
 admin.autodiscover()
 
@@ -30,6 +31,8 @@ urlpatterns = patterns(
     (r'^registration/', include('registration.backends.default.urls')),
     (r'^$', views.IndexView.as_view()),
     url(r'^results/$', views.ResultsView.as_view(), name='results'),
+    url(r'^score/(?P<pk>\d+)/$', DetailView.as_view(
+        model=Response), name='score'),
     (r'^admin/', include(admin.site.urls)),
     url(r'^_impersonate/', include('impersonate.urls')),
     (r'^stats/$', TemplateView.as_view(template_name="stats.html")),

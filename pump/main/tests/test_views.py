@@ -35,6 +35,11 @@ class BasicTest(TestCase):
         r = self.c.get(reverse('results'))
         self.assertTrue("<table" in r.content)
 
+    def test_score_page(self):
+        response = ResponseFactory()
+        r = self.c.get(reverse('score', args=[response.id]))
+        self.assertEqual(r.status_code, 200)
+
 
 class PagetreeViewTestsLoggedOut(TestCase):
     def setUp(self):

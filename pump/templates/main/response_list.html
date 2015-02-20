@@ -8,12 +8,14 @@
 <thead>
 <tr>
 <th>timestamp</th>
+<th>Houghton</th>
 <th>Q1</th>
 <th>Q2</th>
 <th>Q3</th>
 <th>Q4</th>
 <th>Q5</th>
 <th>Q6</th>
+<th>ABC</th>
 <th>Q7</th>
 <th>Q8</th>
 <th>Q9</th>
@@ -30,21 +32,40 @@
 <th>Q20</th>
 <th>Q21</th>
 <th>Q22</th>
+<th>Pick Up</th>
 <th>Q23</th>
+<th>Look Behind</th>
 <th>Q24</th>
 </tr>
 </thead>
 
 <tbody>
 {% for response in object_list %}
+{% with results=response.results %}
 <tr>
 	<td>{{response.added}}</td>
+	<td>
+		{% if results.houghton.pass_fail %}
+		PASS
+		{% else %}
+		FAIL
+		{% endif %}
+		({{results.houghton.score}}/18)
+	</td>
 	<td>{{response.q1}}</td>
 	<td>{{response.q2}}</td>
 	<td>{{response.q3}}</td>
 	<td>{{response.q4}}</td>
 	<td>{{response.q5}}</td>
 	<td>{{response.q6}}</td>
+	<td>
+		{% if results.abc.pass_fail %}
+		PASS
+		{% else %}
+		FAIL
+		{% endif %}
+		({{results.abc.score}}/160)
+	</td>
 	<td>{{response.q7}}</td>
 	<td>{{response.q8}}</td>
 	<td>{{response.q9}}</td>
@@ -61,9 +82,24 @@
 	<td>{{response.q20}}</td>
 	<td>{{response.q21}}</td>
 	<td>{{response.q22}}</td>
+	<td>
+		{% if results.pick_up.pass_fail %}
+		PASS
+		{% else %}
+		FAIL
+		{% endif %}
+	</td>
 	<td>{{response.q23}}</td>
+	<td>
+		{% if results.look_behind.pass_fail %}
+		PASS
+		{% else %}
+		FAIL
+		{% endif %}
+	</td>
 	<td>{{response.q24}}</td>
 </tr>
+{% endwith %}
 {% endfor %}
 </tbody>
 </table>

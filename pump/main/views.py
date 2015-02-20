@@ -15,8 +15,8 @@ class IndexView(View):
     def post(self, request):
         qs = {'q' + str(i): request.POST.get('q' + str(i), '')
               for i in range(1, 25)}
-        Response.objects.create(**qs)
-        return HttpResponseRedirect(reverse("results"))
+        r = Response.objects.create(**qs)
+        return HttpResponseRedirect(reverse("score", args=[r.id, ]))
 
 
 class ResultsView(ListView):
