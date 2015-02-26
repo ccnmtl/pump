@@ -128,6 +128,8 @@ INSTALLED_APPS = [
     'gunicorn',
     'storages',
     'pump.main',
+    'bdd_tests',
+    'django_behave',
 ]
 
 PAGEBLOCKS = ['pageblocks.TextBlock',
