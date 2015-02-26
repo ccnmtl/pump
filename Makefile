@@ -24,7 +24,10 @@ test: ./ve/bin/python
 	$(MANAGE) jenkins --pep8-exclude=migrations --enable-coverage --coverage-rcfile=.coveragerc
 
 flake8: ./ve/bin/python
-	$(FLAKE8) $(APP) --exclude=migrations --max-complexity=10
+	$(FLAKE8) $(APP) bdd_tests --exclude=migrations --max-complexity=10
+
+behave: ./ve/bin/python check
+	$(MANAGE) test bdd_tests --behave_browser firefox --testrunner=django_behave.runner.DjangoBehaveTestSuiteRunner
 
 runserver: ./ve/bin/python check
 	$(MANAGE) runserver

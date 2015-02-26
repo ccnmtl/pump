@@ -34,6 +34,11 @@ sqlparse==0.1.13
 boto==2.34.0
 python-dateutil==2.2
 astroid==1.2.1
+enum34==1.0.3
+parse-type==0.3.4
+parse==1.6.5
+behave==1.2.5
+splinter==0.7.0
 
 djangowind==0.13.2
 sorl==3.1
@@ -69,3 +74,4 @@ django-infranil==0.1.0
 django-flatblocks==0.9
 django-storages-redux==1.2.2
 django-cacheds3storage==0.1.0
+django-behave==0.1.3
