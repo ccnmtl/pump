@@ -1,4 +1,9 @@
-from behave import when, then
+from behave import when, then, given
+
+
+@given(u'I am on the survey')
+def impl(context):
+    context.browser.visit(context.browser_url("/"))
 
 
 @then(u'I see the header "{text}"')
@@ -25,3 +30,22 @@ def i_click_the_button(context, text):
         if button.text == text and button.visible:
             button.click()
             return
+
+
+@given(u'I have advanced to the end')
+def i_have_advanced_to_the_end(context):
+    i_click_the_button(context, "Next >")
+    i_click_the_button(context, "Next >")
+    i_click_the_button(context, "Next >")
+    i_click_the_button(context, "Next >")
+    i_click_the_button(context, "Next >")
+
+
+@when(u'I advance through the wizard')
+def i_advance_through_the_wizard(context):
+    i_click_the_button(context, "Next >")
+
+
+@when(u'I reverse through the wizard')
+def i_reverse_through_the_wizard(context):
+    i_click_the_button(context, "< Previous")
