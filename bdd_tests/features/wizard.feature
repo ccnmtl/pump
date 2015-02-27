@@ -1,37 +1,34 @@
 Feature: Wizard
   Scenario: I start out with Houghton
-    When I access the url "/"
+    Given I am on the survey
     Then I see the header "Houghton Questions"
 
-  Scenario: There is a next button
-    When I access the url "/"
+  Scenario: There is a next butto
+    Given I am on the survey
     Then I see a "Next >" button
 
   Scenario: Clicking Next moves me forward
-    When I access the url "/"
-    When I click the "Next >" button
+    Given I am on the survey
+    When I advance through the wizard
     Then I see the header "Activites-specific Balance Confidence (ABC) Scale"
-    When I click the "Next >" button
+    When I advance through the wizard
     Then I see the header "Demonstrate your abilities"
-    When I click the "Next >" button
+    When I advance through the wizard
     Then I see the header "Demonstrate your abilities"
     Then I see the text "Look behind (both) shoulders"
-    When I click the "Next >" button
+    When I advance through the wizard
     Then I see the text "View Results"
 
   Scenario: I can go back
-    When I access the url "/"
-    When I click the "Next >" button
-    When I click the "Next >" button
-    When I click the "Next >" button
-    When I click the "Next >" button
+    Given I am on the survey
+      and I have advanced to the end
     Then I see the text "View Results"
-    When I click the "< Previous" button
+    When I reverse through the wizard
     Then I see the header "Demonstrate your abilities"
     Then I see the text "Look behind (both) shoulders"
-    When I click the "< Previous" button
+    When I reverse through the wizard
     Then I see the header "Demonstrate your abilities"
-    When I click the "< Previous" button
+    When I reverse through the wizard
     Then I see the header "Activites-specific Balance Confidence (ABC) Scale"
-    When I click the "< Previous" button
+    When I reverse through the wizard
     Then I see the header "Houghton Questions"
