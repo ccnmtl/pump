@@ -3,7 +3,7 @@ Feature: Wizard
     Given I am on the survey
     Then I see the header "Houghton Questions"
 
-  Scenario: There is a next butto
+  Scenario: There is a next button
     Given I am on the survey
     Then I see a "Next >" button
 
