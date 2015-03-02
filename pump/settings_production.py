@@ -27,7 +27,6 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 AWS_S3_CUSTOM_DOMAIN = "d1dxl1g40sjqc0.cloudfront.net"
-AWS_IS_GZIPPED = True
 
 AWS_STORAGE_BUCKET_NAME = "ccnmtl-pump-static-prod"
 AWS_PRELOAD_METADATA = True
