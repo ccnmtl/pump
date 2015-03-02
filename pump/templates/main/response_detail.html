@@ -6,7 +6,7 @@
 
 <dl>
 	<dt>Houghton</dt>
-	<dd>
+	<dd id="houghton-result">
 		{% if results.houghton.pass_fail %}
 		PASS
 		{% else %}
@@ -15,7 +15,7 @@
 		({{results.houghton.score}}/18)
 	</dd>
 	<dt>ABC</dt>
-	<dd>
+	<dd id="abc-result">
 		{% if results.abc.pass_fail %}
 		PASS
 		{% else %}
@@ -24,7 +24,7 @@
 		({{results.abc.score}}/160)
 	</dd>
 	<dt>Pick Up</dt>
-	<dd>
+	<dd id="pickup-result">
 		{% if results.pick_up.pass_fail %}
 		PASS
 		{% else %}
@@ -32,7 +32,7 @@
 		{% endif %}
 	</dd>
 	<dt>Look Behind</dt>
-	<dd>
+	<dd id="look-behind-result">
 		{% if results.look_behind.pass_fail %}
 		PASS
 		{% else %}

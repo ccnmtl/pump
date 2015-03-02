@@ -29,6 +29,9 @@ flake8: ./ve/bin/python
 behave: ./ve/bin/python check
 	$(MANAGE) test bdd_tests --behave_browser firefox --testrunner=django_behave.runner.DjangoBehaveTestSuiteRunner
 
+behave-wip: ./ve/bin/python check
+	$(MANAGE) test bdd_tests --behave_tags @wip --behave_browser firefox --testrunner=django_behave.runner.DjangoBehaveTestSuiteRunner
+
 runserver: ./ve/bin/python check
 	$(MANAGE) runserver
 
