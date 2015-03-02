@@ -28,7 +28,6 @@ TEMPLATE_DEBUG = DEBUG
 STAGING_ENV = True
 
 AWS_S3_CUSTOM_DOMAIN = "dp909d54wadkp.cloudfront.net"
-AWS_IS_GZIPPED = True
 
 AWS_STORAGE_BUCKET_NAME = "ccnmtl-pump-static-stage"
 AWS_PRELOAD_METADATA = True
