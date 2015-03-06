@@ -2,11 +2,6 @@ from behave import when, then, given
 import time
 
 
-@given(u'I am on the survey')
-def i_am_on_the_survey(context):
-    context.browser.visit(context.browser_url("/"))
-
-
 def advance(context):
     for button in context.browser.find_by_css('ul.pager a'):
         if button.text == "Next >" and button.visible:

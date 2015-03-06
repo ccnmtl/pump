@@ -1,11 +1,6 @@
 from behave import when, then, given
 
 
-@given(u'I am on the survey')
-def impl(context):
-    context.browser.visit(context.browser_url("/"))
-
-
 @then(u'I see the header "{text}"')
 def i_see_the_header(context, text):
     assert context.browser.is_text_present(text, wait_time=2)
