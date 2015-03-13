@@ -80,3 +80,9 @@ def i_ams_shown_a_failing_result(context):
 def i_see_the_results_graph(context):
     b = context.browser
     assert b.find_by_css('div.results-graph img')
+
+
+@then(u'I see the additional resources section')
+def i_see_the_additional_resources_section(context):
+    b = context.browser
+    assert b.find_by_id('additional-resources')
