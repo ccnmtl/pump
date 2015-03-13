@@ -74,3 +74,9 @@ def i_ams_shown_a_failing_result(context):
     assert "FAIL" in b.find_by_id('abc-result').first.text
     assert "FAIL" in b.find_by_id('pickup-result').first.text
     assert "FAIL" in b.find_by_id('look-behind-result').first.text
+
+
+@then(u'I see the results graph')
+def i_see_the_results_graph(context):
+    b = context.browser
+    assert b.find_by_css('div.results-graph img')
