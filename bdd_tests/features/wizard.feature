@@ -12,10 +12,10 @@ Feature: Wizard
     When I advance through the wizard
     Then I see the header "Activites-specific Balance Confidence (ABC) Scale"
     When I advance through the wizard
-    Then I see the header "Demonstrate your abilities"
+    Then I see the header "Balance Test 1"
     When I advance through the wizard
-    Then I see the header "Demonstrate your abilities"
-    Then I see the text "Look behind (both) shoulders"
+    Then I see the header "Balance Test 2"
+    Then I see the text "Are you able to look behind (both) shoulders?"
     When I advance through the wizard
     Then I see the text "View Results"
 
@@ -24,10 +24,10 @@ Feature: Wizard
       and I have advanced to the end
     Then I see the text "View Results"
     When I reverse through the wizard
-    Then I see the header "Demonstrate your abilities"
-    Then I see the text "Look behind (both) shoulders"
+    Then I see the header "Balance Test 2"
+    Then I see the text "Are you able to look behind (both) shoulders?"
     When I reverse through the wizard
-    Then I see the header "Demonstrate your abilities"
+    Then I see the header "Balance Test 1"
     When I reverse through the wizard
     Then I see the header "Activites-specific Balance Confidence (ABC) Scale"
     When I reverse through the wizard
