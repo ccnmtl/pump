@@ -42,11 +42,11 @@ class TestABC(TestCase):
         self.assertTrue(a.pass_fail())
 
     def test_barely(self):
-        a = ABC([8, 8, 8, 8, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7])
+        a = ABC([7, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6, 6])
         self.assertEqual(a.score(), 104)
         self.assertFalse(a.pass_fail())
 
-        a = ABC([8, 8, 8, 8, 8, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7])
+        a = ABC([7, 7, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6])
         self.assertEqual(a.score(), 105)
         self.assertTrue(a.pass_fail())
 
