@@ -86,3 +86,9 @@ def i_see_the_results_graph(context):
 def i_see_the_additional_resources_section(context):
     b = context.browser
     assert b.find_by_id('additional-resources')
+
+
+@then(u'I see the definition of satisfactory user')
+def i_see_the_definition_of_satisfactory_user(context):
+    b = context.browser
+    assert b.find_by_id('satisfactory-user')

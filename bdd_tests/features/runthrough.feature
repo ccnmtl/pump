@@ -10,6 +10,7 @@ the questions and get their score/results at the end.
     Then I am shown a failing result
      And I see the results graph
      And I see the additional resources section
+     And I see the definition of satisfactory user
 
   Scenario: High Score
     Given I am on the survey
@@ -18,3 +19,4 @@ the questions and get their score/results at the end.
     Then I am shown a passing result
      And I see the results graph
      And I see the additional resources section
+     And I see the definition of satisfactory user
