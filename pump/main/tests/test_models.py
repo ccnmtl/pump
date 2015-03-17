@@ -18,6 +18,8 @@ class ResponseTest(TestCase):
         self.assertFalse(results['pick_up'].pass_fail())
         self.assertTrue('look_behind' in results)
         self.assertFalse(results['look_behind'].pass_fail())
+        self.assertEqual(results['number_passed'], 0)
+        self.assertEqual(results['percentage_likelihood'], '95.6')
 
     def test_results_all_pass(self):
         r = ResponseFactory(
@@ -40,3 +42,5 @@ class ResponseTest(TestCase):
         self.assertTrue(results['abc'].pass_fail())
         self.assertTrue('look_behind' in results)
         self.assertTrue(results['look_behind'].pass_fail())
+        self.assertEqual(results['number_passed'], 4)
+        self.assertEqual(results['percentage_likelihood'], '59.3')

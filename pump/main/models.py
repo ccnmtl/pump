@@ -56,10 +56,23 @@ class Scorer(object):
         self.pick_up = PassFail(int(r.q23 or '1'))
         self.look_behind = PassFail(int(r.q24 or '1'))
 
+    def number_passed(self):
+        return (
+            self.h.pass_fail() +
+            self.abc.pass_fail() +
+            self.pick_up.pass_fail() +
+            self.look_behind.pass_fail())
+
+    def percentage_likelihood(self):
+        percents = ['95.6', '93.9', '92.1', '81.4', '59.3']
+        return percents[self.number_passed()]
+
     def results(self):
         return dict(
             houghton=self.h,
             abc=self.abc,
             pick_up=self.pick_up,
             look_behind=self.look_behind,
+            number_passed=self.number_passed(),
+            percentage_likelihood=self.percentage_likelihood(),
         )
