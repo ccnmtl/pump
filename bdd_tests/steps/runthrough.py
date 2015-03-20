@@ -100,3 +100,9 @@ def i_see_that_i_have_a_likelihood_of_being_unsatisfactory(context, percent):
 def i_see_that_i_have_passed_n_tests(context, n):
     assert context.browser.is_text_present(
         "You passed %s of the four diagnostic tests." % n)
+
+
+@then(u'I see the definition of satisfactory user')
+def i_see_the_definition_of_satisfactory_user(context):
+    b = context.browser
+    assert b.find_by_id('satisfactory-user')
