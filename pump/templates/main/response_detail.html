@@ -40,7 +40,11 @@
 		{% endif %}
 	</dd>
 
-{% endwith %}
+
+<p>
+You passed {{results.number_passed}} of the four diagnostic tests.<br />
+You have a {{results.percentage_likelihood}}% likelihood of being an Unsatisfactory Community Prosthetic User* within one year.
+</p>
 
 <div class="results-graph">
 <img src="{{STATIC_URL}}img/results-graph.png" />
@@ -66,5 +70,6 @@ Christopher Kevin Wong, PT, PhD, MS -
 </p>
 
 </section>
+{% endwith %}
 
 {% endblock %}
