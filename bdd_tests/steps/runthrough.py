@@ -1,30 +1,11 @@
 from behave import when, then, given
+from .common import advance, fill_in_minimum, submit_survey
 import time
-
-
-def advance(context):
-    for button in context.browser.find_by_css('ul.pager a'):
-        if button.text == "Next >" and button.visible:
-            button.click()
-            return
 
 
 @given(u'I enter the minimum on all questions')
 def i_enter_the_minimum_on_all_questions(context):
-    context.browser.choose('q1', '1')
-    context.browser.choose('q2', '1')
-    context.browser.choose('q3', '1')
-    context.browser.choose('q4', '1')
-    context.browser.choose('q5', '1')
-    context.browser.choose('q6', '1')
-    advance(context)
-    # ABCs default to 0
-    advance(context)
-    context.browser.choose('q23', '1')
-    advance(context)
-    context.browser.choose('q24', '1')
-    advance(context)
-    # ready to submit
+    fill_in_minimum(context)
 
 
 @given(u'I enter the maximum on all questions')
@@ -55,7 +36,7 @@ def i_enter_the_maximum_on_all_questions(context):
 
 @when(u'I submit')
 def i_submit(context):
-    context.browser.find_by_id('submit-button').first.click()
+    submit_survey(context)
 
 
 @then(u'I am shown a passing result')

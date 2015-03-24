@@ -3,6 +3,7 @@ from django.test import TestCase
 from django.test.client import Client
 from pagetree.helpers import get_hierarchy
 from django.contrib.auth.models import User
+from django.core import mail
 from pump.main.models import Response
 from .factories import ResponseFactory
 
@@ -39,6 +40,14 @@ class BasicTest(TestCase):
         response = ResponseFactory()
         r = self.c.get(reverse('score', args=[response.id]))
         self.assertEqual(r.status_code, 200)
+
+    def test_email_results(self):
+        response = ResponseFactory()
+        r = self.c.post(reverse('email-results'),
+                        dict(email='foo@example.com',
+                             response=response.id))
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual(len(mail.outbox), 1)
 
 
 class PagetreeViewTestsLoggedOut(TestCase):

@@ -1,8 +1,10 @@
+from django.conf import settings
+from django.core import mail
 from django.core.urlresolvers import reverse
 from django.views.generic.base import View
 from django.views.generic import ListView
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponseRedirect, HttpResponse
 from .models import Response
 
 
@@ -21,3 +23,17 @@ class IndexView(View):
 
 class ResultsView(ListView):
     model = Response
+
+
+class EmailView(View):
+    def post(self, request):
+        address = request.POST.get('email', None)
+        r = get_object_or_404(Response, pk=request.POST.get('response', ''))
+        mail.send_mail(
+            'Your PUMP results',
+            r.email_text(),
+            settings.SERVER_EMAIL,
+            [address],
+        )
+        return HttpResponse(
+            "your results have been sent to {address}".format(address=address))
