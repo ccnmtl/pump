@@ -1,0 +1,33 @@
+Thank you for using the 'Prosthetic Use for Mobility Prognosis (PUMP)'
+tool. Below, please find your results and links to additional
+resources:
+
+{% with results=object.results %}
+
+Houghton: {% if results.houghton.pass_fail %}PASS{% else %}FAIL{% endif %} ({{results.houghton.score}}/18)
+ABC: {% if results.abc.pass_fail %}PASS{% else %}FAIL{% endif %} ({{results.abc.score}}/160)
+Pick Up: {% if results.pick_up.pass_fail %}PASS{% else %}FAIL{% endif %}
+Look Behind: {% if results.look_behind.pass_fail %}PASS{% else %}FAIL{% endif %}
+
+You passed {{results.number_passed}} of the four diagnostic tests.
+
+You have a {{results.percentage_likelihood}}% likelihood of being an
+Unsatisfactory Community Prosthetic User* within one year.
+
+* A 'Satisfactory Community Prosthetics User' is defined as someone
+	that is able to walk indoors and outdoors independently within their community.
+
+Additional Resources
+
+The Amputee Coalition (ACA) - http://www.amputee-coalition.org
+The Amputee Walking School - http://www.amputeewalkingschool.com
+The New York Presbyterian Rehab Department - http://www.nyp.org/rehabmed/index.html
+Christopher Kevin Wong, PT, PhD, MS - http://columbiaphysicaltherapy.org/christopher-kevin-wong
+
+{% endwith %}
+
+If you have any questions please contact Dr. Kevin Wong
+(ckw7@cumc.columbia.edu)
+
+Thank you,
+The PUMP team

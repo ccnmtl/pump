@@ -70,6 +70,21 @@ Christopher Kevin Wong, PT, PhD, MS -
 </p>
 
 </section>
+
+<section>
+<h3>Email me my results and additional resources:</h3>
+<form action="{% url 'email-results' %}" method="post"
+			class="form-inline">
+{% csrf_token %}
+<input type="hidden" name="response" value="{{object.id}}" />
+<div class="form-group">
+	<label for="email">Email</label>
+	<input type="text" name="email" id="email" class="form-control"
+				 placeholder="enter your email address" />
+	<input type="submit" value="send" id="email-button" class="btn
+	btn-default" />
+</form>
+
 {% endwith %}
 
 {% endblock %}

@@ -1,4 +1,6 @@
 from django.db import models
+from django.template import Context
+from django.template.loader import get_template
 from .criteria import Houghton, ABC, PassFail
 
 
@@ -39,6 +41,12 @@ class Response(models.Model):
     def results(self):
         s = Scorer(self)
         return s.results()
+
+    def email_text(self):
+        """ body of email version """
+        t = get_template("main/response_email.txt")
+        c = Context(dict(response=self))
+        return t.render(c)
 
 
 class Scorer(object):

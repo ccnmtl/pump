@@ -44,3 +44,7 @@ class ResponseTest(TestCase):
         self.assertTrue(results['look_behind'].pass_fail())
         self.assertEqual(results['number_passed'], 4)
         self.assertEqual(results['percentage_likelihood'], '59.3')
+
+    def test_email_text(self):
+        r = ResponseFactory()
+        self.assertTrue("your results" in r.email_text())

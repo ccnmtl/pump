@@ -31,6 +31,7 @@ urlpatterns = patterns(
     (r'^registration/', include('registration.backends.default.urls')),
     (r'^$', views.IndexView.as_view()),
     url(r'^results/$', views.ResultsView.as_view(), name='results'),
+    url(r'^email/$', views.EmailView.as_view(), name='email-results'),
     url(r'^score/(?P<pk>\d+)/$', DetailView.as_view(
         model=Response), name='score'),
     (r'^admin/', include(admin.site.urls)),
