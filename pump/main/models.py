@@ -45,7 +45,7 @@ class Response(models.Model):
     def email_text(self):
         """ body of email version """
         t = get_template("main/response_email.txt")
-        c = Context(dict(response=self))
+        c = Context(dict(object=self))
         return t.render(c)
 
 
