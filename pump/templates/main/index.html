@@ -39,9 +39,10 @@ $(function() {
 {% csrf_token %}
 <div id="wizard">
 	<section>
-		<h2>Houghton Questions</h2>
-		<h3>Please complete the Houghton Questionnaire. If you have any questions, a clinician will assist you.</h3> 
-
+		<h1>Houghton Questions</h1>
+		<p class="lead">Please complete the Houghton Questionnaire. If you have any questions, a clinician will assist you.</p> 
+        <hr />
+        
 	<div class="form-group">
     <label for="q1">Do you wear your prosthesis</label>
 
@@ -184,13 +185,12 @@ $(function() {
 
 	</section>
 	<section>
-	<h2>Activites-specific Balance Confidence (ABC) Scale</h2>
-	<h3>Please complete the Activities-spcific Balance Confidence scale. If you have a question, a clinician will assist you.<br>
-		Rate activity as "No Confidence" (0) If you would not perform the activity.</h3>
+	<h1>Activites-specific Balance Confidence (ABC) Scale</h1>
+	<p class="lead">Please complete the Activities-spcific Balance Confidence scale. If you have a question, a clinician will assist you. Rate activity as "No Confidence" (0) If you would not perform the activity.</p>
+        <hr />
+<h2>How confident are you that you will NOT lose your balance or become unsteady when you:</h2>
 
-<h3>How confident are you that you will NOT lose your balance or become unsteady when you:</h3>
-
-	<div class="form-group">
+	<div class="form-group well">
 		<label>Walk around your house</label>
 
 		<div class="row">
@@ -202,7 +202,7 @@ $(function() {
 	</div>
 
 
-	<div class="form-group">
+	<div class="form-group well">
 		<label>Walk up or down stairs?</label>
 		<div class="row">
 			<div class="col-sm-3"><span class="text-muted">No Confidence</span></div>
@@ -213,7 +213,7 @@ $(function() {
 		<div id="abc-2-slider"></div>
 	</div>
 
-	<div class="form-group">
+	<div class="form-group well">
 		<label>Bend over and pick up a slipper from the front of a closet floor?</label>
 		<div class="row">
 			<div class="col-sm-3"><span class="text-muted">No Confidence</span></div>
@@ -224,7 +224,7 @@ $(function() {
 		<div id="abc-3-slider"></div>
 	</div>
 
-	<div class="form-group">
+	<div class="form-group well">
 		<label>Reach for a small can off a shelf at eye level?</label>
 		<div class="row">
 			<div class="col-sm-3"><span class="text-muted">No Confidence</span></div>
@@ -235,7 +235,7 @@ $(function() {
 		<div id="abc-4-slider"></div>
 	</div>
 
-	<div class="form-group">
+	<div class="form-group well">
 		<label>Stand on your tiptoes and reach for something above your head?</label>
 		<div class="row">
 			<div class="col-sm-3"><span class="text-muted">No Confidence</span></div>
@@ -246,7 +246,7 @@ $(function() {
 		<div id="abc-5-slider"></div>
 	</div>
 
-	<div class="form-group">
+	<div class="form-group well">
 		<label>Stand on a chair and reach for something?</label>
 		<div class="row">
 			<div class="col-sm-3"><span class="text-muted">No Confidence</span></div>
@@ -257,7 +257,7 @@ $(function() {
 		<div id="abc-6-slider"></div>
 	</div>
 
-	<div class="form-group">
+	<div class="form-group well">
 		<label>Sweep the floor?</label>
 		<div class="row">
 			<div class="col-sm-3"><span class="text-muted">No Confidence</span></div>
@@ -268,7 +268,7 @@ $(function() {
 		<div id="abc-7-slider"></div>
 	</div>
 
-	<div class="form-group">
+	<div class="form-group well">
 		<label>Walk outside the house to a car parked in the driveway?</label>
 		<div class="row">
 			<div class="col-sm-3"><span class="text-muted">No Confidence</span></div>
@@ -279,7 +279,7 @@ $(function() {
 		<div id="abc-8-slider"></div>
 	</div>
 
-	<div class="form-group">
+	<div class="form-group well">
 		<label>Get into or out of a car?</label>
 		<div class="row">
 			<div class="col-sm-3"><span class="text-muted">No Confidence</span></div>
@@ -290,7 +290,7 @@ $(function() {
 		<div id="abc-9-slider"></div>
 	</div>
 
-	<div class="form-group">
+	<div class="form-group well">
 		<label>Walk across a parking lot at the mall?</label>
 		<div class="row">
 			<div class="col-sm-3"><span class="text-muted">No Confidence</span></div>
@@ -301,7 +301,7 @@ $(function() {
 		<div id="abc-10-slider"></div>
 	</div>
 
-	<div class="form-group">
+	<div class="form-group well">
 		<label>Walk up or down a ramp?</label>
 		<div class="row">
 			<div class="col-sm-3"><span class="text-muted">No Confidence</span></div>
@@ -312,7 +312,7 @@ $(function() {
 		<div id="abc-11-slider"></div>
 	</div>
 
-	<div class="form-group">
+	<div class="form-group well">
 		<label>Walk in a crowded mall where people rapidly walk past you?</label>
 		<div class="row">
 			<div class="col-sm-3"><span class="text-muted">No Confidence</span></div>
@@ -323,7 +323,7 @@ $(function() {
 		<div id="abc-12-slider"></div>
 	</div>
 
-	<div class="form-group">
+	<div class="form-group well">
 		<label>Are bumped into by people as you walk through the mall?</label>
 		<div class="row">
 			<div class="col-sm-3"><span class="text-muted">No Confidence</span></div>
@@ -334,7 +334,7 @@ $(function() {
 		<div id="abc-13-slider"></div>
 	</div>
 
-	<div class="form-group">
+	<div class="form-group well">
 		<label>Step onto or off an escalator while you are holding onto a railing?</label>
 		<div class="row">
 			<div class="col-sm-3"><span class="text-muted">No Confidence</span></div>
@@ -345,7 +345,7 @@ $(function() {
 		<div id="abc-14-slider"></div>
 	</div>
 
-	<div class="form-group">
+	<div class="form-group well">
 		<label>Step onto or off an escalator while you are holding onto parcels such that you cannot hold onto the railing?</label>
 		<div class="row">
 			<div class="col-sm-3"><span class="text-muted">No Confidence</span></div>
@@ -356,7 +356,7 @@ $(function() {
 		<div id="abc-15-slider"></div>
 	</div>
 
-	<div class="form-group">
+	<div class="form-group well">
 		<label>Walk outside on icy sidewalks?</label>
 		<div class="row">
 			<div class="col-sm-3"><span class="text-muted">No Confidence</span></div>
@@ -369,12 +369,11 @@ $(function() {
 
 </section>
 <section>
-	 <h2>Balance Test 1</h2>
-	 <h3>Please complete the first Balance Test: Pick up an object (e.g. pen) from the floor, starting from a standing position. </h3>
-		 <h4>(The patient must perform without assistance, but can use their hands to balance.)<br>  
-		 The video below demonstrates a successful attempt. If you are unsure how to rate yourself,  a clinician will be able to assist you.</h4>
-
-	<div class="form-group">
+	 <h1>Balance Test 1</h1>
+	 <p class="lead">Please complete the first Balance Test: Pick up an object (e.g. pen) from the floor, starting from a standing position. (The patient must perform without assistance, but can use their hands to balance.)<br>  
+		 The video below demonstrates a successful attempt. If you are unsure how to rate yourself,  a clinician will be able to assist you.</p>
+        <hr />
+	<div class="form-group well">
     <label>Are you able to able to pick up the object safely and easily?</label>
 
 		<div class="radio">
@@ -397,12 +396,11 @@ $(function() {
 
 </section>
 <section>
-	 <h2>Balance Test 2</h2>
-	 <h3>Please complete the second Balance Test: Look over your left and right shoulders while standing </h3>
-		 <h4>(The patient must perform without assistance, or use of their hands to balance.)<br>  
-		 The videos below demonstrate successful and unsuccessful attempts. If you are unsure how to rate yourself,  a clinician will be able to assist you.</h4>
-
-	<div class="form-group">
+	 <h1>Balance Test 2</h1>
+	 <p class="lead">Please complete the second Balance Test: Look over your left and right shoulders while standing (The patient must perform without assistance, or use of their hands to balance.) The videos below demonstrate successful and unsuccessful attempts. If you are unsure how to rate yourself,  a clinician will be able to assist you.
+	 </p>
+        <hr />
+	<div class="form-group well">
     <label>Are you able to look behind (both) shoulders?</label>
 
 		<div class="radio">
