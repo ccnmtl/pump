@@ -4,76 +4,71 @@
 <h1>My Results</h1>
 {% with results=object.results %}
 
-<section class="well">
-<div class="row">
-<div class="col-md-12">
-
-<p class="alert alert-warning">
-You passed {{results.number_passed}} of the four diagnostic tests.<br />
+<p class="alert alert-info">
+<strong>
+You passed {{results.number_passed}} of the 4 diagnostic tests.<br />
 You have a {{results.percentage_likelihood}}% likelihood of being an Unsatisfactory Community Prosthetic User* within one year.
+</strong>
 </p>
 
-</div>
-</div>
+<section class="well">
 <div class="row">
 <div class="col-md-6">
-<dl>
-	<dt>Houghton</dt>
-	<dd id="houghton-result">
+	<div id="houghton-result">
 		{% if results.houghton.pass_fail %}
 		<p class="alert alert-success">
-		PASS
+		<strong>Houghton:</strong> PASS
 		{% else %}
 		<p class="alert alert-danger">
-		FAIL
+		<strong>Houghton:</strong> FAIL
 		{% endif %}
 		({{results.houghton.score}}/18)
 		</p>
-	</dd>
-	<dt>ABC</dt>
-	<dd id="abc-result">
+	</div>
+	<div id="abc-result">
 		{% if results.abc.pass_fail %}
 		<p class="alert alert-success">
-		PASS
+		<strong>ABC:</strong> PASS
 		{% else %}
 		<p class="alert alert-danger">
-		FAIL
+		<strong>ABC:</strong> FAIL
 		{% endif %}
 		({{results.abc.score}}/160)
 		</p>
-	</dd>
-	<dt>Pick Up</dt>
-	<dd id="pickup-result">
+	</div>
+	<div id="pickup-result">
 		{% if results.pick_up.pass_fail %}
 		<p class="alert alert-success">
-		PASS
+		<strong>Pick Up:</strong> PASS
 		{% else %}
 		<p class="alert alert-danger">
-		FAIL
+		<strong>Pick Up:</strong> FAIL
 		{% endif %}
 		</p>
-	</dd>
-	<dt>Look Behind</dt>
-	<dd id="look-behind-result">
+	</div>
+	<div id="look-behind-result">
 		{% if results.look_behind.pass_fail %}
 		<p class="alert alert-success">
-		PASS
+		<strong>Look Behind:</strong> PASS
 		{% else %}
 		<p class="alert alert-danger">
-		FAIL
+		<strong>Look Behind:</strong> FAIL
 		{% endif %}
 		</p>
-	</dd>
-</dl>
+	</div>
 </div>
 <div class="col-md-6">
 <div class="results-graph">
 <img src="{{STATIC_URL}}img/results-graph.png" />
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
 <section id="satisfactory-user">
 <p>* A 'Satisfactory Community Prosthetics User' is defined as someone
 	that is able to walk indoors and outdoors independently within their community.</p>
 </section>
-</div>
 </div>
 </div>
 </section>
