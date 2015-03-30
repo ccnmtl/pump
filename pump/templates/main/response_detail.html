@@ -4,60 +4,95 @@
 <h1>My Results</h1>
 {% with results=object.results %}
 
-<dl>
-	<dt>Houghton</dt>
-	<dd id="houghton-result">
-		{% if results.houghton.pass_fail %}
-		PASS
-		{% else %}
-		FAIL
-		{% endif %}
-		({{results.houghton.score}}/18)
-	</dd>
-	<dt>ABC</dt>
-	<dd id="abc-result">
-		{% if results.abc.pass_fail %}
-		PASS
-		{% else %}
-		FAIL
-		{% endif %}
-		({{results.abc.score}}/160)
-	</dd>
-	<dt>Pick Up</dt>
-	<dd id="pickup-result">
-		{% if results.pick_up.pass_fail %}
-		PASS
-		{% else %}
-		FAIL
-		{% endif %}
-	</dd>
-	<dt>Look Behind</dt>
-	<dd id="look-behind-result">
-		{% if results.look_behind.pass_fail %}
-		PASS
-		{% else %}
-		FAIL
-		{% endif %}
-	</dd>
+<section class="well">
+<div class="row">
+<div class="col-md-12">
 
-
-<p>
+<p class="alert alert-warning">
 You passed {{results.number_passed}} of the four diagnostic tests.<br />
 You have a {{results.percentage_likelihood}}% likelihood of being an Unsatisfactory Community Prosthetic User* within one year.
 </p>
 
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<dl>
+	<dt>Houghton</dt>
+	<dd id="houghton-result">
+		{% if results.houghton.pass_fail %}
+		<p class="alert alert-success">
+		PASS
+		{% else %}
+		<p class="alert alert-danger">
+		FAIL
+		{% endif %}
+		({{results.houghton.score}}/18)
+		</p>
+	</dd>
+	<dt>ABC</dt>
+	<dd id="abc-result">
+		{% if results.abc.pass_fail %}
+		<p class="alert alert-success">
+		PASS
+		{% else %}
+		<p class="alert alert-danger">
+		FAIL
+		{% endif %}
+		({{results.abc.score}}/160)
+		</p>
+	</dd>
+	<dt>Pick Up</dt>
+	<dd id="pickup-result">
+		{% if results.pick_up.pass_fail %}
+		<p class="alert alert-success">
+		PASS
+		{% else %}
+		<p class="alert alert-danger">
+		FAIL
+		{% endif %}
+		</p>
+	</dd>
+	<dt>Look Behind</dt>
+	<dd id="look-behind-result">
+		{% if results.look_behind.pass_fail %}
+		<p class="alert alert-success">
+		PASS
+		{% else %}
+		<p class="alert alert-danger">
+		FAIL
+		{% endif %}
+		</p>
+	</dd>
+</dl>
+</div>
+<div class="col-md-6">
 <div class="results-graph">
 <img src="{{STATIC_URL}}img/results-graph.png" />
-</div>
-
 <section id="satisfactory-user">
 <p>* A 'Satisfactory Community Prosthetics User' is defined as someone
 	that is able to walk indoors and outdoors independently within their community.</p>
 </section>
+</div>
+</div>
+</div>
+</section>
 
-<section id="additional-resources">
+<section class="well">
+<h3>Email me my results and additional resources:</h3>
+<form action="{% url 'email-results' %}" method="post" class="form-inline">
+{% csrf_token %}
+<input type="hidden" name="response" value="{{object.id}}" />
+<div class="form-group">
+<label for="email">Email</label>
+<input type="text" name="email" id="email" class="form-control" placeholder="enter your email address" />
+<input type="submit" value="send" id="email-button" class="btn btn-default" />
+</div>
+</form>
+</section>
+
+<section class="well" id="additional-resources">
 <h3>Additional Resources</h3>
-
 <p>
 The Amputee Coalition (ACA)
 - <a href="http://www.amputee-coalition.org/">http://www.amputee-coalition.org</a><br />
@@ -68,22 +103,8 @@ The New York Presbyterian Rehab Department -
 Christopher Kevin Wong, PT, PhD, MS - 
 <a href="http://columbiaphysicaltherapy.org/christopher-kevin-wong">http://columbiaphysicaltherapy.org/christopher-kevin-wong</a>
 </p>
-
 </section>
 
-<section>
-<h3>Email me my results and additional resources:</h3>
-<form action="{% url 'email-results' %}" method="post"
-			class="form-inline">
-{% csrf_token %}
-<input type="hidden" name="response" value="{{object.id}}" />
-<div class="form-group">
-	<label for="email">Email</label>
-	<input type="text" name="email" id="email" class="form-control"
-				 placeholder="enter your email address" />
-	<input type="submit" value="send" id="email-button" class="btn
-	btn-default" />
-</form>
 
 {% endwith %}
 
