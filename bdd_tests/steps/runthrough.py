@@ -80,7 +80,7 @@ def i_see_that_i_have_a_likelihood_of_being_unsatisfactory(context, percent):
 @then(u'I see that I have passed "{n}" tests')
 def i_see_that_i_have_passed_n_tests(context, n):
     assert context.browser.is_text_present(
-        "You passed %s of the four diagnostic tests." % n)
+        "You passed %s of the 4 diagnostic tests." % n)
 
 
 @then(u'I see the definition of satisfactory user')
