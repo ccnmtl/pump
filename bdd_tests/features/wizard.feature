@@ -17,12 +17,12 @@ Feature: Wizard
     Then I see the header "Balance Test 2"
     Then I see the text "Are you able to look behind (both) shoulders?"
     When I advance through the wizard
-    Then I see the text "View Results"
+    Then I see the text "Answers Submitted"
 
   Scenario: I can go back
     Given I am on the survey
       and I have advanced to the end
-    Then I see the text "View Results"
+    Then I see the text "Answers Submitted"
     When I reverse through the wizard
     Then I see the header "Balance Test 2"
     Then I see the text "Are you able to look behind (both) shoulders?"
