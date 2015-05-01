@@ -20,12 +20,18 @@
         this.current++;
         this.hideAllSections();
         $(this.sections[this.current]).show();
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
     };
 
     Wizard.prototype.showPrevSection = function() {
         this.current--;
         this.hideAllSections();
         $(this.sections[this.current]).show();
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
     };
 
     Wizard.prototype.addNavButtons = function() {
