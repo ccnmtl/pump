@@ -21,7 +21,7 @@
         this.hideAllSections();
         $(this.sections[this.current]).show();
         $('html, body').animate({
-						scrollTop: 0
+            scrollTop: 0
         }, 500);
     };
 
@@ -30,7 +30,7 @@
         this.hideAllSections();
         $(this.sections[this.current]).show();
         $('html, body').animate({
-						scrollTop: 0
+            scrollTop: 0
         }, 500);
     };
 
