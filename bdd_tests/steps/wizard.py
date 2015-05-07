@@ -1,4 +1,7 @@
 from behave import when, then, given
+from .common import (
+    advance, fill_in_minimum, fill_in_minimum_houghton,
+    fill_in_minimum_balance_1,  fill_in_minimum_balance_2)
 
 
 @then(u'I see the header "{text}"')
@@ -29,18 +32,29 @@ def i_click_the_button(context, text):
 
 @given(u'I have advanced to the end')
 def i_have_advanced_to_the_end(context):
-    i_click_the_button(context, "Next >")
-    i_click_the_button(context, "Next >")
-    i_click_the_button(context, "Next >")
-    i_click_the_button(context, "Next >")
-    i_click_the_button(context, "Next >")
+    fill_in_minimum(context)
 
 
 @when(u'I advance through the wizard')
 def i_advance_through_the_wizard(context):
-    i_click_the_button(context, "Next >")
+    advance(context)
 
 
 @when(u'I reverse through the wizard')
 def i_reverse_through_the_wizard(context):
     i_click_the_button(context, "< Previous")
+
+
+@when(u'I fill in the Houghton questions')
+def i_fill_in_the_houghton_questions(context):
+    fill_in_minimum_houghton(context)
+
+
+@when(u'I fill in the Balance 1 questions')
+def i_fill_in_the_balance_1_questions(context):
+    fill_in_minimum_balance_1(context)
+
+
+@when(u'I fill in the Balance 2 questions')
+def i_fill_in_the_balance_2_questions(context):
+    fill_in_minimum_balance_2(context)
