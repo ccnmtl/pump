@@ -35,3 +35,26 @@ Feature: Wizard
     Then I see the header "Activites-specific Balance Confidence (ABC) Scale"
     When I reverse through the wizard
     Then I see the header "Houghton Questions"
+
+  Scenario: I can't advance past a section until I've answered the questions
+    Given I am on the survey
+    Then I see the header "Houghton Questions"
+    Then I see a "Next >" button
+    Then the "Next >" button is disabled
+    When I fill in the Houghton questions
+    Then the "Next >" button is enabled
+    When I advance through the wizard
+
+    # ABCs default to zero
+    Then the "Next >" button is enabled
+    When I advance through the wizard
+
+    Then the "Next >" button is disabled
+    When I fill in the balance 1 questions
+    Then the "Next >" button is enabled
+    When I advance through the wizard
+
+    Then the "Next >" button is disabled
+    When I fill in the balance 2 questions
+    Then the "Next >" button is enabled
+    When I advance through the wizard

@@ -58,3 +58,20 @@ def i_fill_in_the_balance_1_questions(context):
 @when(u'I fill in the Balance 2 questions')
 def i_fill_in_the_balance_2_questions(context):
     fill_in_minimum_balance_2(context)
+
+
+@then(u'the "{text}" button is disabled')
+def the_button_is_disabled(context, text):
+    for b in context.browser.find_by_css('ul.pager a'):
+        if b.visible and b.text.startswith(text):
+            return b['disabled']
+    assert False
+
+
+@then(u'the "{text}" button is enabled')
+def the_button_is_enabled(context, text):
+    for b in context.browser.find_by_css('ul.pager a'):
+        if b.visible and b.text.startswith(text):
+            print(str(b['disabled']))
+            return not b['disabled']
+    assert False
