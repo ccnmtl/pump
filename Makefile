@@ -26,10 +26,10 @@ test: ./ve/bin/python
 flake8: ./ve/bin/python
 	$(FLAKE8) $(APP) bdd_tests --exclude=migrations --max-complexity=10
 
-behave: ./ve/bin/python check
+behave: ./ve/bin/python check flake8
 	$(MANAGE) test bdd_tests --behave_browser firefox --testrunner=django_behave.runner.DjangoBehaveTestSuiteRunner
 
-behave-wip: ./ve/bin/python check
+behave-wip: ./ve/bin/python check flake8
 	$(MANAGE) test bdd_tests --behave_tags @wip --behave_browser firefox --testrunner=django_behave.runner.DjangoBehaveTestSuiteRunner
 
 runserver: ./ve/bin/python check
