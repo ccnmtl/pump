@@ -122,24 +122,12 @@ INSTALLED_APPS = [
     'django_extensions',
     'impersonate',
     'registration',
-    'pagetree',
-    'pageblocks',
-    'quizblock',
     'gunicorn',
     'storages',
     'pump.main',
     'bdd_tests',
     'django_behave',
 ]
-
-PAGEBLOCKS = ['pageblocks.TextBlock',
-              'pageblocks.HTMLBlock',
-              'pageblocks.PullQuoteBlock',
-              'pageblocks.ImageBlock',
-              'pageblocks.ImagePullQuoteBlock',
-              'quizblock.Quiz',
-              ]
-
 
 INTERNAL_IPS = ('127.0.0.1', )
 DEBUG_TOOLBAR_PANELS = (
