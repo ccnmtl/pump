@@ -91,7 +91,7 @@
                 var a = $('<a>Next &gt;</a>')
                     .attr({href:'#', class:'btn next-button',
                            id:'next-button-' + index});
-                if (index != 1) {
+                if (index !== 1) {
                     // all sections except ABC need questions answered
                     // before you can advance
                     a.attr({disabled: 'disabled'});
