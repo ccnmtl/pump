@@ -9,7 +9,7 @@
         var selected = radios.filter(function(index) {
             return $(this).is(':checked');
         });
-        return total == selected.size();
+        return total === selected.length;
     };
 
     var Wizard = function(element, sectionSelector) {
