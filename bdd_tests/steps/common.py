@@ -8,19 +8,31 @@ def advance(context):
             return
 
 
-def fill_in_minimum(context):
+def fill_in_minimum_houghton(context):
     context.browser.choose('q1', '1')
     context.browser.choose('q2', '1')
     context.browser.choose('q3', '1')
     context.browser.choose('q4', '1')
     context.browser.choose('q5', '1')
     context.browser.choose('q6', '1')
+
+
+def fill_in_minimum_balance_1(context):
+    context.browser.choose('q23', '1')
+
+
+def fill_in_minimum_balance_2(context):
+    context.browser.choose('q24', '1')
+
+
+def fill_in_minimum(context):
+    fill_in_minimum_houghton(context)
     advance(context)
     # ABCs default to 0
     advance(context)
-    context.browser.choose('q23', '1')
+    fill_in_minimum_balance_1(context)
     advance(context)
-    context.browser.choose('q24', '1')
+    fill_in_minimum_balance_2(context)
     advance(context)
 
 
