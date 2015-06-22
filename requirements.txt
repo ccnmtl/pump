@@ -33,7 +33,7 @@ sqlparse==0.1.14
 boto==2.38.0
 python-dateutil==2.2
 astroid==1.2.1
-enum34==1.0.3
+enum34==1.0.4
 parse-type==0.3.4
 parse==1.6.5
 behave==1.2.5
