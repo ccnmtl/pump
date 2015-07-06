@@ -2,7 +2,6 @@ Django==1.7.7
 Markdown==2.6.1
 uuid==1.30
 psycopg2==2.5.4
-Pillow==2.8.1
 versiontools==1.9.1
 statsd==3.1
 pep8==1.5.7
@@ -38,7 +37,6 @@ behave==1.2.5
 splinter==0.7.2
 
 djangowind==0.13.3
-sorl==3.1
 typogrify==2.0.7
 django-indexer==0.3.0
 django-templatetag-sugar==1.0
