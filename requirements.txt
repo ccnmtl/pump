@@ -1,5 +1,5 @@
 Django==1.7.7
-Markdown==2.6.1
+Markdown==2.6.2
 uuid==1.30
 psycopg2==2.5.4
 versiontools==1.9.1
