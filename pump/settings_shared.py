@@ -100,7 +100,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.messages',
     'django.contrib.admin',
-    'typogrify',
     'compressor',
     'django_statsd',
     'bootstrap3',
