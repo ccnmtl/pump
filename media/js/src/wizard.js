@@ -80,7 +80,7 @@
                .append(ul);
             if (index > 0) {
                 var pb = $('<li></li>').append($('<a>&lt; Previous</a>')
-                    .attr({href:'#'}));
+                    .attr({href: '#'}));
                 pb.click(function() {
                     w.showPrevSection();
                     return false;
@@ -89,8 +89,8 @@
             }
             if (index < (length - 1)) {
                 var a = $('<a>Next &gt;</a>')
-                    .attr({href:'#', class:'btn next-button',
-                           id:'next-button-' + index});
+                    .attr({href: '#', class: 'btn next-button',
+                           id: 'next-button-' + index});
                 if (index !== 1) {
                     // all sections except ABC need questions answered
                     // before you can advance
