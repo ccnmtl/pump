@@ -64,3 +64,5 @@ django-flatblocks==0.9.1
 django-storages-redux==1.2.3
 django-cacheds3storage==0.1.1
 django-behave==0.1.5
+
+ccnmtlsettings==0.1.0
