@@ -39,7 +39,7 @@ parse==1.6.6
 behave==1.2.5
 splinter==0.7.3
 
-djangowind==0.13.3
+djangowind==0.14.1
 django-indexer==0.3.0
 django-paging==0.2.5
 django-appconf==1.0.1
