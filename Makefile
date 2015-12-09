@@ -10,18 +10,6 @@ jenkins: ./ve/bin/python check flake8 jshint jscs test
 	chmod +x manage.py bootstrap.py
 	./bootstrap.py
 
-jshint: node_modules/jshint/bin/jshint
-	./node_modules/jshint/bin/jshint $(JS_FILES)
-
-jscs: node_modules/jscs/bin/jscs
-	./node_modules/jscs/bin/jscs $(JS_FILES)
-
-node_modules/jshint/bin/jshint:
-	npm install jshint --prefix .
-
-node_modules/jscs/bin/jscs:
-	npm install jscs --prefix .
-
 test: ./ve/bin/python
 	$(MANAGE) jenkins --pep8-exclude=migrations --enable-coverage --coverage-rcfile=.coveragerc
 
@@ -81,3 +69,5 @@ install: ./ve/bin/python check jenkins
 	createdb $(APP)
 	$(MANAGE) syncdb --noinput
 	make migrate
+
+include *.mk
