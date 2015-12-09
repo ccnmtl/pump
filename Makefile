@@ -11,10 +11,10 @@ jenkins: ./ve/bin/python check flake8 jshint jscs test
 	./bootstrap.py
 
 jshint: node_modules/jshint/bin/jshint
-	./node_modules/jshint/bin/jshint $(JS_FILES) --config=./jshintrc
+	./node_modules/jshint/bin/jshint $(JS_FILES)
 
 jscs: node_modules/jscs/bin/jscs
-	./node_modules/jscs/bin/jscs $(JS_FILES) --config=./jscsrc
+	./node_modules/jscs/bin/jscs $(JS_FILES)
 
 node_modules/jshint/bin/jshint:
 	npm install jshint --prefix .
