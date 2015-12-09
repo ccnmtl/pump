@@ -1,0 +1,22 @@
+{
+  "name": "pump",
+  "version": "0.0.0",
+  "description": "[![Build Status](https://travis-ci.org/ccnmtl/pump.svg?branch=master)](https://travis-ci.org/ccnmtl/pump)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ccnmtl/pump.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/ccnmtl/pump/issues"
+  },
+  "devDependencies": {
+    "jshint": "~2.9.1-rc1",
+    "jscs": "~2.7.0"
+  }
+}
