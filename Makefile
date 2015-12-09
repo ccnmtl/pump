@@ -2,6 +2,8 @@ MANAGE=./manage.py
 APP=pump
 FLAKE8=./ve/bin/flake8
 
+JS_FILES=media/js/src/ media/js/tests
+
 jenkins: ./ve/bin/python check flake8 jshint jscs test
 
 ./ve/bin/python: requirements.txt bootstrap.py virtualenv.py
@@ -9,10 +11,10 @@ jenkins: ./ve/bin/python check flake8 jshint jscs test
 	./bootstrap.py
 
 jshint: node_modules/jshint/bin/jshint
-	./node_modules/jshint/bin/jshint media/js/src/ media/js/tests --config=./jshintrc
+	./node_modules/jshint/bin/jshint $(JS_FILES) --config=./jshintrc
 
 jscs: node_modules/jscs/bin/jscs
-	./node_modules/jscs/bin/jscs media/js/src/ media/js/tests --config=./jscsrc
+	./node_modules/jscs/bin/jscs $(JS_FILES) --config=./jscsrc
 
 node_modules/jshint/bin/jshint:
 	npm install jshint --prefix .
