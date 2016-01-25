@@ -42,6 +42,7 @@ parse-type==0.3.4
 parse==1.6.6
 behave==1.2.5
 splinter==0.7.3
+contextlib2==0.5.1
 
 djangowind==0.14.3
 django-indexer==0.3.0
@@ -49,7 +50,7 @@ django-paging==0.2.5
 django-appconf==1.0.1
 django-compressor==1.6
 django-statsd-mozilla==0.3.16
-raven==5.8.1
+raven==5.10.1
 django-bootstrap3==6.2.2
 django-bootstrap-form==3.2
 django-debug-toolbar==1.4
