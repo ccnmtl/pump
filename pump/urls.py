@@ -26,7 +26,6 @@ urlpatterns = patterns(
     '',
     auth_urls,
     logout_page,
-    (r'^registration/', include('registration.backends.default.urls')),
     (r'^$', views.IndexView.as_view()),
     url(r'^results/$', views.ResultsView.as_view(), name='results'),
     url(r'^email/$', views.EmailView.as_view(), name='email-results'),

@@ -21,10 +21,7 @@ INSTALLED_APPS += [  # noqa
     'bootstrapform',
     'infranil',
     'django_extensions',
-    'registration',
     'pump.main',
     'bdd_tests',
     'django_behave',
 ]
-
-ACCOUNT_ACTIVATION_DAYS = 7
