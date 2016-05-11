@@ -35,7 +35,7 @@ sqlparse==0.1.19
 boto==2.40.0
 python-dateutil==2.5.3
 lazy-object-proxy==1.2.2
-wrapt==1.10.6
+wrapt==1.10.8
 astroid==1.4.5
 enum34==1.1.4
 parse-type==0.3.4
