@@ -47,7 +47,7 @@ parse-type==0.3.4
 parse==1.6.6
 behave==1.2.5
 splinter==0.7.3
-contextlib2==0.5.3
+contextlib2==0.5.4
 rcssmin==1.0.6
 rjsmin==1.0.12
 
