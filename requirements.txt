@@ -37,7 +37,7 @@ fake-factory==0.7.2
 factory_boy==2.7.0
 ldap3==1.4.0
 sqlparse==0.2.1
-boto==2.42.0
+boto==2.43.0
 python-dateutil==2.5.3
 lazy-object-proxy==1.2.2
 wrapt==1.10.8
