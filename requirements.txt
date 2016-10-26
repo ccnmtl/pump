@@ -75,4 +75,4 @@ django-cacheds3storage==0.1.2
 django-behave==0.1.5
 django-smtp-ssl==1.0
 
-ccnmtlsettings==1.1.2
+ccnmtlsettings==1.2.0
