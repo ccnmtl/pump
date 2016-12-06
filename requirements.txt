@@ -51,7 +51,7 @@ contextlib2==0.5.4
 rcssmin==1.0.6
 rjsmin==1.0.12
 
-djangowind==0.16.0
+djangowind==0.16.1
 django-appconf==1.0.2
 django-compressor==2.1
 django-statsd-mozilla==0.3.16
