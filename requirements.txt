@@ -1,6 +1,6 @@
 --index-url https://pypi.ccnmtl.columbia.edu/
 Django==1.10.5
-Markdown==2.6.7
+Markdown==2.6.8
 uuid==1.30
 psycopg2==2.6.2
 versiontools==1.9.1
