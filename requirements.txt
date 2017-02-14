@@ -24,7 +24,7 @@ webencodings==0.5
 rdflib==4.2.2
 selenium==2.47.1
 coverage==4.3.4
-pyasn1==0.2.1
+pyasn1==0.2.2
 pyOpenSSL==16.2.0
 ndg-httpsclient==0.4.2
 requests==2.13.0
