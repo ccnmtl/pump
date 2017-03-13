@@ -15,3 +15,8 @@ behave-wip: check flake8
 	$(MANAGE) test bdd_tests --behave_tags @wip --behave_browser firefox --testrunner=django_behave.runner.DjangoBehaveTestSuiteRunner
 
 include *.mk
+
+eslint: $(JS_SENTINAL)
+	$(NODE_MODULES)/.bin/eslint $(JS_FILES)
+
+.PHONY: eslint
