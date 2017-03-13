@@ -3,7 +3,7 @@ APP=pump
 JS_FILES=media/js/src/ media/js/tests
 PY_DIRS=$(APP) bdd_tests
 
-all: jenkins
+all: eslint jenkins
 
 # behave/bdd stuff still not factored out
 MANAGE=./manage.py

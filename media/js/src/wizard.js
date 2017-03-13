@@ -1,4 +1,4 @@
-;(function() {
+(function() {
 
     var allRadioButtonsSelected = function(radios) {
         var groups = {};
@@ -90,7 +90,7 @@
             if (index < (length - 1)) {
                 var a = $('<a>Next &gt;</a>')
                     .attr({href: '#', class: 'btn next-button',
-                           id: 'next-button-' + index});
+                        id: 'next-button-' + index});
                 if (index !== 1) {
                     // all sections except ABC need questions answered
                     // before you can advance
