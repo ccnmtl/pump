@@ -20,7 +20,7 @@ fuzzywuzzy==0.15.0
 sure==1.4.5
 ipython==5.3.0
 ipdb==0.10.2
-webencodings==0.5
+webencodings==0.5.1
 rdflib==4.2.2
 selenium==2.47.1
 coverage==4.3.4
