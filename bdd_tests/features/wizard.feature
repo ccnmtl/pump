@@ -34,7 +34,7 @@ Feature: Wizard
     When I reverse through the wizard
     Then I see the header "Activites-specific Balance Confidence (ABC) Scale"
     When I reverse through the wizard
-    Then I see the header "Houghton Questions"
+    Then I see the header "Prosthetic Use"
 
   Scenario: I can't advance past a section until I've answered the questions
     Given I am on the survey
