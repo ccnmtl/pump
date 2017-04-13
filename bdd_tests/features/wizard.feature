@@ -1,7 +1,7 @@
 Feature: Wizard
   Scenario: I start out with Houghton
     Given I am on the survey
-    Then I see the header "Houghton Questions"
+    Then I see the header "Prosthetic Use"
 
   Scenario: There is a next button
     Given I am on the survey
@@ -34,11 +34,11 @@ Feature: Wizard
     When I reverse through the wizard
     Then I see the header "Activites-specific Balance Confidence (ABC) Scale"
     When I reverse through the wizard
-    Then I see the header "Houghton Questions"
+    Then I see the header "Prosthetic Use"
 
   Scenario: I can't advance past a section until I've answered the questions
     Given I am on the survey
-    Then I see the header "Houghton Questions"
+    Then I see the header "Prosthetic Use"
     Then I see a "Next >" button
     Then the "Next >" button is disabled
     When I fill in the Houghton questions
