@@ -8,7 +8,7 @@ BEHAVE_DEBUG_ON_ERROR = False
 
 
 def before_all(context):
-    context.browser = Browser('firefox')
+    context.browser = Browser('firefox', wait_time=10, timeout=30)
 
     def browser_url(url):
         return context.base_url + url
