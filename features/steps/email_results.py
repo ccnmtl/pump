@@ -12,11 +12,13 @@ def i_have_completed_a_survey(context):
 
 @when(u'I enter "{address}" in the email field')
 def i_enter_an_address_in_the_email_field(context, address):
+    context.browser.is_element_present_by_id('email-button', wait_time=10)
     context.browser.fill('email', address)
     context.browser.find_by_id('email-button').click()
 
 
 @then(u'an email is sent to "{address}"')
 def an_email_is_sent_to(context, address):
+    context.browser.is_element_present_by_text('sent', wait_time=10)
     assert len(mail.outbox) == 1
     assert address in mail.outbox[0].to
