@@ -2,7 +2,7 @@ language: python
 dist: trusty
 sudo: false
 addons:
-  firefox: "52.0.2"
+  firefox: "44.0.2"
 python:
   - "2.7"
 install:
