@@ -42,7 +42,7 @@ boto==2.46.1
 python-dateutil==2.6.0
 lazy-object-proxy==1.2.2
 wrapt==1.10.10
-astroid==1.5.1
+astroid==1.5.2
 enum34==1.1.6
 parse-type==0.3.4
 parse==1.8.0
