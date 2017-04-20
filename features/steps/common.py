@@ -2,7 +2,7 @@ from behave import given
 
 
 def advance(context):
-    for button in context.browser.find_by_css('ul.pager a'):
+    for button in context.browser.find_by_css('ul.pager a.next-button'):
         if button.text == "Next >" and button.visible:
             button.click()
             return
