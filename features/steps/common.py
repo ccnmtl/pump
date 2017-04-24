@@ -1,3 +1,4 @@
+import time
 from behave import given
 from selenium.common.exceptions import StaleElementReferenceException
 
@@ -48,6 +49,7 @@ def fill_in_minimum(context):
     advance(context)
     fill_in_minimum_balance_2(context)
     advance(context)
+    time.sleep(5)
 
 
 def goto_survey(context):
