@@ -11,7 +11,7 @@ Feature: Wizard
     Given I am on the survey
     When I fill in the Houghton questions
     When I advance through the wizard
-    Then I see the header "Activites-specific Balance Confidence (ABC) Scale"
+    Then I see the header "Activity Balance Confidence (ABC)"
     When I advance through the wizard
     Then I see the header "Balance Test 1"
     When I fill in the Balance 1 questions
@@ -32,7 +32,7 @@ Feature: Wizard
     When I reverse through the wizard
     Then I see the header "Balance Test 1"
     When I reverse through the wizard
-    Then I see the header "Activites-specific Balance Confidence (ABC) Scale"
+    Then I see the header "Activites Balance Confidence (ABC)"
     When I reverse through the wizard
     Then I see the header "Prosthetic Use"
 
