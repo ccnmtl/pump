@@ -1,6 +1,9 @@
 import time
 from behave import given
-from selenium.common.exceptions import StaleElementReferenceException
+from selenium.common.exceptions import (
+    StaleElementReferenceException,
+    ElementNotVisibleException,
+)
 
 
 def advance(context, max_attempts=3):
@@ -56,8 +59,17 @@ def goto_survey(context):
     context.browser.visit(context.browser_url("/"))
 
 
-def submit_survey(context):
-    context.browser.find_by_id('submit-button').first.click()
+def submit_survey(context, max_attempts=3):
+    attempts = 0
+    while True:
+        try:
+            context.browser.find_by_id('submit-button').first.click()
+            return
+        except ElementNotVisibleException:
+            if attempts == max_attempts:
+                raise
+            attempts += 1
+            time.sleep(1)
 
 
 @given(u'I am on the survey')
