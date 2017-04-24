@@ -1,11 +1,20 @@
 from behave import given
+from selenium.common.exceptions import StaleElementReferenceException
 
 
-def advance(context):
-    for button in context.browser.find_by_css('ul.pager a.next-button'):
-        if button.visible:
-            button.click()
-            return
+def advance(context, max_attempts=3):
+    attempts = 1
+    while True:
+        try:
+            for button in context.browser.find_by_css(
+                    'ul.pager a.next-button'):
+                if button.visible:
+                    button.click()
+                    return
+        except StaleElementReferenceException:
+            if attempts == max_attempts:
+                raise
+            attempts += 1
 
 
 def fill_in_minimum_houghton(context):
