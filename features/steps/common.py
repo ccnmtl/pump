@@ -37,7 +37,7 @@ def fill_in_minimum_balance_2(context):
     #     context.browser.choose('q24', '1')
     # so, let's just do it with JS in the page...
     context.browser.execute_script(
-            "$('#q4-1').prop('checked', true)")
+            "$('#q4-2').prop('checked', true)")
 
 
 def fill_in_minimum(context):
