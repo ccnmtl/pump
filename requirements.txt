@@ -20,6 +20,7 @@ fuzzywuzzy==0.15.0
 sure==1.4.5
 traitlets==4.3.2
 ipython==5.3.0
+
 ipython_genutils==0.2.0
 decorator==4.0.11
 pygments==2.2.0
@@ -32,7 +33,9 @@ pickleshare==0.7.4
 prompt_toolkit==1.0.14
 wcwidth==0.1.7
 simplegeneric==0.8.1
-ipdb==0.10.2
+
+ipdb==0.10.3
+
 webencodings==0.5.1
 rdflib==4.2.2
 selenium==3.3.3
