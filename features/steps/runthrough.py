@@ -1,5 +1,8 @@
 from behave import when, then, given
 from .common import advance, fill_in_minimum, submit_survey
+from selenium.common.exceptions import (
+    ElementNotVisibleException,
+)
 import time
 
 
@@ -29,8 +32,11 @@ def i_enter_the_maximum_on_all_questions(context):
     advance(context)
     context.browser.choose('q23', '2')
     advance(context)
-    context.browser.execute_script(
-            "$('#q4-1').prop('checked', true)")
+    try:
+        context.browser.choose('q24', '2')
+    except ElementNotVisibleException:
+        context.browser.execute_script(
+            "$('#q24-1').prop('checked', true)")
     advance(context)
     # ready to submit
 

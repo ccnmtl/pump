@@ -40,7 +40,7 @@ def fill_in_minimum_balance_2(context):
     #     context.browser.choose('q24', '1')
     # so, let's just do it with JS in the page...
     context.browser.execute_script(
-            "$('#q4-2').prop('checked', true)")
+            "$('#q24-2').prop('checked', true)")
 
 
 def fill_in_minimum(context):
@@ -69,7 +69,7 @@ def submit_survey(context, max_attempts=3):
             if attempts == max_attempts:
                 raise
             attempts += 1
-            time.sleep(1)
+            time.sleep(attempts)
 
 
 @given(u'I am on the survey')
