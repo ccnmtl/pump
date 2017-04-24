@@ -32,6 +32,7 @@ def fill_in_minimum_balance_1(context):
 
 
 def fill_in_minimum_balance_2(context):
+    context.browser.find_by_id('q4-1')
     context.browser.choose('q24', '1')
 
 
