@@ -11,6 +11,7 @@ def advance(context, max_attempts=3):
                 if button.visible:
                     button.click()
                     return
+            return
         except StaleElementReferenceException:
             if attempts == max_attempts:
                 raise
