@@ -32,7 +32,7 @@ Feature: Wizard
     When I reverse through the wizard
     Then I see the header "Balance Test 1"
     When I reverse through the wizard
-    Then I see the header "Activites Balance Confidence (ABC)"
+    Then I see the header "Activity Balance Confidence (ABC)"
     When I reverse through the wizard
     Then I see the header "Prosthetic Use"
 
