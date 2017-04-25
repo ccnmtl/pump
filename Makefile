@@ -1,7 +1,7 @@
 APP=pump
 
 JS_FILES=media/js/src/ media/js/tests
-PY_DIRS=$(APP) bdd_tests
+PY_DIRS=$(APP) features
 
 all: eslint jenkins
 
@@ -9,10 +9,7 @@ all: eslint jenkins
 MANAGE=./manage.py
 
 behave: check flake8
-	$(MANAGE) test bdd_tests --behave_browser firefox --testrunner=django_behave.runner.DjangoBehaveTestSuiteRunner
-
-behave-wip: check flake8
-	$(MANAGE) test bdd_tests --behave_tags @wip --behave_browser firefox --testrunner=django_behave.runner.DjangoBehaveTestSuiteRunner
+	$(MANAGE) behave
 
 include *.mk
 

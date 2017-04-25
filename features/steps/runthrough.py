@@ -1,5 +1,8 @@
 from behave import when, then, given
 from .common import advance, fill_in_minimum, submit_survey
+from selenium.common.exceptions import (
+    ElementNotVisibleException,
+)
 import time
 
 
@@ -29,7 +32,11 @@ def i_enter_the_maximum_on_all_questions(context):
     advance(context)
     context.browser.choose('q23', '2')
     advance(context)
-    context.browser.choose('q24', '2')
+    try:
+        context.browser.choose('q24', '2')
+    except ElementNotVisibleException:
+        context.browser.execute_script(
+            "$('#q24-1').prop('checked', true)")
     advance(context)
     # ready to submit
 
@@ -42,6 +49,7 @@ def i_submit(context):
 @then(u'I am shown a passing result')
 def i_am_shown_a_passing_result(context):
     b = context.browser
+    b.is_element_present_by_id('houghton-result')
     assert "PASS" in b.find_by_id('houghton-result').first.text
     assert "PASS" in b.find_by_id('abc-result').first.text
     assert "PASS" in b.find_by_id('pickup-result').first.text
@@ -51,6 +59,7 @@ def i_am_shown_a_passing_result(context):
 @then(u'I am shown a failing result')
 def i_ams_shown_a_failing_result(context):
     b = context.browser
+    b.is_element_present_by_id('houghton-result')
     assert "FAIL" in b.find_by_id('houghton-result').first.text
     assert "FAIL" in b.find_by_id('abc-result').first.text
     assert "FAIL" in b.find_by_id('pickup-result').first.text

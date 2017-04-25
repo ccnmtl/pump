@@ -6,12 +6,12 @@ from .common import (
 
 @then(u'I see the header "{text}"')
 def i_see_the_header(context, text):
-    assert context.browser.is_text_present(text, wait_time=2)
+    assert context.browser.is_text_present(text)
 
 
 @then(u'I see the text "{text}"')
 def i_see_the_text(context, text):
-    assert context.browser.is_text_present(text, wait_time=2)
+    assert context.browser.is_text_present(text)
 
 
 @then(u'I see a "{text}" button')
