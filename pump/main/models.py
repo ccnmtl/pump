@@ -74,6 +74,10 @@ class Scorer(object):
         percents = ['95.6', '93.9', '92.1', '81.4', '59.3']
         return percents[self.number_passed()]
 
+    def percentage_positive(self):
+        percents = ['4.4', '6.1', '7.9', '18.6', '40.7']
+        return percents[self.number_passed()]
+
     def results(self):
         return dict(
             houghton=self.h,
@@ -82,4 +86,5 @@ class Scorer(object):
             look_behind=self.look_behind,
             number_passed=self.number_passed(),
             percentage_likelihood=self.percentage_likelihood(),
+            percentage_positive=self.percentage_positive(),
         )

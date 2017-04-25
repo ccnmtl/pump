@@ -20,6 +20,7 @@ class ResponseTest(TestCase):
         self.assertFalse(results['look_behind'].pass_fail())
         self.assertEqual(results['number_passed'], 0)
         self.assertEqual(results['percentage_likelihood'], '95.6')
+        self.assertEqual(results['percentage_positive'], '4.4')
 
     def test_results_all_pass(self):
         r = ResponseFactory(
@@ -44,6 +45,7 @@ class ResponseTest(TestCase):
         self.assertTrue(results['look_behind'].pass_fail())
         self.assertEqual(results['number_passed'], 4)
         self.assertEqual(results['percentage_likelihood'], '59.3')
+        self.assertEqual(results['percentage_positive'], '40.7')
 
     def test_email_text(self):
         r = ResponseFactory()
