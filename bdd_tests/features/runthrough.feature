@@ -11,7 +11,7 @@ the questions and get their score/results at the end.
      And I see the results graph
      And I see the additional resources section
      And I see that I have passed "0" tests
-     And I see that I have a "95.6"% likelihood of being unsatisfactory
+     And I see that I have a "4.4"% likelihood of being satisfactory
      And I see the definition of satisfactory user
 
   Scenario: High Score
@@ -22,5 +22,5 @@ the questions and get their score/results at the end.
      And I see the results graph
      And I see the additional resources section
      And I see that I have passed "4" tests
-     And I see that I have a "59.3"% likelihood of being unsatisfactory
+     And I see that I have a "40.7"% likelihood of being satisfactory
      And I see the definition of satisfactory user
