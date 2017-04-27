@@ -9,6 +9,18 @@ class Houghton(object):
     def pass_fail(self):
         return self.score() >= 8
 
+    def category(self):
+        categories = [
+            "indepenedent community walking ability",
+            "limited community/independent household walking ability",
+            "limited household walking ability",
+        ]
+        if self.score() >= 9:
+            return categories[0]
+        elif self.score() >= 6:
+            return categories[1]
+        return categories[2]
+
 
 class ABC(object):
     """ ABC PASS is 105 or greater
