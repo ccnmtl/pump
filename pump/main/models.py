@@ -5,6 +5,32 @@ from .criteria import Houghton, ABC, PassFail
 
 class Response(models.Model):
     added = models.DateTimeField(auto_now_add=True)
+
+    # Survey Info
+    sex = models.TextField(blank=True, default="")
+    race = models.TextField(blank=True, default="")
+    amputation_level = models.TextField(blank=True, default="")
+    amputation_cause = models.TextField(blank=True, default="")
+    age = models.TextField(blank=True, default="")
+
+    # Risk Inventory Questions
+    r1 = models.TextField(blank=True, default="")
+    r2 = models.TextField(blank=True, default="")
+    r3 = models.TextField(blank=True, default="")
+    r4 = models.TextField(blank=True, default="")
+    r5 = models.TextField(blank=True, default="")
+    r6 = models.TextField(blank=True, default="")
+    r7 = models.TextField(blank=True, default="")
+    r8 = models.TextField(blank=True, default="")
+    r9 = models.TextField(blank=True, default="")
+    r10 = models.TextField(blank=True, default="")
+    r11 = models.TextField(blank=True, default="")
+    r12 = models.TextField(blank=True, default="")
+    r13 = models.TextField(blank=True, default="")
+    r14 = models.TextField(blank=True, default="")
+    r15 = models.TextField(blank=True, default="")
+    r16 = models.TextField(blank=True, default="")
+
     # Houghton
     q1 = models.TextField(blank=True, default="")
     q2 = models.TextField(blank=True, default="")
