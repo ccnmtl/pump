@@ -37,7 +37,305 @@ $(function() {
 
 <form role="form" method="post" action=".">
 {% csrf_token %}
-<div id="wizard">
+    <div id="wizard">
+        <section>
+            <h1>Risk Inventory</h1>
+
+            <h2>Information About Yourself</h2>
+            
+            <div class="form-group well">
+                <label for="sex">Sex</label>
+                <select name="sex" id="sex" class="form-control">
+                    <option value=""></option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group well">
+                <label for="race">Race</label>
+                <select name="race" id="race" class="form-control">
+                    <option value=""></option>
+                    <option value="White Caucasian">White Caucasian</option>
+                    <option value="Hispanic non-white">Hispanic non-white</option>
+                    <option value="African American">African American</option>
+                    <option value="Asian American">Asian American</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group well">
+                <label for="amputation_level">Amputation Level</label>
+                <select name="amputation_level" id="amputation_level" class="form-control">
+                    <option value=""></option>
+                    <option value="Partial Foot or Ankle">Partial Foot or Ankle</option>
+                    <option value="Transtibial">Transtibial</option>
+                    <option value="Through Knee">Through Knee</option>
+                    <option value="Transfemoral">Transfemoral</option>
+                    <option value="Hip or Higher">Hip or Higher</option>
+                    <option value="Bilateral">Bilateral</option>
+                </select>
+            </div>
+
+            <div class="form-group well">
+                <label for="amputation_cause">Amputation Cause</label>
+                <select name="amputation_cause" id="amputation_cause" class="form-control">
+                    <option value=""></option>
+                    <option value="Diabetes">Diabetes</option>
+                    <option value="Vascular Disease">Vascular Disease</option>
+                    <option value="Trauma">Trauma</option>
+                    <option value="Congenital (born-with) condition">Congenital (born-with) condition</option>
+                    <option value="Other medical condition">Other medical condition</option>
+                </select>
+            </div>
+
+            <div class="form-group well">
+                <label for="age">Age</label>
+                <select name="age" id="age" class="form-control">
+                    <option value=""></option>
+                    <option value="5-14">5-14</option>
+                    <option value="15-24">15-24</option>
+                    <option value="25-34">25-34</option>
+                    <option value="35-44">35-44</option>
+                    <option value="45-54">45-54</option>
+                    <option value="55-64">55-64</option>
+                    <option value="65-74">65-74</option>
+                    <option value="75+">75+</option>
+                </select>
+            </div>
+
+            <h2>Do these apply to you?</h2>
+
+            <div class="form-group well">
+                <label for="r1">Have you fallen in the past 12 months?</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r1" id="r1-1" value="2+">More than once (2+)
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r1" id="r1-2" value="1">Once (1)
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r1" id="r1-3" value="0">No (0)
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group well">
+                <label for="r2">Get up at night</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r2" id="r2-1" value="yes">Yes
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r2" id="r2-2" value="no">No
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group well">
+                <label for="r3">Have phantom limb pains</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r3" id="r3-1" value="yes">Yes
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r3" id="r3-2" value="no">No
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group well">
+                <label for="r4">Have wet/slippery surfaces at home</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r4" id="r4-1" value="yes">Yes
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r4" id="r4-2" value="no">No
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group well">
+                <label for="r5">Have unsecured rugs/carpets, bath towels</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r5" id="r5-1" value="yes">Yes
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r5" id="r5-2" value="no">No
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group well">
+                <label for="r6">Have cluttered floor: shoes, papers, cords</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r6" id="r6-1" value="yes">Yes
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r6" id="r6-2" value="no">No
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group well">
+                <label for="r7">Have adjustable (screen) door closures</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r7" id="r7-1" value="yes">Yes
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r7" id="r7-2" value="no">No
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group well">
+                <label for="r8">Hard to sit/to stand up from toilet/shower</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r8" id="r8-1" value="yes">Yes
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r8" id="r8-2" value="no">No
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group well">
+                <label for="r9">No grab bar in bathroom</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r9" id="r9-1" value="yes">Yes
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r9" id="r9-2" value="no">No
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group well">
+                <label for="r10">Do you feel unsteady on entry steps and slopes?</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r10" id="r10-1" value="yes">Yes
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r10" id="r10-2" value="no">No
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group well">
+                <label for="r11">Have cats or dogs</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r11" id="r11-1" value="yes">Yes
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r11" id="r11-2" value="no">No
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group well">
+                <label for="r12">Are you over weight?</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r12" id="r12-1" value="yes">Yes
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r12" id="r12-2" value="no">No
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group well">
+                <label for="r13">Do you get dizzy or light-headed when you get up from the bed or chair?</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r13" id="r13-1" value="yes">Yes
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r13" id="r13-2" value="no">No
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group well">
+                <label for="r14">Have difficulty seeing clearly</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r14" id="r14-1" value="yes">Yes
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r14" id="r14-2" value="no">No
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group well">
+                <label for="r15">Have you had an open sore/wound, or infection on the foot or amputated limb?</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r15" id="r15-1" value="yes">Yes
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r15" id="r15-2" value="no">No
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group well">
+                <label for="r16">Do you have kidney disease?</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r16" id="r16-1" value="yes">Yes
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="r16" id="r16-2" value="no">No
+                    </label>
+                </div>
+            </div>
+            
+        </section>
 	<section>
 		<h1>Prosthetic Use</h1>
 		<p class="lead">Please answer all questions on the Prosthetic Use scale.</p> 
