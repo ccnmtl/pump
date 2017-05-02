@@ -15,8 +15,15 @@ class IndexView(View):
         return render(request, self.template_name, dict())
 
     def post(self, request):
+        rs = {'r' + str(i): request.POST.get('r' + str(i), '')
+              for i in range(1, 17)}
+
         qs = {'q' + str(i): request.POST.get('q' + str(i), '')
               for i in range(1, 25)}
+        qs.update(rs)
+        for question in ['sex', 'race', 'amputation_level', 'amputation_cause',
+                         'age']:
+            qs[question] = request.POST.get(question, '')
         r = Response.objects.create(**qs)
         return HttpResponseRedirect(reverse("score", args=[r.id, ]))
 

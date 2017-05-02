@@ -38,13 +38,14 @@
             });
         };
 
-        // register houghton listeners
         registerRadioListener(0);
+        // register houghton listeners
+        registerRadioListener(1);
         // ABCs section has no validation
         // balance 1
-        registerRadioListener(2);
-        // balance 2
         registerRadioListener(3);
+        // balance 2
+        registerRadioListener(4);
     };
 
     Wizard.prototype.hideAllSections = function() {
