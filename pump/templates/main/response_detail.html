@@ -1,8 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
+    {% with results=object.results %}
+    <h1>My Summary</h1>
 
+    <p>
+        You identified yourself as a {{object.age}} year old {{object.sex}}
+        with {{object.amputation_level}} amputation due to {{object.amputation_cause}}. Your
+        responses indicate that your current walking ability is
+        categorized as {{results.houghton.category}} ability. People with lower limb prostheses who have
+        an independent community walking ability can usually walk at a
+        speed of >0.8 m/s; people who have an independent household
+        walking ability but are limited in community walking usually
+        can walk >0.5 m/s.
+    </p>
+
+    
 <h1>My Results</h1>
-{% with results=object.results %}
+
 
 <p class="alert alert-info">
 <strong>
