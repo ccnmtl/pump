@@ -28,7 +28,7 @@
 
         var registerRadioListener = function(section) {
             var radios = $(self.sections[section])
-								.find('input[type="radio"]');
+                .find('input[type="radio"]');
             radios.change(function(e) {
                 if (allRadioButtonsSelected(radios)) {
                     $(self.sections[section])
@@ -92,14 +92,16 @@
                 var a = $('<a>Next &gt;</a>')
                     .attr({href: '#', class: 'btn next-button',
                         id: 'next-button-' + index});
-                if (index !== 1) {
+                if (index !== 2) {
                     // all sections except ABC need questions answered
                     // before you can advance
                     a.attr({disabled: 'disabled'});
                 }
                 var nb = $('<li></li>').append(a);
-
                 nb.click(function(event) {
+                    if (a.attr('disabled') === 'disabled') {
+                        return false;
+                    }
                     w.showNextSection();
                     return false;
                 });
