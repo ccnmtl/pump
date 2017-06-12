@@ -32,8 +32,8 @@
             radios.change(function(e) {
                 if (allRadioButtonsSelected(radios)) {
                     $(self.sections[section])
-                      .find('.next-button')
-                      .removeAttr('disabled');
+                        .find('.next-button')
+                        .removeAttr('disabled');
                 }
             });
         };
@@ -78,7 +78,7 @@
         this.sections.each(function(index, element) {
             var ul = $('<ul></ul>').addClass('pager');
             var row = $('<nav></nav>')
-               .append(ul);
+                .append(ul);
             if (index > 0) {
                 var pb = $('<li></li>').append($('<a>&lt; Previous</a>')
                     .attr({href: '#'}));
