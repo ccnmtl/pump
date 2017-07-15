@@ -21,7 +21,7 @@ traitlets==4.3.2
 ipython==5.4.1 # pyup: <6.0.0
 
 ipython_genutils==0.2.0
-decorator==4.0.11
+decorator==4.1.0
 pygments==2.2.0
 pexpect==4.2.1
 ptyprocess==0.5.2
