@@ -4,15 +4,25 @@ resources:
 
 {% with results=object.results %}
 
+You identified yourself as a {{object.age}} year old {{object.sex}}
+with {{object.amputation_level}} amputation due to
+{{object.amputation_cause}}. Your responses indicate that your current
+walking ability is categorized as {{results.houghton.category}}
+ability. People with lower limb prostheses who have an independent
+community walking ability can usually walk at a speed of >0.8 m/s;
+people who have an independent household walking ability but are
+limited in community walking usually can walk >0.5 m/s.
+
 Houghton: {% if results.houghton.pass_fail %}PASS{% else %}FAIL{% endif %} ({{results.houghton.score}}/18)
 ABC: {% if results.abc.pass_fail %}PASS{% else %}FAIL{% endif %} ({{results.abc.score}}/160)
 Pick Up: {% if results.pick_up.pass_fail %}PASS{% else %}FAIL{% endif %}
 Look Behind: {% if results.look_behind.pass_fail %}PASS{% else %}FAIL{% endif %}
 
-You passed {{results.number_passed}} of the four diagnostic tests.
+You passed {{results.number_passed}} of the 4 prognostic criteria.
 
-You have a {{results.percentage_likelihood}}% likelihood of being an
-Unsatisfactory Community Prosthetic User* within one year.
+Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a
+{{results.percentage_positive}}% likelihood of reaching the
+independent community walking ability category within one year.
 
 * A 'Satisfactory Community Prosthetics User' is defined as someone
 	that is able to walk indoors and outdoors independently within their community.
