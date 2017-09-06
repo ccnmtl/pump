@@ -17,7 +17,7 @@ class BasicTest(TestCase):
     def test_smoketest(self):
         response = self.c.get("/smoketest/")
         self.assertEquals(response.status_code, 200)
-        assert "PASS" in response.content
+        self.assertContains(response, "PASS")
 
     def test_empty_submit(self):
         # for now, it's ok to be empty
@@ -27,12 +27,12 @@ class BasicTest(TestCase):
     def test_results_empty(self):
         r = self.c.get(reverse('results'))
         self.assertEqual(r.status_code, 200)
-        self.assertTrue("No responses" in r.content)
+        self.assertContains(r, "No responses")
 
     def test_results_notempty(self):
         ResponseFactory()
         r = self.c.get(reverse('results'))
-        self.assertTrue("<table" in r.content)
+        self.assertContains(r, "<table")
 
     def test_score_page(self):
         response = ResponseFactory()
