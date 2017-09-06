@@ -5,6 +5,7 @@ addons:
   firefox: "52.2.1esr"
 python:
   - "2.7"
+  - "3.5"
 install:
   - pip install -U pip
   - pip install -U setuptools
