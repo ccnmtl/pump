@@ -39,7 +39,7 @@ $(function() {
 {% csrf_token %}
     <div id="wizard">
         <section>
-            <p>Many people with limb loss have difficulties with balance and mobility that makes home and community activities challenging and increases the risk of falls. Understanding the risk factors that affect your ability to safely participate in life’s activities is an important step in reducing your risk of falls and injury while optimizing your walking potential.</p>
+            <p>People with limb loss can experience difficulty keeping their balance and walking with their prosthesis. Activities around the home and in the community can be challenging. Difficulty balancing can increase the risk of falling. Knowing the risk factors that affect your ability to safely participate in life’s activities may reduce your risk of falls and injury while optimizing your walking potential.</p>
 
             <p>Complete the Risk Inventory survey and receive personalized recommendations about</p>
 
@@ -83,7 +83,8 @@ $(function() {
                     <option value="Through Knee">Through Knee</option>
                     <option value="Transfemoral">Transfemoral</option>
                     <option value="Hip or Higher">Hip or Higher</option>
-                    <option value="Bilateral">Bilateral</option>
+                    <option value="Bilateral with Transfemoral or hip amputation">Bilateral with Transfemoral or hip amputation</option>
+                    <option value="Bilateral without a Transfemoral or hip amputation">Bilateral without a Transfemoral or hip amputation</option>
                 </select>
             </div>
 
@@ -91,7 +92,7 @@ $(function() {
                 <label for="amputation_cause">Amputation Cause</label>
                 <select name="amputation_cause" id="amputation_cause" class="form-control">
                     <option value=""></option>
-                    <option value="Diabetes">Diabetes</option>
+                    <option value="Vascular Disease and/or  Diabetes">Vascular Disease and/or Diabetes</option>
                     <option value="Vascular Disease">Vascular Disease</option>
                     <option value="Trauma">Trauma</option>
                     <option value="Congenital (born-with) condition">Congenital (born-with) condition</option>
@@ -114,7 +115,7 @@ $(function() {
                 </select>
             </div>
 
-            <h2>Do these apply to you?</h2>
+            <h2>Do These Apply To You?</h2>
 
             <div class="form-group well">
                 <label for="r1">Have you fallen in the past 12 months?</label>
@@ -136,7 +137,7 @@ $(function() {
             </div>
 
             <div class="form-group well">
-                <label for="r2">Get up at night</label>
+                <label for="r2">Often wet up at night (e.g. for bathroom)</label>
                 <div class="radio">
                     <label>
                         <input type="radio" name="r2" id="r2-1" value="yes">Yes
@@ -220,7 +221,7 @@ $(function() {
             </div>
 
             <div class="form-group well">
-                <label for="r8">Hard to sit/to stand up from toilet/shower</label>
+                <label for="r8">Have a hard to sitting/standing up from toilet/shower</label>
                 <div class="radio">
                     <label>
                         <input type="radio" name="r8" id="r8-1" value="yes">Yes
@@ -248,7 +249,7 @@ $(function() {
             </div>
 
             <div class="form-group well">
-                <label for="r10">Do you feel unsteady on entry steps and slopes?</label>
+                <label for="r10">Feel unsteady on entry steps and slopes?</label>
                 <div class="radio">
                     <label>
                         <input type="radio" name="r10" id="r10-1" value="yes">Yes
@@ -276,7 +277,7 @@ $(function() {
             </div>
 
             <div class="form-group well">
-                <label for="r12">Are you over weight?</label>
+                <label for="r12">Am concerned about being over weight?</label>
                 <div class="radio">
                     <label>
                         <input type="radio" name="r12" id="r12-1" value="yes">Yes
@@ -290,7 +291,7 @@ $(function() {
             </div>
 
             <div class="form-group well">
-                <label for="r13">Do you get dizzy or light-headed when you get up from the bed or chair?</label>
+                <label for="r13">Get dizzy or light-headed when getting up from the bed or chair?</label>
                 <div class="radio">
                     <label>
                         <input type="radio" name="r13" id="r13-1" value="yes">Yes
@@ -318,7 +319,7 @@ $(function() {
             </div>
 
             <div class="form-group well">
-                <label for="r15">Have you had an open sore/wound, or infection on the foot or amputated limb?</label>
+                <label for="r15">Have had an open sore/wound, or infection on the foot or amputated limb?</label>
                 <div class="radio">
                     <label>
                         <input type="radio" name="r15" id="r15-1" value="yes">Yes
@@ -332,7 +333,7 @@ $(function() {
             </div>
 
             <div class="form-group well">
-                <label for="r16">Do you have kidney disease?</label>
+                <label for="r16">Have kidney disease?</label>
                 <div class="radio">
                     <label>
                         <input type="radio" name="r16" id="r16-1" value="yes">Yes
