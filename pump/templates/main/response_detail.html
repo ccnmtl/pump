@@ -15,13 +15,13 @@
     </p>
 
     
-<h1>My Results</h1>
+<h1>Prosthetic Use for Mobility Prognosis</h1>
 
 
 <p class="alert alert-info">
 <strong>
 You passed {{results.number_passed}} of the 4 prognostic criteria.<br />
-Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.percentage_positive}}% likelihood of reaching the independent community walking ability category within one year.
+Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.percentage_positive}}% likelihood of reaching the independent community walking category within one year. Consult with your prosthetitist of physical therapist to find out how you can improve your indoor and outdoor walking to reach the next ability level.
 </strong>
 </p>
 
@@ -31,10 +31,10 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
 	<div id="houghton-result">
 		{% if results.houghton.pass_fail %}
 		<p class="alert alert-success">
-		<strong>Houghton:</strong> PASS
+		<strong>Prosthetic Function:</strong> PASS
 		{% else %}
 		<p class="alert alert-danger">
-		<strong>Houghton:</strong> FAIL
+		<strong>Prosthetic Function</strong> 
 		{% endif %}
 		({{results.houghton.score}}/18)
 		</p>
@@ -45,7 +45,7 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
 		<strong>ABC:</strong> PASS
 		{% else %}
 		<p class="alert alert-danger">
-		<strong>ABC:</strong> FAIL
+		<strong>ABC</strong>
 		{% endif %}
 		({{results.abc.score}}/160)
 		</p>
@@ -56,7 +56,7 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
 		<strong>Pick Up:</strong> PASS
 		{% else %}
 		<p class="alert alert-danger">
-		<strong>Pick Up:</strong> FAIL
+		<strong>Pick Up:</strong> NOT ABLE 
 		{% endif %}
 		</p>
 	</div>
@@ -66,7 +66,7 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
 		<strong>Look Behind:</strong> PASS
 		{% else %}
 		<p class="alert alert-danger">
-		<strong>Look Behind:</strong> FAIL
+		<strong>Look Behind:</strong> NOT ABLE 
 		{% endif %}
 		</p>
 	</div>
@@ -80,8 +80,8 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
 <div class="row">
 <div class="col-md-12">
 <section id="satisfactory-user">
-<p>* A 'Satisfactory Community Prosthetics User' is defined as someone
-	that is able to walk indoors and outdoors independently within their community.</p>
+<p>* Independent community walking ability includes walking >0.8 m/s and
+    managing outdoor obstacles such as curbs and uneven ground independently.</p>
 </section>
 </div>
 </div>
@@ -118,7 +118,7 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
                 <p>Get help when you walk outside within the community.</p>
                 <ul>
                     <li>
-                        If 2 or more of these 4 apply, you are not likely to reach the independent community walking ability category by next year.
+                        If 2 or more of these 4 apply, you are not likely to reach the independent community walking category by next year.<sup><a href="#ref-1">1</a></sup>
                     </li>
                 </ul>
             </td>
@@ -129,11 +129,11 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
         </tr>
         <tr>
             <td></td>
-            <td>Do you need to hold on or get help to pick up something from the floor?</td>
+            <td>Need to hold on or get help to pick up something from the floor?</td>
         </tr>
         <tr>
             <td></td>
-            <td>Do you need to hold on to turn and look behind you over your shoulder?</td>
+            <td>Need to hold on to turn and look behind you over your shoulder?</td>
         </tr>
 
         <tr><th colspan="3">Falls and Fall-Related Injury</th></tr>
@@ -147,7 +147,7 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
                     <li>
                         People of female sex and non-white race, with 
                         transtibial amputations due to vascular disease
-                        are more likely to have fall-related injuries.
+                        are more likely to have fall-related injuries.<sup><a href="#ref-2">2</a></sup>
                     </li>
                 </ul>
             </td>
@@ -168,7 +168,7 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
         <tr>
             <td></td>
             <td>Over 55 years of age</td>
-            <td>If you fall, consult a doctor—an x-ray is often recommended.</td>
+            <td>If you fall, consult a doctor—an x-ray is often recommended.<sup><a href="#ref-3">3</a></sup></td>
         </tr>
         <tr>
             <td></td>
@@ -178,20 +178,21 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
 
         <tr>
             <td></td>
-            <td>Get up at night</td>
-            <td>Leave on a night-light. Take a moment before getting up. </td>
+            <td>Often get up at night (e.g. bathroom)</td>
+            <td rowspan="2">Leave on a night-light. Take a moment before getting up.
+                <ul><li>You may feel your amputated limb is still there!<sup><a href="#ref-5">5</a></sup></li></ul>
+            </td>
         </tr>
         <tr>
             <td></td>
             <td>Have phantom limb pains</td>
-            <td><ul><li>You may feel your amputated limb is still there!</li></ul></td>
         </tr>
         <tr>
             <td></td>
             <td>Wet/slippery surfaces at home</td>
             <td><p>Wipe up spills immediately, use a non-slip surface or tape in the bathroom/shower/tub, avoid wet and icy surfaces.</p>
                 <ul>
-                    <li>Wet/icy surfaces are especially risky for people using prostheses.</li>
+                    <li>Wet/icy surfaces are especially risky for people using prostheses.<sup><a href="#ref-2">2</a></sup></li>
                 </ul>
             </td>
         </tr>
@@ -210,7 +211,7 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
             <td>
                 <p>Remove clutter, clear paths, arrange furniture strategically</p>
                 <ul>
-                    <li>Tripping or stepping on small obstacles can cause a prosthetic knee to collapse.</li>
+                    <li>Tripping or stepping on small obstacles can cause a prosthetic knee to collapse.<sup><a href="#ref-2">2</a></sup></li>
                 </ul>
             </td>
         </tr>
@@ -219,35 +220,35 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
             <td>Adjustable (screen) door closures</td>
             <td><p>Adjust closure so you have enough time to get in/out</p>
                 <ul>
-                    <li>The door can catch on the prosthesis without your feeling it.</li>
+                    <li>The door can catch on the prosthesis without your feeling it.<sup><a href="#ref-6">6</a></sup></li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td></td>
-            <td>Hard to sit to/stand up from toilet/shower</td>
+            <td>Have a hard time sitting/standing up from toilet/shower</td>
             <td><p>Use shower chair or toilet seat with arm. Consult a physical therapist to discuss if exercise or leisure group activities can help you get stronger.</p>
                 <ul>
-                    <li>Falls in the bathroom can be the result of leg weakness.</li>
+                    <li>Falls in the bathroom can be the result of leg weakness.<sup><a href="#ref-6">6</a></sup></li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td></td>
-            <td>No grab bar in bathroom</td>
+            <td>Do not have a grab bar in bathroom</td>
             <td><p>Install grab bar near toilet and shower/bath</p>
                 <ul>
-                    <li>Falls in the bathroom are common and can result from loss of balance.</li>
+                    <li>Falls in the bathroom are common and can result from loss of balance.<sup><a href="#ref-6">6</a></sup></li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td></td>
-            <td>Do you feel unsteady on entry steps and slopes?</td>
+            <td>Feel unsteady on entry steps and slopes?</td>
             <td>
                 <p>Install handrail for indoor and outdoor stairs/entry/slopes. Take care descending stairs and especially slopes. Consult a prosthetist to discuss prosthetic options.</p>
                 <ul>
-                    <li>Prosthetic knees can give way on declines. </li>
+                    <li>Prosthetic knees can give way on declines.<sup><a href="#ref-2">2</a></sup> </li>
                 </ul>
             </td>
         </tr>
@@ -256,7 +257,7 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
             <td>Have cats or dogs</td>
             <td><p>Watch out for your pets. Don’t let leashes encircle your leg!</p>
                 <ul>
-                    <li>A prosthesis can’t feel the leash pulling on your leg.</li>
+                    <li>A prosthesis can’t feel the leash pulling on your leg.<sup><a href="#ref-2">2</a></sup></li>
                 </ul>
             </td>
         </tr>
@@ -265,12 +266,12 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
         
         <tr>
             <td></td>
-            <td>Do you get dizzy or light-headed when you get up from the bed or chair?</td>
+            <td>Get dizzy or light-headed when you getting up from the bed or chair?</td>
             <td><p>Get up slowly and take a moment to get your balance.</p>
                 <p>Review your medications with your physician/pharmacist.</p>
                 <p>If worse recently, consult a physician about your medications. </p>
                 <ul>
-                    <li>Your heart health or blood sugar may have changed.</li>
+                    <li>Your heart health or blood sugar may have changed.<sup><a href="#ref-7">7</a></sup></li>
                 </ul>
             </td>
         </tr>
@@ -279,42 +280,56 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
             <td>Have difficulty seeing clearly</td>
             <td><p>If your vision got worse recently, consult a physician about your health and medications.</p>
                 <ul>
-                    <li>Uncontrolled blood sugar/diabetes can cause blurry vision.</li>
+                    <li>Uncontrolled blood sugar/diabetes can cause blurry vision.<sup><a href="#ref-7">7</a></sup></li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td></td>
-            <td>Are you over weight?</td>
+            <td>Am concerned about being over weight?</td>
             <td><p>You may want to change your diet and get more active. </p>
                 <p>Consult a physician about your diet or medications. Consult a physical therapist or join a support or leisure activity group.</p>
                 <ul>
                     <li>
-                        Being overweight can cause back and leg pain. Exercises and regular physical activity can help.
+                        Being overweight can cause back and leg pain. Exercises and regular physical activity can help.<sup><a href="#ref-8">8</a></sup>
                     </li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td></td>
-            <td>Have you had an open sore/wound, or infection on the foot or amputated limb?</td>
+            <td>Have you an open sore/wound, or infection on the foot or amputated limb?</td>
             <td><p>Check your skin regularly for open areas. Consult regularly with a physician.</p>
                 <ul>
-                    <li>Vascular disease is a risk factor for a second amputation.</li>
+                    <li>Vascular disease is a risk factor for a second amputation.<sup><a href="#ref-9">9</a></sup></li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td></td>
-            <td>Do you have kidney disease?</td>
+            <td>Have kidney disease?</td>
             <td><p>Consult regularly with a physician.</p>
                 <ul>
-                    <li>Kidney disease is a risk factors for a second amputation.</li>
+                    <li>Kidney disease is a risk factors for a second amputation.<sup><a href="#ref-9">9</a></sup></li>
                 </ul>
             </td>
         </tr>
         
     </table>
+</section>
+<section class="references">
+    <h4>Risk Inventory References</h4>
+    <ol>
+        <li><a class="footnote-target" id="ref-1"></a>Wong CK, Young RS, Ow-Wing C, Karimi P. Determining 1-year Prosthetic Use for Mobility Prognoses (PUMP) for community-dwelling adults with lower limb amputation: development of a clinical prediction rule. Am J Phys Med Rehabil 2016;95(5):339-47. doi: 10.1097/PHM.0000000000000383.</li>
+        <li><a class="footnote-target" id="ref-2"></a>Wong CK, Chihuri S, Li G. The risk of fall-related injury in community-dwelling people with lower limb amputation: a prospective cohort study. J Rehabil Med 2016;48:80-5. doi: 10.2340/16501977-2042.</li>
+        <li><a class="footnote-target" id="ref-3"></a>LeBlanc, KE, Muncie HL Jr, LeBlanc LL. Hip fracture: diagnosis, treatment, and secondary prevention. Am Fam Physician 2014;89(12):945-951. <a href="http://www.aafp.org/afp/2014/0615/p945.html">http://www.aafp.org/afp/2014/0615/p945.html</a></li>
+        <li><a class="footnote-target" id="ref-4"></a>Wong CK, Chen C, Blackwell W, et al. Balance ability measured with the Berg Balance Scale: a determinant of fall history in community-dwelling adults with leg amputation. J Rehabil Med 2015;47(1):80-6. doi: 10.2340/16501977-1882.</li>
+        <li><a class="footnote-target" id="ref-5"></a>Wong CK, Wong CK. Left-right limb recognition ability in people with limb loss: a clinical measure for phantom limb pain. Pain Med 2017. doi: 10.1093/pm/pnx179.</li>
+        <li><a class="footnote-target" id="ref-6"></a>The Amputee Coalition (ACA). Before you fall: tips for preventing falls in the home.<a href="http://www.amputee-coalition.org">http://www.amputee-coalition.org</a></li>
+        <li><a class="footnote-target" id="ref-7"></a>American Diabetes Association. Diabetes symptoms. <a href="http://www.diabetes.org/diabetes-basics/symptoms/">http://www.diabetes.org/diabetes-basics/symptoms/</a></li>
+        <li><a class="footnote-target" id="ref-8"></a>Wong CK, Wong RJ. Standard and amputation-adjusted body mass index measures: comparison and relevance to functional measures, weight-related comorbidities, and dieting. Am J Phys Med Rehabil 2017;96(12):912-5. doi: 10.1097/PHM.0000000000000796.</li>
+        <li><a class="footnote-target" id="ref-9"></a>Wong CK, Stern JR, D'Andrea Jr. RF, et al. The risk of subsequent amputation following an initial lower extremity amputation: a systematic review. Int J Diabetol Vasc Dis Res 2016;4(5):171-7. IJDVR-2328-353X-04-501</li>
+    </ol>
 </section>
 
 <section class="well">
@@ -335,8 +350,6 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
 <p>
 The Amputee Coalition (ACA)
 - <a href="http://www.amputee-coalition.org/">http://www.amputee-coalition.org</a><br />
-The Amputee Walking School
-- <a href="http://www.amputeewalkingschool.com/">http://www.amputeewalkingschool.com</a><br />
 The New York Presbyterian Rehab Department -
 <a href="http://www.nyp.org/rehabmed/index.html">http://www.nyp.org/rehabmed/index.html</a><br />
 Christopher Kevin Wong, PT, PhD, MS - 
