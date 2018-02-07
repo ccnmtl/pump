@@ -170,3 +170,7 @@ border-radius: 5px;
     -webkit-border-radius: 3px;
     line-height: 140%;
 }
+
+.footnote-target {
+    padding-top: 56px;
+}
