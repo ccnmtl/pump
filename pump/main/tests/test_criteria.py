@@ -44,27 +44,27 @@ class TestHoughton(TestCase):
 class TestABC(TestCase):
     def test_normal(self):
         a = ABC([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16])
-        self.assertEqual(a.score(), 136)
+        self.assertEqual(a.score(), int((136 / 160.0) * 100))
         self.assertTrue(a.pass_fail())
 
     def test_fail(self):
         a = ABC([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
-        self.assertEqual(a.score(), 16)
+        self.assertEqual(a.score(), int((16 / 160.0) * 100))
         self.assertFalse(a.pass_fail())
 
     def test_high_pass(self):
         a = ABC([10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
                  10, 10, 10, 10, 10])
-        self.assertEqual(a.score(), 160)
+        self.assertEqual(a.score(), int((160 / 160.0) * 100))
         self.assertTrue(a.pass_fail())
 
     def test_barely(self):
-        a = ABC([7, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6, 6])
-        self.assertEqual(a.score(), 104)
+        a = ABC([7, 7, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6])
+        self.assertEqual(a.score(), int((105 / 160.0) * 100))
         self.assertFalse(a.pass_fail())
 
-        a = ABC([7, 7, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6])
-        self.assertEqual(a.score(), 105)
+        a = ABC([7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6])
+        self.assertEqual(a.score(), int((106 / 160.0) * 100))
         self.assertTrue(a.pass_fail())
 
 
