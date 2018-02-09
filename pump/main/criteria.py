@@ -11,9 +11,9 @@ class Houghton(object):
 
     def category(self):
         categories = [
-            "indepenedent community walking ability",
-            "limited community/independent household walking ability",
-            "limited household walking ability",
+            "indepenedent community walking",
+            "limited community/independent household walking",
+            "limited household walking",
         ]
         if self.score() >= 9:
             return categories[0]

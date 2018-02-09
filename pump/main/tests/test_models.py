@@ -25,7 +25,7 @@ class ResponseTest(TestCase):
     def test_results_all_pass(self):
         r = ResponseFactory(
             # Houghton
-            q1="4", q2="4", q3="4", q4="2", q5="2", q6="2",
+            q1="3", q2="3", q3="3", q4="1", q5="1", q6="1",
             # ABC
             q7="10", q8="10", q9="10", q10="10", q11="10",
             q12="10", q13="10", q14="10", q15="10", q16="10",
