@@ -5,7 +5,7 @@ from django.views.generic.base import View
 from django.views.generic import ListView
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse
-from .models import Response
+from pump.main.models import Response
 
 
 class IndexView(View):
