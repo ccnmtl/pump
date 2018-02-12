@@ -11,7 +11,7 @@ class Houghton(object):
 
     def category(self):
         categories = [
-            "indepenedent community walking",
+            "independent community walking",
             "limited community/independent household walking",
             "limited household walking",
         ]
