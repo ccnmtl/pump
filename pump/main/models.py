@@ -89,6 +89,29 @@ class Scorer(object):
         self.pick_up = PassFail(int(r.q23 or '1'))
         self.look_behind = PassFail(int(r.q24 or '1'))
 
+        self.sex = r.sex
+        self.race = r.race
+        self.amputation_level = r.amputation_level
+        self.amputation_cause = r.amputation_cause
+        self.age = r.age
+
+        self.r1 = r.r1 == "1" or r.r1 == "2+"
+        self.r2 = r.r2 == "yes"
+        self.r3 = r.r3 == "yes"
+        self.r4 = r.r4 == "yes"
+        self.r5 = r.r5 == "yes"
+        self.r6 = r.r6 == "yes"
+        self.r7 = r.r7 == "yes"
+        self.r8 = r.r8 == "yes"
+        self.r9 = r.r9 == "yes"
+        self.r10 = r.r10 == "yes"
+        self.r11 = r.r11 == "yes"
+        self.r12 = r.r12 == "yes"
+        self.r13 = r.r13 == "yes"
+        self.r14 = r.r14 == "yes"
+        self.r15 = r.r15 == "yes"
+        self.r16 = r.r16 == "yes"
+
     def number_passed(self):
         return (
             self.h.pass_fail() +
@@ -104,6 +127,17 @@ class Scorer(object):
         percents = ['4.4', '6.1', '7.9', '18.6', '40.7']
         return percents[self.number_passed()]
 
+    def fall_related_injury(self):
+        return (self.sex == "Female" or
+                self.race != "White Caucasian" or
+                self.amputation_level == "Transtibial" or
+                self.amputation_cause == "Vascular Disease")
+
+    def over_55(self):
+        return (self.age == "55-64" or
+                self.age == "65-74" or
+                self.age == "75+")
+
     def results(self):
         return dict(
             houghton=self.h,
@@ -113,4 +147,22 @@ class Scorer(object):
             number_passed=self.number_passed(),
             percentage_likelihood=self.percentage_likelihood(),
             percentage_positive=self.percentage_positive(),
+            fall_related_injury=self.fall_related_injury(),
+            over_55=self.over_55(),
+            r1=self.r1,
+            r2=self.r2,
+            r3=self.r3,
+            r4=self.r4,
+            r5=self.r5,
+            r6=self.r6,
+            r7=self.r7,
+            r8=self.r8,
+            r9=self.r9,
+            r10=self.r10,
+            r11=self.r11,
+            r12=self.r12,
+            r13=self.r13,
+            r14=self.r14,
+            r15=self.r15,
+            r16=self.r16,
         )

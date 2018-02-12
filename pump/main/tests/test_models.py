@@ -21,6 +21,23 @@ class ResponseTest(TestCase):
         self.assertEqual(results['number_passed'], 0)
         self.assertEqual(results['percentage_likelihood'], '95.6')
         self.assertEqual(results['percentage_positive'], '4.4')
+        self.assertFalse(results['over_55'])
+        self.assertFalse(results['r1'])
+        self.assertFalse(results['r2'])
+        self.assertFalse(results['r3'])
+        self.assertFalse(results['r4'])
+        self.assertFalse(results['r5'])
+        self.assertFalse(results['r6'])
+        self.assertFalse(results['r7'])
+        self.assertFalse(results['r8'])
+        self.assertFalse(results['r9'])
+        self.assertFalse(results['r10'])
+        self.assertFalse(results['r11'])
+        self.assertFalse(results['r12'])
+        self.assertFalse(results['r13'])
+        self.assertFalse(results['r14'])
+        self.assertFalse(results['r15'])
+        self.assertFalse(results['r16'])
 
     def test_results_all_pass(self):
         r = ResponseFactory(
@@ -35,6 +52,23 @@ class ResponseTest(TestCase):
             q23="2",
             # look behind
             q24="2",
+            age="55-64",
+            r1="2+",
+            r2="yes",
+            r3="yes",
+            r4="yes",
+            r5="yes",
+            r6="yes",
+            r7="yes",
+            r8="yes",
+            r9="yes",
+            r10="yes",
+            r11="yes",
+            r12="yes",
+            r13="yes",
+            r14="yes",
+            r15="yes",
+            r16="yes",
         )
         results = r.results()
         self.assertTrue('houghton' in results)
@@ -46,6 +80,23 @@ class ResponseTest(TestCase):
         self.assertEqual(results['number_passed'], 4)
         self.assertEqual(results['percentage_likelihood'], '59.3')
         self.assertEqual(results['percentage_positive'], '40.7')
+        self.assertTrue(results['over_55'])
+        self.assertTrue(results['r1'])
+        self.assertTrue(results['r2'])
+        self.assertTrue(results['r3'])
+        self.assertTrue(results['r4'])
+        self.assertTrue(results['r5'])
+        self.assertTrue(results['r6'])
+        self.assertTrue(results['r7'])
+        self.assertTrue(results['r8'])
+        self.assertTrue(results['r9'])
+        self.assertTrue(results['r10'])
+        self.assertTrue(results['r11'])
+        self.assertTrue(results['r12'])
+        self.assertTrue(results['r13'])
+        self.assertTrue(results['r14'])
+        self.assertTrue(results['r15'])
+        self.assertTrue(results['r16'])
 
     def test_email_text(self):
         r = ResponseFactory()

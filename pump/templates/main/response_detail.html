@@ -104,6 +104,7 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
             <td>(Try these strategies—have someone help you if needed.)</td>
         </tr>
 
+        {% if results.number_passed > 0 %}
         <tr>
             <th colspan="3">
                 Prosthetic Mobility
@@ -127,7 +128,8 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
             <td></td>
             <td>Balance Confidence score ≤65?</td>
         </tr>
-        <tr>
+
+        <tr class="">
             <td></td>
             <td>Need to hold on or get help to pick up something from the floor?</td>
         </tr>
@@ -135,9 +137,10 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
             <td></td>
             <td>Need to hold on to turn and look behind you over your shoulder?</td>
         </tr>
-
+        {% endif %}
+        {% if result.fall_related_injury %}
         <tr><th colspan="3">Falls and Fall-Related Injury</th></tr>
-
+    
         <tr>
             <td></td>
             <td>Female sex</td>
@@ -164,18 +167,23 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
             <td></td>
             <td>Vascular amputation</td>
         </tr>
+        {% endif %}
 
+        {% if result.over_55 %}
         <tr>
             <td></td>
             <td>Over 55 years of age</td>
             <td>If you fall, consult a doctor—an x-ray is often recommended.<sup><a href="#ref-3">3</a></sup></td>
         </tr>
+        {% endif %}
+        {% if results.r1 %}
         <tr>
             <td></td>
             <td>Fallen in past 12 months</td>
             <td>Consult a rehabilitation professional to discuss how exercise or wellness activities can improve your balance and prevent another fall.</td>
         </tr>
-
+        {% endif %}
+        {% if results.r2 %}
         <tr>
             <td></td>
             <td>Often get up at night (e.g. bathroom)</td>
@@ -183,10 +191,14 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
                 <ul><li>You may feel your amputated limb is still there!<sup><a href="#ref-5">5</a></sup></li></ul>
             </td>
         </tr>
+        {% endif %}
+        {% if results.r3 %}
         <tr>
             <td></td>
             <td>Have phantom limb pains</td>
         </tr>
+        {% endif %}
+        {% if results.r4 %}
         <tr>
             <td></td>
             <td>Wet/slippery surfaces at home</td>
@@ -196,6 +208,8 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
                 </ul>
             </td>
         </tr>
+        {% endif %}
+        {% if results.r5 %}
         <tr>
             <td></td>
             <td>Unsecured rugs/carpets, bath towels</td>
@@ -205,6 +219,8 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
                 </li>
             </td>
         </tr>
+        {% endif %}
+        {% if results.r6 %}
         <tr>
             <td></td>
             <td>Cluttered floor: shoes, papers, cords</td>
@@ -215,6 +231,8 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
                 </ul>
             </td>
         </tr>
+        {% endif %}
+        {% if results.r7 %}
         <tr>
             <td></td>
             <td>Adjustable (screen) door closures</td>
@@ -224,6 +242,8 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
                 </ul>
             </td>
         </tr>
+        {% endif %}
+        {% if results.r8 %}
         <tr>
             <td></td>
             <td>Have a hard time sitting/standing up from toilet/shower</td>
@@ -233,6 +253,8 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
                 </ul>
             </td>
         </tr>
+        {% endif %}
+        {% if results.r9 %}
         <tr>
             <td></td>
             <td>Do not have a grab bar in bathroom</td>
@@ -242,6 +264,8 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
                 </ul>
             </td>
         </tr>
+        {% endif %}
+        {% if results.r10 %}
         <tr>
             <td></td>
             <td>Feel unsteady on entry steps and slopes?</td>
@@ -252,6 +276,8 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
                 </ul>
             </td>
         </tr>
+        {% endif %}
+        {% if results.r11 %}
         <tr>
             <td></td>
             <td>Have cats or dogs</td>
@@ -261,9 +287,10 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
                 </ul>
             </td>
         </tr>
-
+        {% endif %}
         <tr><th colspan="3">Medical Concerns</th></tr>
         
+        {% if results.r13 %}
         <tr>
             <td></td>
             <td>Get dizzy or light-headed when you getting up from the bed or chair?</td>
@@ -275,6 +302,8 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
                 </ul>
             </td>
         </tr>
+        {% endif %}
+        {% if results.r14 %}
         <tr>
             <td></td>
             <td>Have difficulty seeing clearly</td>
@@ -284,6 +313,8 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
                 </ul>
             </td>
         </tr>
+        {% endif %}
+        {% if results.r12 %}
         <tr>
             <td></td>
             <td>Am concerned about being over weight?</td>
@@ -296,6 +327,8 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
                 </ul>
             </td>
         </tr>
+        {% endif %}
+        {% if results.r15 %}
         <tr>
             <td></td>
             <td>Have you an open sore/wound, or infection on the foot or amputated limb?</td>
@@ -305,6 +338,8 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
                 </ul>
             </td>
         </tr>
+        {% endif %}
+        {% if results.r16 %}
         <tr>
             <td></td>
             <td>Have kidney disease?</td>
@@ -314,6 +349,7 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
                 </ul>
             </td>
         </tr>
+        {% endif %}
         
     </table>
 </section>
