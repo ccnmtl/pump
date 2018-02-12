@@ -7,7 +7,7 @@ class TestHoughton(TestCase):
         h = Houghton([1, 2, 3, 1, 1, 1])
         self.assertEqual(h.score(), 9)
         self.assertEqual(h.category(),
-                         "indepenedent community walking ability")
+                         "independent community walking")
         self.assertTrue(h.pass_fail())
 
     def test_fail(self):
@@ -15,21 +15,21 @@ class TestHoughton(TestCase):
         self.assertEqual(h.score(), 6)
         self.assertEqual(h.category(),
                          "limited community/independent "
-                         "household walking ability")
+                         "household walking")
         self.assertFalse(h.pass_fail())
 
     def test_total_fail(self):
         h = Houghton([0, 0, 0, 0, 0, 0])
         self.assertEqual(h.score(), 0)
         self.assertEqual(h.category(),
-                         "limited household walking ability")
+                         "limited household walking")
         self.assertFalse(h.pass_fail())
 
     def test_pass(self):
         h = Houghton([4, 4, 4, 2, 2, 2])
         self.assertEqual(h.score(), 18)
         self.assertEqual(h.category(),
-                         "indepenedent community walking ability")
+                         "independent community walking")
         self.assertTrue(h.pass_fail())
 
     def test_barely(self):
@@ -37,7 +37,7 @@ class TestHoughton(TestCase):
         self.assertEqual(h.score(), 8)
         self.assertEqual(h.category(),
                          "limited community/independent "
-                         "household walking ability")
+                         "household walking")
         self.assertTrue(h.pass_fail())
 
 
