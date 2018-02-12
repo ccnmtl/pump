@@ -23,17 +23,17 @@ class Houghton(object):
 
 
 class ABC(object):
-    """ ABC PASS is 105 or greater
+    """ ABC PASS is 66% or greater
     (out of possible 160, using 10pt scale for each of
-    the 16 questions) (which should be 66% or greater) """
+    the 16 questions, averaged) (which should be 66% or greater) """
     def __init__(self, responses):
         self.responses = responses
 
     def score(self):
-        return sum(self.responses)
+        return int((sum(self.responses) / 160.0) * 100)
 
     def pass_fail(self):
-        return self.score() >= 105
+        return self.score() >= 66
 
 
 class PassFail(object):
