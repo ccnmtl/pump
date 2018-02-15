@@ -10,11 +10,69 @@ body {
 body > .container {
   background-color: #fff;
   min-height: 100%;
-  padding-top: 75px;
+  padding-top: 80px;
+}
+
+h2 {
+    margin-top: 1em;
+    font-size: 1.8em;
+}
+
+.navbar-brand .text-muted {
+    color: #000000;
+}
+
+@media (min-width: 1200px) {
+    .container {
+            width: 900px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container.logged-in {
+            width: 1100px;
+    }
+    
+    .navbar-brand {
+        margin: 10px;
+        font-size: 2.3em;
+    }
 }
 
 #content {
   min-height: 100%;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.preamble {
+    margin-top: 1.5em;
+}
+
+.preamble ul {
+    font-size: 1.2em;
+}
+
+#tips p {
+    font-size: 1em;
+}
+
+section hr {
+    margin: 2em 0em;
+}
+
+section h2 {
+    margin-bottom: 1.25em;
+}
+
+.form-group.well {
+    margin-bottom: 2em;
+}
+
+.well h3 {
+    margin-top: 0px;
 }
 
 input.input-badge[type="text"] 
@@ -173,4 +231,8 @@ border-radius: 5px;
 
 .footnote-target {
     padding-top: 56px;
+}
+
+.references {
+    margin-bottom: 2em;
 }

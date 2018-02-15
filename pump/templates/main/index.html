@@ -39,6 +39,7 @@ $(function() {
 {% csrf_token %}
     <div id="wizard">
         <section>
+            <div class="preamble">
             <p>People with limb loss can experience difficulty keeping their balance and walking with their prosthesis. Activities around the home and in the community can be challenging. Difficulty balancing can increase the risk of falling. Knowing the risk factors that affect your ability to safely participate in life’s activities may reduce your risk of falls and injury while optimizing your walking potential.</p>
 
             <p>Complete the Risk Inventory survey and receive personalized recommendations about</p>
@@ -48,10 +49,13 @@ $(function() {
                 <li>Your Prosthetic Use for Mobility Prognosis (PUMP) for future community walking</li>
                 <li>Tips for Injury Prevention Strategies (TIPS) to help you avoid falls and injury</li>
             </ul>
+            </div>
             
-            <h1>Risk Inventory</h1>
+            <hr/>
 
-            <h2>Information About Yourself</h2>
+            <h2>Risk Inventory</h2>
+
+            <h3>Information About Yourself</h3>
             
             <div class="form-group well">
                 <label for="sex">Sex</label>
@@ -115,7 +119,7 @@ $(function() {
                 </select>
             </div>
 
-            <h2>Do These Apply To You?</h2>
+            <h3>Do These Apply To You?</h3>
 
             <div class="form-group well">
                 <label for="r1">Have you fallen in the past 12 months?</label>
@@ -348,7 +352,7 @@ $(function() {
             
         </section>
 	<section>
-		<h1>Prosthetic Use</h1>
+		<h2>Prosthetic Use</h2>
 		<p class="lead">Please answer all questions on the Prosthetic Use scale.</p> 
         <div class="form-group well">
         <label for="q1">Do you wear your prosthesis?</label>
@@ -485,7 +489,7 @@ $(function() {
         </div>
 	</section>
 	<section>
-	<h1>Activity Balance Confidence (ABC)</h1>
+	<h2>Activity Balance Confidence (ABC)</h2>
 	<p class="lead">Please complete the Activities-specific Balance Confidence scale. Rate how confident you are that you can maintain your balance during each activity. (If you would not perform the activity, you can skip.)</p>
 
 	<div class="form-group well">
@@ -668,9 +672,9 @@ $(function() {
 </section>
     <section>
     
-	 <h1>Balance Test 1</h1>
-	 <p class="lead">Please complete the first Balance Test: Pick up an object (e.g. pen) from the floor, starting from a standing position. Try to perform without assistance, but use your hands for balance if needed. (If you feel unsafe, skip the activity and answer “no”.)</p>
-   <p class="lead">The picture below demonstrates a successful attempt.</p>
+	 <h2>Balance Test 1</h2>
+	 <p >Please complete the first Balance Test: Pick up an object (e.g. pen) from the floor, starting from a standing position. Try to perform without assistance, but use your hands for balance if needed. (If you feel unsafe, skip the activity and answer “no”.)</p>
+   <p >The picture below demonstrates a successful attempt.</p>
 
 	<div class="form-group well">
     <label>Are you able to able to pick up the object safely and easily?</label>
@@ -689,7 +693,7 @@ $(function() {
 
 	</div>
 
-  <p class="lead">This is an example of successfully picking an object up from the floor independently:</p>
+  <p>This is an example of successfully picking an object up from the floor independently:</p>
   
 	<div class="well">
   <h3>Successfully Pick up an object from the floor</h3>
@@ -699,11 +703,11 @@ $(function() {
 </section>
     <section>
     
-	 <h1>Balance Test 2</h1>
-	 <p class="lead">
+	 <h2>Balance Test 2</h2>
+	 <p >
        Please complete the second Balance Test: Look over your left and right shoulders while standing. Try to perform without assistance, or using your hands to balance. (If you feel unsafe, skip the activity and answer “no”.)
    </p>
-   <p class="lead">
+   <p>
        The picture below demonstrates a successful and unsuccessful attempt.
 	 </p>
 
@@ -732,7 +736,7 @@ $(function() {
 
 </section>
     <section>
-	 <h1>Answers Submitted</h1>
+	 <h2>Answers Submitted</h2>
 	 <input type="submit" class="btn btn-primary" value="Show Me My Results" id="submit-button" />
 </section>
 </div>
