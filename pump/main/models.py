@@ -127,6 +127,8 @@ class Scorer(object):
         percents = ['4.4', '6.1', '7.9', '18.6', '40.7']
         return percents[self.number_passed()]
 
+    # The criteria for this function are defined by documentation
+    # from the client.
     def fall_related_injury(self):
         return (self.sex == "Female" or
                 self.race != "White Caucasian" or
