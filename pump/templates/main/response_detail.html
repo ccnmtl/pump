@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
     {% with results=object.results %}
-    <h1>My Summary</h1>
+    <h2>My Summary</h2>
 
     <p>
         You identified yourself as a {{object.age}} year old {{object.sex}}
@@ -15,13 +15,13 @@
     </p>
 
     
-<h1>Prosthetic Use for Mobility Prognosis</h1>
+<h2>Prosthetic Use for Mobility Prognosis</h2>
 
 
 <p class="alert alert-info">
 <strong>
 You passed {{results.number_passed}} of the 4 prognostic criteria.<br />
-Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.percentage_positive}}% likelihood of reaching the independent community walking category within one year. Consult with your prosthetitist of physical therapist to find out how you can improve your indoor and outdoor walking to reach the next ability level.
+Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.percentage_positive}}% likelihood of reaching the independent community walking category within one year. Consult with your prosthetitist or physical therapist to find out how you can improve your indoor and outdoor walking to reach the next ability level.
 </strong>
 </p>
 
@@ -88,7 +88,7 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
 </section>
 
 <section id="tips">
-    <h3>Tips for Injury Prevention Strategies (TIPS) to help you avoid falls and injury</h3>
+    <h2>Tips for Injury Prevention Strategies (TIPS) to help you avoid falls and injury</h2>
 
     <table class="table">
         <tr>
@@ -187,7 +187,7 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
         <tr>
             <td></td>
             <td>Often get up at night (e.g. bathroom)</td>
-            <td rowspan="2">Leave on a night-light. Take a moment before getting up.
+            <td >Leave on a night-light. Take a moment before getting up.
                 <ul><li>You may feel your amputated limb is still there!<sup><a href="#ref-5">5</a></sup></li></ul>
             </td>
         </tr>
@@ -288,9 +288,8 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
             </td>
         </tr>
         {% endif %}
-        <tr><th colspan="3">Medical Concerns</th></tr>
-        
         {% if results.r13 %}
+        <tr><th colspan="3">Medical Concerns</th></tr>
         <tr>
             <td></td>
             <td>Get dizzy or light-headed when you getting up from the bed or chair?</td>
