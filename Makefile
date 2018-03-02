@@ -1,4 +1,5 @@
 APP=pump
+SYS_PYTHON=python3
 
 JS_FILES=media/js/src/ media/js/tests
 PY_DIRS=$(APP) features
