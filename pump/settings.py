@@ -2,6 +2,6 @@
 from pump.settings_shared import *
 
 try:
-    from local_settings import *
+    from pump.local_settings import *
 except ImportError:
     pass
