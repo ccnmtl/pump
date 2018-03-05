@@ -1,6 +1,5 @@
 Django==1.11.10 # pyup: <2.0
 Markdown==2.6.11
-uuid==1.30
 psycopg2==2.7.4
 versiontools==1.9.1
 statsd==3.2.2
