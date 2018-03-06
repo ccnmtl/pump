@@ -2,10 +2,12 @@ import django.contrib.auth.views
 import django.views.static
 import djangowind.views
 
-from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
 from django.views.generic import TemplateView, DetailView
+
+from django.urls import include, path, re_path
+
 from pump.main import views
 from pump.main.models import Response
 import os.path
@@ -14,35 +16,35 @@ admin.autodiscover()
 site_media_root = os.path.join(os.path.dirname(__file__), "../media")
 
 redirect_after_logout = getattr(settings, 'LOGOUT_REDIRECT_URL', None)
-auth_urls = url(r'^accounts/', include('django.contrib.auth.urls'))
-logout_page = url(r'^accounts/logout/$',
+auth_urls = re_path(r'^accounts/', include('django.contrib.auth.urls'))
+logout_page = re_path(r'^accounts/logout/$',
                   django.contrib.auth.views.logout,
                   {'next_page': redirect_after_logout})
 if hasattr(settings, 'CAS_BASE'):
-    auth_urls = url(r'^accounts/', include('djangowind.urls'))
-    logout_page = url(r'^accounts/logout/$',
+    auth_urls = path('accounts/', include('djangowind.urls'))
+    logout_page = re_path(r'^accounts/logout/$',
                       djangowind.views.logout,
                       {'next_page': redirect_after_logout})
 
 urlpatterns = [
     auth_urls,
     logout_page,
-    url(r'^$', views.IndexView.as_view()),
-    url(r'^results/$', views.ResultsView.as_view(), name='results'),
-    url(r'^email/$', views.EmailView.as_view(), name='email-results'),
-    url(r'^score/(?P<pk>\d+)/$', DetailView.as_view(
+    re_path(r'^$', views.IndexView.as_view()),
+    re_path(r'^results/$', views.ResultsView.as_view(), name='results'),
+    re_path(r'^email/$', views.EmailView.as_view(), name='email-results'),
+    re_path(r'^score/(?P<pk>\d+)/$', DetailView.as_view(
         model=Response), name='score'),
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^_impersonate/', include('impersonate.urls')),
-    url(r'^stats/$', TemplateView.as_view(template_name="stats.html")),
-    url(r'smoketest/', include('smoketest.urls')),
-    url(r'infranil/', include('infranil.urls')),
-    url(r'^uploads/(?P<path>.*)$', django.views.static.serve,
+    path('admin/', admin.site.urls),
+    re_path(r'^_impersonate/', include('impersonate.urls')),
+    re_path(r'^stats/$', TemplateView.as_view(template_name="stats.html")),
+    re_path(r'smoketest/', include('smoketest.urls')),
+    re_path(r'infranil/', include('infranil.urls')),
+    re_path(r'^uploads/(?P<path>.*)$', django.views.static.serve,
         {'document_root': settings.MEDIA_ROOT}),
 ]
 
 if settings.DEBUG:
     import debug_toolbar
     urlpatterns += [
-        url(r'^__debug__/', include(debug_toolbar.urls)),
+        re_path(r'^__debug__/', include(debug_toolbar.urls)),
     ]

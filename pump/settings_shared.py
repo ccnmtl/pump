@@ -14,7 +14,11 @@ PROJECT_APPS = [
 USE_TZ = True
 
 MIDDLEWARE_CLASSES += [  # noqa
-    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware'
+]
+
+MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
 
 INSTALLED_APPS += [  # noqa
