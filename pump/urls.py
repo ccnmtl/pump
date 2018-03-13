@@ -18,13 +18,13 @@ site_media_root = os.path.join(os.path.dirname(__file__), "../media")
 redirect_after_logout = getattr(settings, 'LOGOUT_REDIRECT_URL', None)
 auth_urls = re_path(r'^accounts/', include('django.contrib.auth.urls'))
 logout_page = re_path(r'^accounts/logout/$',
-                  django.contrib.auth.views.logout,
-                  {'next_page': redirect_after_logout})
+                      django.contrib.auth.views.logout,
+                      {'next_page': redirect_after_logout})
 if hasattr(settings, 'CAS_BASE'):
     auth_urls = path('accounts/', include('djangowind.urls'))
     logout_page = re_path(r'^accounts/logout/$',
-                      djangowind.views.logout,
-                      {'next_page': redirect_after_logout})
+                          djangowind.views.logout,
+                          {'next_page': redirect_after_logout})
 
 urlpatterns = [
     auth_urls,
@@ -40,7 +40,7 @@ urlpatterns = [
     re_path(r'smoketest/', include('smoketest.urls')),
     re_path(r'infranil/', include('infranil.urls')),
     re_path(r'^uploads/(?P<path>.*)$', django.views.static.serve,
-        {'document_root': settings.MEDIA_ROOT}),
+            {'document_root': settings.MEDIA_ROOT}),
 ]
 
 if settings.DEBUG:

@@ -1,3 +1,4 @@
+# flake8: noqa
 # Django settings for pump project.
 import os.path
 import sys
@@ -13,21 +14,15 @@ PROJECT_APPS = [
 ]
 USE_TZ = True
 
-MIDDLEWARE_CLASSES += [  # noqa
-    'django.middleware.csrf.CsrfViewMiddleware'
-]
+MIDDLEWARE = MIDDLEWARE_CLASSES
+MIDDLEWARE += ['django.middleware.csrf.CsrfViewMiddleware']
 
-MIDDLEWARE = [
-    'debug_toolbar.middleware.DebugToolbarMiddleware'
-]
-
-INSTALLED_APPS += [  # noqa
+INSTALLED_APPS += [
     'bootstrap3',
     'bootstrapform',
     'infranil',
     'django_extensions',
     'pump.main',
-#    'bdd_tests',
     'behave_django',
 ]
 
