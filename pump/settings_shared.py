@@ -14,7 +14,6 @@ PROJECT_APPS = [
 ]
 USE_TZ = True
 
-MIDDLEWARE = MIDDLEWARE_CLASSES
 MIDDLEWARE += ['django.middleware.csrf.CsrfViewMiddleware']
 
 INSTALLED_APPS += [
