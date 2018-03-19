@@ -13,7 +13,7 @@ tornado==5.0
 cssselect==1.0.3
 lxml==4.2.0
 fuzzywuzzy==0.16.0
-sure==1.4.7
+sure==1.4.9
 traitlets==4.3.2
 ipython==5.5.0 # pyup: <6.0.0
 
