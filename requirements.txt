@@ -34,7 +34,7 @@ ipdb==0.11
 
 webencodings==0.5.1
 rdflib==4.2.2
-selenium==3.11.0
+selenium==3.12.0
 coverage==4.5.1
 pyasn1==0.4.2
 cryptography==2.2.2  # pyOpenSSL
