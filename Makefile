@@ -1,7 +1,7 @@
 APP=pump
 SYS_PYTHON=python3
 
-JS_FILES=media/js/src/ media/js/tests
+JS_FILES=media/js/src/
 PY_DIRS=$(APP) features
 
 all: jenkins
