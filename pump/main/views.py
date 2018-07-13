@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.core import mail
+from django.core.mail import EmailMultiAlternatives
 from django.urls import reverse
 from django.views.generic.base import View
 from django.views.generic import ListView
@@ -36,11 +36,13 @@ class EmailView(View):
     def post(self, request):
         address = request.POST.get('email', None)
         r = get_object_or_404(Response, pk=request.POST.get('response', ''))
-        mail.send_mail(
+        msg = EmailMultiAlternatives(
             'Your PUMP results',
             r.email_text(),
             settings.SERVER_EMAIL,
             [address],
         )
+        msg.attach_alternative(r.email_html(), "text/html")
+        msg.send()
         return HttpResponse(
             "your results have been sent to {address}".format(address=address))
