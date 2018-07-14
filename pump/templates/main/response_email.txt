@@ -24,7 +24,7 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a
 {{results.percentage_positive}}% likelihood of reaching the
 independent community walking ability category within one year.
 
-* A 'Satisfactory Community Prosthetics User' is defined as someone
+* A "Satisfactory Community Prosthetics User" is defined as someone
 	that is able to walk indoors and outdoors independently within their community.
 
 Additional Resources
