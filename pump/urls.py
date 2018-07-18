@@ -4,12 +4,11 @@ import djangowind.views
 
 from django.contrib import admin
 from django.conf import settings
-from django.views.generic import TemplateView, DetailView
+from django.views.generic import TemplateView
 
 from django.urls import include, path, re_path
 
 from pump.main import views
-from pump.main.models import Response
 import os.path
 admin.autodiscover()
 
