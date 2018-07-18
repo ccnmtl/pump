@@ -245,3 +245,12 @@ border-radius: 5px;
 .references {
     margin-bottom: 2em;
 }
+
+ul.alert-success {
+    margin-top: 1em;
+}
+
+.alert-success li {
+    list-style-type: none;
+}
+

@@ -31,9 +31,10 @@ urlpatterns = [
     logout_page,
     re_path(r'^$', views.IndexView.as_view()),
     re_path(r'^results/$', views.ResultsView.as_view(), name='results'),
-    re_path(r'^email/$', views.EmailView.as_view(), name='email-results'),
-    re_path(r'^score/(?P<pk>\d+)/$', DetailView.as_view(
-        model=Response), name='score'),
+    re_path(r'^score/(?P<pk>\d+)/$', views.ScoreView.as_view(),
+            name='score'),
+    re_path(r'^score/$', views.ScoreView.as_view(),
+            name='score-email'),
     path('admin/', admin.site.urls),
     re_path(r'^_impersonate/', include('impersonate.urls')),
     re_path(r'^stats/$', TemplateView.as_view(template_name="stats.html")),

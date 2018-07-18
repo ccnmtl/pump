@@ -41,8 +41,8 @@ class BasicTest(TestCase):
 
     def test_email_results(self):
         response = ResponseFactory()
-        r = self.c.post(reverse('email-results'),
+        r = self.c.post(reverse('score-email'),
                         dict(email='foo@example.com',
                              response=response.id))
-        self.assertEqual(r.status_code, 200)
+        self.assertEqual(r.status_code, 302)
         self.assertEqual(len(mail.outbox), 1)
