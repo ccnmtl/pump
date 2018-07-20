@@ -2,14 +2,17 @@
 {% block content %}
     {% with results=object.results %}
 
-    {% if messages %}
-    <ul class="alert alert-success">
-        {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags  }}"{% endif %}>{{ message  }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-
+    {% for message in messages %}
+        {% if message.tags == 'success' %}
+        <ul class="alert alert-success">
+            <li>{{ message }}</li>
+        </ul>
+        {% elif message.tags == 'error' %}
+        <ul class="alert alert-danger">
+            <li>{{ message }}</li>
+        </ul>
+        {% endif %}
+    {% endfor %}
     <h2>My Summary</h2>
 
     <p>
@@ -383,7 +386,7 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
 <input type="hidden" name="response" value="{{object.id}}" />
 <div class="form-group">
 <label for="email">Email</label>
-<input type="text" name="email" id="email" class="form-control" placeholder="enter your email address" />
+<input type="email" name="email" id="email" class="form-control" placeholder="enter your email address" />
 <input type="submit" value="send" id="email-button" class="btn btn-default" />
 </div>
 </form>

@@ -3,6 +3,7 @@ from django.test import TestCase
 from django.test.client import Client
 from django.core import mail
 from pump.main.models import Response
+from django.contrib.messages import get_messages
 from .factories import ResponseFactory
 
 
@@ -46,3 +47,28 @@ class BasicTest(TestCase):
                              response=response.id))
         self.assertEqual(r.status_code, 302)
         self.assertEqual(len(mail.outbox), 1)
+
+    # Tests correct handling of no email submitted
+    def test_email_none(self):
+        response = ResponseFactory()
+        r = self.c.post(reverse('score-email'),
+                        dict(email='',
+                             response=response.id))
+        self.assertEqual(r.status_code, 302)
+        messages = list(get_messages(r.wsgi_request))
+        msg = messages[0].tags
+        self.assertEqual(msg, 'error')
+        self.assertEqual(len(mail.outbox), 0)
+
+    # Tests correct handling of malformed email
+    def test_email_malformed(self):
+        """Tests correct handling of malformed email"""
+        response = ResponseFactory()
+        r = self.c.post(reverse('score-email'),
+                        dict(email='foo@bar',
+                             response=response.id))
+        self.assertEqual(r.status_code, 302)
+        messages = list(get_messages(r.wsgi_request))
+        msg = messages[0].tags
+        self.assertEqual(msg, 'error')
+        self.assertEqual(len(mail.outbox), 0)

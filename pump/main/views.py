@@ -7,6 +7,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from pump.main.models import Response
 from django.contrib import messages
+from django.core.validators import ValidationError, validate_email
 
 
 class IndexView(View):
@@ -40,6 +41,18 @@ class ScoreView(DetailView):
     def post(self, request):
         address = request.POST.get('email', None)
         r = get_object_or_404(Response, pk=request.POST.get('response', ''))
+        try:
+            validate_email(address)
+        except ValidationError:
+            if not address:
+                err_msg = 'No email address was provided'
+            else:
+                err_msg = '{address} is not a valid email address.' \
+                          .format(address=address)
+            messages.add_message(request, messages.ERROR, err_msg)
+            return HttpResponseRedirect(
+                reverse("score", args=[r.id, ]))
+
         msg = EmailMultiAlternatives(
             'Your PUMP results',
             r.email_text(),
@@ -48,7 +61,7 @@ class ScoreView(DetailView):
         )
         msg.attach_alternative(r.email_html(), "text/html")
         msg.send()
-        messages.add_message(request, messages.INFO,
+        messages.add_message(request, messages.SUCCESS,
                              'Your results have been sent to {address}'
                              .format(address=address))
         return HttpResponseRedirect(
