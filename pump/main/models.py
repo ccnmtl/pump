@@ -73,6 +73,12 @@ class Response(models.Model):
         c = dict(object=self)
         return t.render(c)
 
+    def email_html(self):
+        """ html body of email version """
+        t = get_template("main/response_email.html")
+        c = dict(object=self)
+        return t.render(c)
+
 
 class Scorer(object):
     def __init__(self, r):

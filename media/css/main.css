@@ -10,7 +10,7 @@ body {
 body > .container {
   background-color: #fff;
   min-height: 100%;
-  padding-top: 80px;
+  padding-top: 130px;
 }
 
 h2 {
@@ -36,6 +36,11 @@ h2 {
     .navbar-brand {
         margin: 10px;
         font-size: 2.3em;
+        height: unset;
+    }
+
+    .navbar-brand > div {
+        line-height: 1.25em;
     }
 }
 
@@ -45,6 +50,10 @@ h2 {
 
 p {
     font-size: 1.2em;
+}
+
+img#intro {
+    width: 100%;
 }
 
 .preamble {
@@ -236,3 +245,12 @@ border-radius: 5px;
 .references {
     margin-bottom: 2em;
 }
+
+ul.alert-success {
+    margin-top: 1em;
+}
+
+.alert-success li {
+    list-style-type: none;
+}
+

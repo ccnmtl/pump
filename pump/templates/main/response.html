@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
     {% with results=object.results %}
+
+    {% if messages %}
+    <ul class="alert alert-success">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags  }}"{% endif %}>{{ message  }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
     <h2>My Summary</h2>
 
     <p>
@@ -11,7 +20,7 @@
         an independent community walking ability can usually walk at a
         speed of &gt;0.8 m/s; people who have an independent household
         walking ability but are limited in community walking usually
-        can walk &gt;0.5 m/s.
+        can walk &gt;0.4 m/s.
     </p>
 
     
@@ -316,7 +325,7 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
         {% if results.r12 %}
         <tr>
             <td></td>
-            <td>Am concerned about being over weight?</td>
+            <td>Concerned about being over weight?</td>
             <td><p>You may want to change your diet and get more active. </p>
                 <p>Consult a physician about your diet or medications. Consult a physical therapist or join a support or leisure activity group.</p>
                 <ul>
@@ -344,7 +353,7 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
             <td>Have kidney disease?</td>
             <td><p>Consult regularly with a physician.</p>
                 <ul>
-                    <li>Kidney disease is a risk factors for a second amputation.<sup><a href="#ref-9">9</a></sup></li>
+                    <li>Kidney disease is a risk factor for a second amputation.<sup><a href="#ref-9">9</a></sup></li>
                 </ul>
             </td>
         </tr>
@@ -369,7 +378,7 @@ Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a {{results.perce
 
 <section class="well">
 <h3>Email me my results and additional resources:</h3>
-<form action="{% url 'email-results' %}" method="post" class="form-inline">
+<form action="{% url 'score-email' %}" method="post" class="form-inline">
 {% csrf_token %}
 <input type="hidden" name="response" value="{{object.id}}" />
 <div class="form-group">
