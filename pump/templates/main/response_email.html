@@ -6,28 +6,50 @@
 body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
-#tips {
-    border: solid black 1px;
-}
-
 #wrapper-table {
     width: 600px;
+    font-size: 16px;
 }
 
 h1, h2 {
     margin: 0;
     mso-line-height-rule: exactly;
-    margin-top: 0.5em;
+    margin: 0.5em 0;
 }
 
 table.header {
     width: 100%;
 }
+
+table {
+    border-collapse: collapse;
+}
+
+#tips {
+    border: solid black 1px;
+}
+
+#tips td, #tips th {
+    padding: 12px;
+}
+
 td.email-header {
     background-color: #3365cc;
     font-size: 1.5em;
     padding: 1em;
     color: white;
+}
+
+.result {
+    font-weight: bold;
+}
+
+.pass {
+    color: green;
+}
+
+.fail {
+    color: red;
 }
   </style>
 </head>
@@ -54,7 +76,7 @@ tool. Below, please find your results and links to additional
 resources:</p>
 
 {% with results=object.results %}
-
+<h2>Summary</h2>
 <p>You identified yourself as a {{object.age}} year old {{object.sex}}
 with {{object.amputation_level}} amputation due to
 {{object.amputation_cause}}. Your responses indicate that your current
@@ -64,19 +86,18 @@ community walking ability can usually walk at a speed of >0.8 m/s;
 people who have an independent household walking ability but are
 limited in community walking usually can walk >0.5 m/s.</p>
 
-<p>Houghton: {% if results.houghton.pass_fail %}PASS{% else %}FAIL{% endif %} ({{results.houghton.score}}/18)</p>
-<p>ABC: {% if results.abc.pass_fail %}PASS{% else %}FAIL{% endif %} ({{results.abc.score}}/160)</p>
-<p>Pick Up: {% if results.pick_up.pass_fail %}PASS{% else %}FAIL{% endif %}</p>
-<p>Look Behind: {% if results.look_behind.pass_fail %}PASS{% else %}FAIL{% endif %}</p>
-
 <p>You passed {{results.number_passed}} of the 4 prognostic criteria.</p>
 
 <p>Your Prosthetic Use for Mobility Prognosis (PUMP) is: You have a
 {{results.percentage_positive}}% likelihood of reaching the
 independent community walking ability category within one year.</p>
 
-<p>* A "Satisfactory Community Prosthetics User" is defined as someone
-that is able to walk indoors and outdoors independently within their community.</p>
+<p class="result {% if results.houghton.pass_fail %}pass{% else %}fail{% endif %}">Prosthetic Function: {% if results.houghton.pass_fail %}PASS{% else %}FAIL{% endif %} ({{results.houghton.score}}/12)</p>
+<p class="result {% if results.abc.pass_fail %}pass{% else %}fail{% endif %}">ABC: {% if results.abc.pass_fail %}PASS{% else %}FAIL{% endif %} ({{results.abc.score}}/160)</p>
+<p class="result {% if results.pick_up.pass_fail %}pass{% else %}fail{% endif %}">Pick Up: {% if results.pick_up.pass_fail %}PASS{% else %}FAIL{% endif %}</p>
+<p class="result {% if results.look_behind.pass_fail %}pass{% else %}fail{% endif %}">Look Behind: {% if results.look_behind.pass_fail %}PASS{% else %}FAIL{% endif %}</p>
+
+<p>* Independent community walking ability includes walking >0.8 m/s and managing outdoor obstacles such as curbs and uneven ground independently.</p>
 
 </td>
 </tr>
@@ -86,14 +107,11 @@ that is able to walk indoors and outdoors independently within their community.<
 
 <table id="tips" class="table" width="600" border="">
     <tr>
-        <th width="50">Yes?</th>
-        <th width="150">Injury Risk Inventory</th>
+        <th width="200">Injury Risk Inventory</th>
         <th width="400">Prevention Strategy and Explanation</th>
     </tr>
 
     <tr>
-        <td>
-        </td>
         <td>(Do these apply to you?)</td>
         <td>(Try these strategies - have someone help you if needed.)</td>
     </tr>
@@ -106,7 +124,6 @@ that is able to walk indoors and outdoors independently within their community.<
     </tr>
 
     <tr>
-        <td></td>
         <td>Houghton Prosthetic Use score &le; 7?</td>
         <td rowspan="4">
             <p>Consult a rehabilitation professional to discuss how exercise or wellness activities may benefit your mobility. </p>
@@ -119,16 +136,13 @@ that is able to walk indoors and outdoors independently within their community.<
         </td>
     </tr>
     <tr>
-        <td></td>
         <td>Balance Confidence score &le; 65?</td>
     </tr>
 
     <tr class="">
-        <td></td>
         <td>Need to hold on or get help to pick up something from the floor?</td>
     </tr>
     <tr>
-        <td></td>
         <td>Need to hold on to turn and look behind you over your shoulder?</td>
     </tr>
     {% endif %}
@@ -136,7 +150,6 @@ that is able to walk indoors and outdoors independently within their community.<
     <tr><th colspan="3">Falls and Fall-Related Injury</th></tr>
 
     <tr>
-        <td></td>
         <td>Female sex</td>
         <td rowspan="4">
             <p>Regular exercise and physical therapy can help. Stay careful!</p>
@@ -150,36 +163,30 @@ that is able to walk indoors and outdoors independently within their community.<
         </td>
     </tr>
     <tr>
-        <td></td>
         <td>Non-white race</td>
     </tr>
     <tr>
-        <td></td>
         <td>Transtibial level amputation</td>
     </tr>
     <tr>
-        <td></td>
         <td>Vascular amputation</td>
     </tr>
     {% endif %}
 
     {% if result.over_55 %}
     <tr>
-        <td></td>
         <td>Over 55 years of age</td>
         <td>If you fall, consult a doctor &mdash; an x-ray is often recommended.<sup>3</sup></td>
     </tr>
     {% endif %}
     {% if results.r1 %}
     <tr>
-        <td></td>
         <td>Fallen in past 12 months</td>
         <td>Consult a rehabilitation professional to discuss how exercise or wellness activities can improve your balance and prevent another fall.</td>
     </tr>
     {% endif %}
     {% if results.r2 %}
     <tr>
-        <td></td>
         <td>Often get up at night (e.g. bathroom)</td>
         <td>Leave on a night-light. Take a moment before getting up.
             <ul><li>You may feel your amputated limb is still there!<sup>5</sup></li></ul>
@@ -188,13 +195,11 @@ that is able to walk indoors and outdoors independently within their community.<
     {% endif %}
     {% if results.r3 %}
     <tr>
-        <td></td>
         <td>Have phantom limb pains</td>
     </tr>
     {% endif %}
     {% if results.r4 %}
     <tr>
-        <td></td>
         <td>Wet/slippery surfaces at home</td>
         <td><p>Wipe up spills immediately, use a non-slip surface or tape in the bathroom/shower/tub, avoid wet and icy surfaces.</p>
             <ul>
@@ -205,7 +210,6 @@ that is able to walk indoors and outdoors independently within their community.<
     {% endif %}
     {% if results.r5 %}
     <tr>
-        <td></td>
         <td>Unsecured rugs/carpets, bath towels</td>
         <td><p>Secure with carpet tape or tacks</p>
             <ul>
@@ -216,7 +220,6 @@ that is able to walk indoors and outdoors independently within their community.<
     {% endif %}
     {% if results.r6 %}
     <tr>
-        <td></td>
         <td>Cluttered floor: shoes, papers, cords</td>
         <td>
             <p>Remove clutter, clear paths, arrange furniture strategically</p>
@@ -228,7 +231,6 @@ that is able to walk indoors and outdoors independently within their community.<
     {% endif %}
     {% if results.r7 %}
     <tr>
-        <td></td>
         <td>Adjustable (screen) door closures</td>
         <td><p>Adjust closure so you have enough time to get in/out</p>
             <ul>
@@ -239,7 +241,6 @@ that is able to walk indoors and outdoors independently within their community.<
     {% endif %}
     {% if results.r8 %}
     <tr>
-        <td></td>
         <td>Have a hard time sitting/standing up from toilet/shower</td>
         <td><p>Use shower chair or toilet seat with arm. Consult a physical therapist to discuss if exercise or leisure group activities can help you get stronger.</p>
             <ul>
@@ -250,7 +251,6 @@ that is able to walk indoors and outdoors independently within their community.<
     {% endif %}
     {% if results.r9 %}
     <tr>
-        <td></td>
         <td>Do not have a grab bar in bathroom</td>
         <td><p>Install grab bar near toilet and shower/bath</p>
             <ul>
@@ -261,7 +261,6 @@ that is able to walk indoors and outdoors independently within their community.<
     {% endif %}
     {% if results.r10 %}
     <tr>
-        <td></td>
         <td>Feel unsteady on entry steps and slopes?</td>
         <td>
             <p>Install handrail for indoor and outdoor stairs/entry/slopes. Take care descending stairs and especially slopes. Consult a prosthetist to discuss prosthetic options.</p>
@@ -273,7 +272,6 @@ that is able to walk indoors and outdoors independently within their community.<
     {% endif %}
     {% if results.r11 %}
     <tr>
-        <td></td>
         <td>Have cats or dogs</td>
         <td><p>Watch out for your pets. Don't let leashes encircle your leg!</p>
             <ul>
@@ -285,7 +283,6 @@ that is able to walk indoors and outdoors independently within their community.<
     {% if results.r13 %}
     <tr><th colspan="3">Medical Concerns</th></tr>
     <tr>
-        <td></td>
         <td>Get dizzy or light-headed when you getting up from the bed or chair?</td>
         <td><p>Get up slowly and take a moment to get your balance.</p>
             <p>Review your medications with your physician/pharmacist.</p>
@@ -298,7 +295,6 @@ that is able to walk indoors and outdoors independently within their community.<
     {% endif %}
     {% if results.r14 %}
     <tr>
-        <td></td>
         <td>Have difficulty seeing clearly</td>
         <td><p>If your vision got worse recently, consult a physician about your health and medications.</p>
             <ul>
@@ -309,7 +305,6 @@ that is able to walk indoors and outdoors independently within their community.<
     {% endif %}
     {% if results.r12 %}
     <tr>
-        <td></td>
         <td>Concerned about being over weight?</td>
         <td><p>You may want to change your diet and get more active. </p>
             <p>Consult a physician about your diet or medications. Consult a physical therapist or join a support or leisure activity group.</p>
@@ -323,7 +318,6 @@ that is able to walk indoors and outdoors independently within their community.<
     {% endif %}
     {% if results.r15 %}
     <tr>
-        <td></td>
         <td>Have you an open sore/wound, or infection on the foot or amputated limb?</td>
         <td><p>Check your skin regularly for open areas. Consult regularly with a physician.</p>
             <ul>
@@ -334,7 +328,6 @@ that is able to walk indoors and outdoors independently within their community.<
     {% endif %}
     {% if results.r16 %}
     <tr>
-        <td></td>
         <td>Have kidney disease?</td>
         <td><p>Consult regularly with a physician.</p>
             <ul>
