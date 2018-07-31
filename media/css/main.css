@@ -18,6 +18,10 @@ h2 {
     font-size: 1.8em;
 }
 
+.navbar-brand {
+    height: unset;
+}
+
 .navbar-brand .text-muted {
     color: #000000;
 }
@@ -254,3 +258,24 @@ ul.alert {
     list-style-type: none;
 }
 
+nav.navbar {
+    background-color: #36c;
+}
+
+footer {
+    background-color: #000d74;
+    padding: 2.5em 0;
+}
+
+footer img {
+    width: 100%;
+}
+
+footer > .container {
+    min-height: 0px;
+}
+
+.ctl-logo {
+    /*Shim down the ctl logo to align with rehaab logo */
+    padding-top: 4px;
+}
