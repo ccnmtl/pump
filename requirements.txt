@@ -26,7 +26,7 @@ backports.shutil_get_terminal_size==1.0.0
 pathlib2==2.3.3
 scandir==1.9.0
 pickleshare==0.7.5
-prompt_toolkit==2.0.8
+prompt_toolkit==2.0.9
 wcwidth==0.1.7
 simplegeneric==0.8.1
 
