@@ -30,7 +30,7 @@ prompt_toolkit==2.0.9
 wcwidth==0.1.7
 simplegeneric==0.8.1
 
-ipdb==0.11
+ipdb==0.12
 
 webencodings==0.5.1
 rdflib==4.2.2
