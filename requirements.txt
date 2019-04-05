@@ -33,7 +33,6 @@ simplegeneric==0.8.1
 ipdb==0.12
 
 webencodings==0.5.1
-rdflib==4.2.2
 selenium==3.141.0
 coverage==4.5.3
 pyasn1==0.4.5
