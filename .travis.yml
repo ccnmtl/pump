@@ -15,8 +15,8 @@ before_install:
     - mkdir geckodriver
     - tar -zxf geckodriver-v0.24.0-linux64.tar.gz -C geckodriver
     - export PATH=$PATH:$PWD/geckodriver
-    - "export DISPLAY=:99.0"
-    - "sh -e /etc/init.d/xvfb start"
+services:
+  - xvfb
 install:
   - pip install -U pip wheel
   - pip install -U setuptools
