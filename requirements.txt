@@ -1,6 +1,6 @@
 Django==2.2.3
 Markdown==2.6.11 # pyup: < 3
-psycopg2==2.8.2
+psycopg2==2.8.3
 versiontools==1.9.1
 statsd==3.3.0
 pep8==1.7.1
@@ -9,9 +9,9 @@ mccabe==0.6.1
 pycodestyle==2.5.0
 configparser==3.7.4
 flake8==3.7.7
-tornado==6.0.2
+tornado==6.0.3
 cssselect==1.0.3
-lxml==4.3.3
+lxml==4.3.4
 fuzzywuzzy==0.17.0
 sure==1.4.11
 traitlets==4.3.2
@@ -19,11 +19,11 @@ ipython==5.8.0 # pyup: <6.0.0
 
 ipython_genutils==0.2.0
 decorator==4.4.0
-pygments==2.3.1
+pygments==2.4.2
 pexpect==4.7.0
 ptyprocess==0.6.0
 backports.shutil_get_terminal_size==1.0.0
-pathlib2==2.3.3
+pathlib2==2.3.4
 scandir==1.10.0
 pickleshare==0.7.5
 prompt_toolkit==2.0.9
@@ -36,13 +36,13 @@ webencodings==0.5.1
 selenium==3.141.0
 coverage==4.5.3
 pyasn1==0.4.5
-cryptography==2.6.1  # pyOpenSSL
+cryptography==2.7  # pyOpenSSL
 pyOpenSSL==19.0.0
 ndg-httpsclient==0.5.1
 
 chardet==3.0.4
 idna==2.8
-urllib3==1.25
+urllib3==1.25.3
 certifi==2019.6.16
 
 requests==2.21.0
