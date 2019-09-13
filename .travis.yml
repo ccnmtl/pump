@@ -2,7 +2,7 @@ language: python
 dist: xenial
 sudo: false
 addons:
-  firefox: "52.2.1esr"
+  firefox: "68.1esr"
 python:
   - "3.5"
   - "3.6"
