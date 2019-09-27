@@ -23,7 +23,7 @@ pygments==2.4.2
 pexpect==4.7.0
 ptyprocess==0.6.0
 backports.shutil_get_terminal_size==1.0.0
-pathlib2==2.3.4
+pathlib2==2.3.5
 scandir==1.10.0
 pickleshare==0.7.5
 prompt_toolkit==2.0.9
