@@ -69,7 +69,7 @@ parse-type==0.4.2
 parse==1.12.1
 behave==1.2.6
 splinter==0.11.0
-contextlib2==0.6.0
+contextlib2==0.6.0.post1
 rcssmin==1.0.6
 rjsmin==1.1.0
 pytz==2019.3
