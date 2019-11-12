@@ -14,7 +14,7 @@ locals().update(
         base=base,
         STATIC_ROOT=STATIC_ROOT,  # noqa: F405
         INSTALLED_APPS=INSTALLED_APPS,  # noqa: F405
-        cloudfront="d1vy4q2u1y7bpg",
+        cloudfront="dp909d54wadkp",
     ))
 
 try:
