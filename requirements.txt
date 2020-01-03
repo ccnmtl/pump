@@ -76,7 +76,7 @@ rcssmin==1.0.6
 rjsmin==1.1.0
 pytz==2019.3
 
-djangowind==1.2.2
+djangowind==1.2.3
 django-appconf==1.0.3
 django-compressor==2.4
 django-statsd-mozilla==0.4.0
