@@ -68,7 +68,7 @@ boto3>=1.12.0,<1.13.0
 python-dateutil==2.8.1
 lazy-object-proxy==1.4.3
 wrapt==1.12.1
-astroid==2.3.3
+astroid==2.4.1
 parse-type==0.4.2
 parse==1.15.0
 behave==1.2.6
