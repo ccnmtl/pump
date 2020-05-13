@@ -4,7 +4,6 @@ sudo: false
 addons:
   firefox: "68.1esr"
 python:
-  - "3.5"
   - "3.6"
 install:
   - pip install -U pip
