@@ -1,5 +1,5 @@
 Django==2.2.12 # pyup: < 3
-Markdown==2.6.11 # pyup: < 3
+Markdown==3.2.1
 psycopg2==2.8.5
 versiontools==1.9.1
 statsd==3.3.0
@@ -7,30 +7,20 @@ pep8==1.7.1
 pyflakes==2.2.0
 mccabe==0.6.1
 pycodestyle==2.6.0
-configparser==4.0.2 # pyup: <5.0.0
+configparser==5.0.0
 flake8==3.8.1
 tornado==6.0.4
 cssselect==1.1.0
 lxml==4.5.0
 fuzzywuzzy==0.18.0
 sure==1.4.11
-traitlets==4.3.3
-ipython==5.10.0 # pyup: <6.0.0
 
-ipython_genutils==0.2.0
-decorator==4.4.2
 pygments==2.6.1
-pexpect==4.8.0
-ptyprocess==0.6.0
-backports.shutil_get_terminal_size==1.0.0
 pathlib2==2.3.5
 scandir==1.10.0
-pickleshare==0.7.5
+
 prompt_toolkit==2.0.10 # pyup: <3.0.0
 wcwidth==0.1.9
-simplegeneric==0.8.1
-
-ipdb==0.13.2
 
 webencodings==0.5.1
 selenium==3.141.0
