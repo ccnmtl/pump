@@ -91,7 +91,7 @@ gunicorn==20.0.4
 django-infranil==1.1.0
 django-flatblocks==0.9.4
 django-storages==1.9.1
-django-cacheds3storage==0.2.1
+django-cacheds3storage==0.2.2
 behave-django==1.4.0
 django-smtp-ssl==1.0
 
