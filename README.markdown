@@ -1,1 +1,1 @@
-[![Build Status](https://travis-ci.org/ccnmtl/pump.svg?branch=master)](https://travis-ci.org/ccnmtl/pump)
+[![Actions Status](https://github.com/ccnmtl/pump/workflows/build-and-test/badge.svg)](https://github.com/ccnmtl/pump/actions)
