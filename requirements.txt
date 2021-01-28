@@ -62,7 +62,7 @@ lazy-object-proxy==1.5.2
 wrapt==1.12.1
 astroid==2.4.1
 parse-type==0.5.2
-parse==1.18.0
+parse==1.19.0
 behave==1.2.6
 splinter==0.14.0
 contextlib2==0.6.0.post1
