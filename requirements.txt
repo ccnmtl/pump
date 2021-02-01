@@ -68,7 +68,7 @@ splinter==0.14.0
 contextlib2==0.6.0.post1
 rcssmin==1.0.6
 rjsmin==1.1.0
-pytz==2020.5
+pytz==2021.1
 
 djangowind==1.2.3
 django-appconf==1.0.4
