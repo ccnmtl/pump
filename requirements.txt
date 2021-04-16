@@ -77,7 +77,7 @@ django-statsd-mozilla==0.4.0
 sentry-sdk==1.0.0
 django-bootstrap3==12.1.0
 django-bootstrap-form==3.4
-django-debug-toolbar==2.2
+django-debug-toolbar==2.2.1
 django-waffle==2.1.0
 
 django-smoketest==1.1.2
