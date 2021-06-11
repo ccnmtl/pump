@@ -29,12 +29,12 @@ webencodings==0.5.1
 selenium==3.141.0
 coverage==5.5
 pyasn1==0.4.8
-cryptography==3.3.2  # pyOpenSSL
+cryptography==3.4.7  # pyOpenSSL
 pyOpenSSL==20.0.1
 ndg-httpsclient==0.5.1
 
 chardet==4.0.0
-idna==2.10
+idna==3.2
 urllib3==1.26.5  # sentry-sdk
 certifi==2021.5.30  # sentry-sdk
 
