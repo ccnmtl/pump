@@ -39,7 +39,7 @@ urllib3==1.26.5  # sentry-sdk
 certifi==2021.5.30  # sentry-sdk
 
 requests==2.25.1
-logilab-common==1.6.3
+logilab-common==1.8.1
 editdistance==0.5.3
 pylint==2.5.2
 six==1.16.0
