@@ -1,33 +1,26 @@
-import django.contrib.auth.views
-import django.views.static
-import djangowind.views
-
-from django.contrib import admin
-from django.conf import settings
-from django.views.generic import TemplateView
-
-from django.urls import include, path, re_path
-
-from pump.main import views
 import os.path
+
+from django.conf import settings
+from django.conf.urls import url
+from django.contrib import admin
+import django.contrib.auth.views
+from django.urls import include, path, re_path
+from django.views.generic import TemplateView
+import django.views.static
+from django_cas_ng import views as cas_views
+from pump.main import views
+
+
 admin.autodiscover()
 
 site_media_root = os.path.join(os.path.dirname(__file__), "../media")
 
-redirect_after_logout = getattr(settings, 'LOGOUT_REDIRECT_URL', None)
-auth_urls = re_path(r'^accounts/', include('django.contrib.auth.urls'))
-logout_page = re_path(r'^accounts/logout/$',
-                      django.contrib.auth.views.LogoutView.as_view(),
-                      {'next_page': redirect_after_logout})
-if hasattr(settings, 'CAS_BASE'):
-    auth_urls = path('accounts/', include('djangowind.urls'))
-    logout_page = re_path(r'^accounts/logout/$',
-                          djangowind.views.logout,
-                          {'next_page': redirect_after_logout})
-
 urlpatterns = [
-    auth_urls,
-    logout_page,
+    url(r'^accounts/', include('django.contrib.auth.urls')),
+    path('cas/login', cas_views.LoginView.as_view(),
+         name='cas_ng_login'),
+    path('cas/logout', cas_views.LogoutView.as_view(),
+         name='cas_ng_logout'),
     re_path(r'^$', views.IndexView.as_view()),
     re_path(r'^results/$', views.ResultsView.as_view(), name='results'),
     re_path(r'^score/(?P<pk>\d+)/$', views.ScoreView.as_view(),
