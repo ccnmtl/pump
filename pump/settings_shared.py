@@ -23,7 +23,6 @@ INSTALLED_APPS += [
     'django_cas_ng',
     'bootstrap3',
     'bootstrapform',
-    'infranil',
     'django_extensions',
     'pump.main',
     'behave_django',
@@ -78,3 +77,5 @@ TEMPLATES = [
         },
     },
 ]
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
