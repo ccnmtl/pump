@@ -31,7 +31,6 @@ urlpatterns = [
     re_path(r'^_impersonate/', include('impersonate.urls')),
     re_path(r'^stats/$', TemplateView.as_view(template_name="stats.html")),
     re_path(r'smoketest/', include('smoketest.urls')),
-    re_path(r'infranil/', include('infranil.urls')),
     re_path(r'^uploads/(?P<path>.*)$', django.views.static.serve,
             {'document_root': settings.MEDIA_ROOT}),
 ]
