@@ -1,6 +1,6 @@
 Django>=3.2.14,<4
 Markdown==3.4.1
-psycopg2<2.9
+psycopg2==2.9.3
 versiontools==1.9.1
 statsd==3.3.0
 pep8==1.7.1
