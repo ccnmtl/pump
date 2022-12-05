@@ -28,7 +28,7 @@ wcwidth==0.2.5
 webencodings==0.5.1
 coverage==6.5.0
 pyasn1==0.4.8
-cryptography==38.0.0  # pyOpenSSL
+cryptography==38.0.3  # pyOpenSSL
 pyOpenSSL==22.1.0
 ndg-httpsclient==0.5.1
 
