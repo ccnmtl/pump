@@ -29,7 +29,7 @@ webencodings==0.5.1
 coverage==7.0.0
 pyasn1==0.4.8
 cryptography==39.0.0  # pyOpenSSL
-pyOpenSSL==22.1.0
+pyOpenSSL==23.0.0
 ndg-httpsclient==0.5.1
 
 chardet==5.1.0
