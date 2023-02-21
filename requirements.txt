@@ -88,7 +88,7 @@ django-impersonate==1.8.1
 django-markwhat==1.6.2
 gunicorn==20.1.0
 django-storages==1.13
-django-cacheds3storage==0.2.2
+django-cacheds3storage==0.3.0
 behave-django==1.4.0
 django-smtp-ssl==1.0
 
