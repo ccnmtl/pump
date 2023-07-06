@@ -54,7 +54,7 @@ sqlparse==0.4.4
 s3transfer==0.6.0
 jmespath==1.0.0
 
-botocore>=1.15.0,<1.30.0
+botocore>=1.15.0,<1.31.0
 boto3>=1.12.0,<1.28.0
 
 python-dateutil==2.8.2
@@ -73,7 +73,7 @@ pytz==2023.3
 django-appconf==1.0.5
 django-compressor>=3.1,<5.0
 django-statsd-mozilla==0.4.0
-sentry-sdk==1.26.0
+sentry-sdk==1.27.0
 django-bootstrap3==23.4
 django-bootstrap-form==3.4
 django-debug-toolbar==4.1.0
