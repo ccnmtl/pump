@@ -1,5 +1,4 @@
 {% load bootstrap3 %}
-{% load compress %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,9 +16,7 @@
 
 {% bootstrap_css %}
 
-{% compress css %}
-    <link href="{{STATIC_URL}}css/main.css" rel="stylesheet">
-{% endcompress %}
+  <link href="{{STATIC_URL}}css/main.css" rel="stylesheet">
 	<link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico" type="image/x-icon" />
 	{% block css %}{% endblock %}
   <script src="{{STATIC_URL}}js/jquery-3.2.1.min.js"></script>

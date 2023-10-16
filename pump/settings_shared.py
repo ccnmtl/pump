@@ -2,7 +2,7 @@
 # Django settings for pump project.
 import os.path
 import sys
-from ccnmtlsettings.shared import common
+from ctlsettings.shared import common
 
 project = 'pump'
 base = os.path.dirname(__file__)
@@ -16,19 +16,15 @@ USE_TZ = True
 
 MIDDLEWARE += [
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django_cas_ng.middleware.CASMiddleware'
 ]
 
 INSTALLED_APPS += [
-    'django_cas_ng',
     'bootstrap3',
     'bootstrapform',
     'django_extensions',
     'pump.main',
     'behave_django',
 ]
-
-INSTALLED_APPS.remove('djangowind') # noqa
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
@@ -47,10 +43,6 @@ if 'test' in sys.argv or 'jenkins' in sys.argv:
                 'ATOMIC_REQUESTS': True,
             }
         }
-
-CAS_SERVER_URL = 'https://cas.columbia.edu/cas/'
-CAS_VERSION = '3'
-CAS_ADMIN_REDIRECT = False
 
 TEMPLATES = [
     {
