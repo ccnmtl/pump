@@ -1,4 +1,4 @@
-Django>=3.2.14,<4
+Django>=3.2.14,<6
 Markdown==3.5
 psycopg2==2.9.3
 versiontools==1.9.1
