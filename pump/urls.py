@@ -1,7 +1,6 @@
 import os.path
 
 from django.conf import settings
-from django.conf.urls import url
 from django.contrib import admin
 import django.contrib.auth.views
 from django.urls import include, path, re_path
@@ -16,7 +15,7 @@ admin.autodiscover()
 site_media_root = os.path.join(os.path.dirname(__file__), "../media")
 
 urlpatterns = [
-    url(r'^accounts/', include('django.contrib.auth.urls')),
+    re_path(r'^accounts/', include('django.contrib.auth.urls')),
     path('cas/login', cas_views.LoginView.as_view(),
          name='cas_ng_login'),
     path('cas/logout', cas_views.LogoutView.as_view(),
