@@ -13,11 +13,11 @@ class BasicTest(TestCase):
 
     def test_root(self):
         response = self.c.get("/")
-        self.assertEquals(response.status_code, 200)
+        self.assertEqual(response.status_code, 200)
 
     def test_smoketest(self):
         response = self.c.get("/smoketest/")
-        self.assertEquals(response.status_code, 200)
+        self.assertEqual(response.status_code, 200)
         self.assertContains(response, "PASS")
 
     def test_empty_submit(self):
