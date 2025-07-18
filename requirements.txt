@@ -85,7 +85,7 @@ django-ga-context==0.1.0
 django-impersonate==1.9.1
 gunicorn==23.0.0
 django-storages==1.14.2
-behave-django==1.6.0
+behave-django==1.7.0
 django-smtp-ssl==1.0
 
 ctlsettings==0.4.2
