@@ -71,7 +71,7 @@ pytz==2025.2
 
 django-appconf==1.1.0
 django-statsd-mozilla==0.4.0
-sentry-sdk==2.40.0
+sentry-sdk==2.41.0
 django-bootstrap3==25.2
 django-bootstrap-form==3.4
 django-debug-toolbar==5.2.0
