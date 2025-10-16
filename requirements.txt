@@ -27,7 +27,7 @@ prompt_toolkit==3.0.22 # pyup: <3.0.0
 wcwidth==0.2.5
 
 webencodings==0.5.1
-coverage==7.10.0
+coverage==7.11.0
 pyasn1==0.6.0
 cffi==2.0.0 # cryptography
 cryptography==46.0.1  # pyOpenSSL
