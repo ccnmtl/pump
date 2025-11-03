@@ -16,6 +16,7 @@ USE_TZ = True
 
 MIDDLEWARE += [
     'django.middleware.csrf.CsrfViewMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 INSTALLED_APPS += [
@@ -24,6 +25,7 @@ INSTALLED_APPS += [
     'django_extensions',
     'pump.main',
     'behave_django',
+    'debug_toolbar',
 ]
 
 AUTHENTICATION_BACKENDS = [
