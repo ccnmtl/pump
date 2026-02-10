@@ -24,7 +24,7 @@ pathlib2==2.3.6
 scandir==1.10.0
 
 prompt_toolkit==3.0.22 # pyup: <3.0.0
-wcwidth==0.5.0
+wcwidth==0.6.0
 
 webencodings==0.5.1
 pyasn1==0.6.0
