@@ -29,7 +29,7 @@ webencodings==0.5.1
 pyasn1==0.6.3
 cffi==2.0.0 # cryptography
 cryptography==47.0.0  # pyOpenSSL
-pyOpenSSL==26.0.0
+pyOpenSSL==26.1.0
 ndg-httpsclient==0.5.1
 
 chardet==7.4.0.post1
