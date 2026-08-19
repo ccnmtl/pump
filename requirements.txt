@@ -25,7 +25,7 @@ scandir==1.10.0
 prompt_toolkit==3.0.22 # pyup: <3.0.0
 wcwidth==0.8.1
 
-webencodings==0.5.1
+webencodings==0.6.1
 pyasn1==0.6.4
 cffi==2.1.0 # cryptography
 cryptography==50.0.0  # pyOpenSSL
@@ -100,7 +100,7 @@ django-cas-ng==5.1.0
 asgiref==3.12.1
 
 backports.zoneinfo;python_version<'3.9'
-webencodings==0.5.1 # django-markdownify
+webencodings==0.6.1 # django-markdownify
 tinycss2==1.5.0 # django-markdownify
 bleach==6.4.0 # django-markdownify
 django-markdownify==0.9.3
